@@ -1,0 +1,89 @@
+# ========================================
+# Node.js / JavaScript 공통
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# 환경 변수 파일
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 로그
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# IDE / 편집기
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.DS_Store
+
+# OS
+Thumbs.db
+
+# ========================================
+# Next.js
+# ========================================
+.next/
+out/
+
+# ========================================
+# React.js (CRA)
+# ========================================
+build/
+
+# ========================================
+# Vite
+# ========================================
+dist/
+.vite/
+
+# ========================================
+# React Native
+# ========================================
+# React Native build artifacts
+android/app/build/
+ios/build/
+ios/Pods/
+*.xcworkspace
+*.xcuserstate
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+
+# Gradle
+.gradle/
+local.properties
+
+# CocoaPods
+Podfile.lock
+
+# Expo
+.expo/
+.expo-shared/
+
+# Metro / Cache
+.expo/
+.expo-shared/
+.expo-settings.json
+.expo-dev-client.json
+.expo-go/
+.expo-packager-cache/
+.expo-service-worker-cache/
+.expo-web-cache/

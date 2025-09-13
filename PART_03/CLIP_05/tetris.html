@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 테트리스</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .game-container {
+            text-align: center;
+        }
+
+        canvas {
+            border: 2px solid #fff;
+            background-color: #000;
+        }
+
+        .score {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>테트리스</h1>
+        <div class="score">점수: <span id="score">0</span></div>
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="controls">
+            <p>조작 방법:</p>
+            <p>← → : 좌우 이동</p>
+            <p>↓ : 빠른 낙하</p>
+            <p>↑ : 회전</p>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+
+        const COLS = 10;
+        const ROWS = 20;
+        const BLOCK_SIZE = 30;
+
+        let board = Array(ROWS).fill().map(() => Array(COLS).fill(0));
+        let score = 0;
+        let currentPiece = null;
+        let gameRunning = true;
+
+        const colors = [
+            '#000000', '#FF0000', '#00FF00', '#0000FF',
+            '#FFFF00', '#FF00FF', '#00FFFF', '#FFA500'
+        ];
+
+        const tetrominoes = [
+            {
+                shape: [
+                    [1, 1, 1, 1]
+                ],
+                color: 1
+            },
+            {
+                shape: [
+                    [1, 1],
+                    [1, 1]
+                ],
+                color: 2
+            },
+            {
+                shape: [
+                    [0, 1, 0],
+                    [1, 1, 1]
+                ],
+                color: 3
+            },
+            {
+                shape: [
+                    [1, 0, 0],
+                    [1, 1, 1]
+                ],
+                color: 4
+            },
+            {
+                shape: [
+                    [0, 0, 1],
+                    [1, 1, 1]
+                ],
+                color: 5
+            },
+            {
+                shape: [
+                    [0, 1, 1],
+                    [1, 1, 0]
+                ],
+                color: 6
+            },
+            {
+                shape: [
+                    [1, 1, 0],
+                    [0, 1, 1]
+                ],
+                color: 7
+            }
+        ];
+
+        function createPiece() {
+            const tetromino = tetrominoes[Math.floor(Math.random() * tetrominoes.length)];
+            return {
+                shape: tetromino.shape,
+                color: tetromino.color,
+                x: Math.floor(COLS / 2) - Math.floor(tetromino.shape[0].length / 2),
+                y: 0
+            };
+        }
+
+        function drawBlock(x, y, color) {
+            ctx.fillStyle = colors[color];
+            ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+            ctx.strokeStyle = '#333';
+            ctx.strokeRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+        }
+
+        function drawBoard() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let y = 0; y < ROWS; y++) {
+                for (let x = 0; x < COLS; x++) {
+                    if (board[y][x] !== 0) {
+                        drawBlock(x, y, board[y][x]);
+                    }
+                }
+            }
+        }
+
+        function drawPiece(piece) {
+            for (let y = 0; y < piece.shape.length; y++) {
+                for (let x = 0; x < piece.shape[y].length; x++) {
+                    if (piece.shape[y][x] !== 0) {
+                        drawBlock(piece.x + x, piece.y + y, piece.color);
+                    }
+                }
+            }
+        }
+
+        function isValidPosition(piece, dx = 0, dy = 0) {
+            for (let y = 0; y < piece.shape.length; y++) {
+                for (let x = 0; x < piece.shape[y].length; x++) {
+                    if (piece.shape[y][x] !== 0) {
+                        const newX = piece.x + x + dx;
+                        const newY = piece.y + y + dy;
+
+                        if (newX < 0 || newX >= COLS || newY >= ROWS) {
+                            return false;
+                        }
+
+                        if (newY >= 0 && board[newY][newX] !== 0) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        function placePiece(piece) {
+            for (let y = 0; y < piece.shape.length; y++) {
+                for (let x = 0; x < piece.shape[y].length; x++) {
+                    if (piece.shape[y][x] !== 0) {
+                        board[piece.y + y][piece.x + x] = piece.color;
+                    }
+                }
+            }
+        }
+
+        function clearLines() {
+            let linesCleared = 0;
+
+            for (let y = ROWS - 1; y >= 0; y--) {
+                if (board[y].every(cell => cell !== 0)) {
+                    board.splice(y, 1);
+                    board.unshift(Array(COLS).fill(0));
+                    linesCleared++;
+                    y++;
+                }
+            }
+
+            score += linesCleared * 100;
+            scoreElement.textContent = score;
+        }
+
+        function rotatePiece(piece) {
+            const rotated = [];
+            const rows = piece.shape.length;
+            const cols = piece.shape[0].length;
+
+            for (let x = 0; x < cols; x++) {
+                rotated[x] = [];
+                for (let y = rows - 1; y >= 0; y--) {
+                    rotated[x][rows - 1 - y] = piece.shape[y][x];
+                }
+            }
+
+            const rotatedPiece = {
+                ...piece,
+                shape: rotated
+            };
+
+            if (isValidPosition(rotatedPiece)) {
+                piece.shape = rotated;
+            }
+        }
+
+        function gameLoop() {
+            if (!gameRunning) return;
+
+            if (!currentPiece) {
+                currentPiece = createPiece();
+                if (!isValidPosition(currentPiece)) {
+                    gameRunning = false;
+                    alert('게임 오버! 점수: ' + score);
+                    return;
+                }
+            }
+
+            if (isValidPosition(currentPiece, 0, 1)) {
+                currentPiece.y++;
+            } else {
+                placePiece(currentPiece);
+                clearLines();
+                currentPiece = null;
+            }
+
+            drawBoard();
+            if (currentPiece) {
+                drawPiece(currentPiece);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (!currentPiece || !gameRunning) return;
+
+            switch(e.key) {
+                case 'ArrowLeft':
+                    if (isValidPosition(currentPiece, -1, 0)) {
+                        currentPiece.x--;
+                    }
+                    break;
+                case 'ArrowRight':
+                    if (isValidPosition(currentPiece, 1, 0)) {
+                        currentPiece.x++;
+                    }
+                    break;
+                case 'ArrowDown':
+                    if (isValidPosition(currentPiece, 0, 1)) {
+                        currentPiece.y++;
+                    }
+                    break;
+                case 'ArrowUp':
+                    rotatePiece(currentPiece);
+                    break;
+            }
+
+            drawBoard();
+            if (currentPiece) {
+                drawPiece(currentPiece);
+            }
+        });
+
+        setInterval(gameLoop, 500);
+        gameLoop();
+    </script>
+</body>
+</html>

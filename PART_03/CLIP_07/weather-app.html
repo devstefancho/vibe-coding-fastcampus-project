@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 앱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .weather-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .weather-container h1 {
+            color: #2d3436;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .city-selector {
+            margin-bottom: 30px;
+        }
+
+        .city-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .city-btn {
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .city-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .city-btn.active {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+        }
+
+        .weather-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .current-city {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin: 15px 0;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .weather-description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .weather-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 10px;
+            border-radius: 10px;
+        }
+
+        .detail-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .last-updated {
+            color: #636e72;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .weather-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .weather-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .city-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .temperature {
+                font-size: 2.5rem;
+            }
+
+            .weather-details {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>날씨 정보</h1>
+
+        <div class="city-selector">
+            <div class="city-buttons">
+                <button class="city-btn active" data-city="seoul">서울</button>
+                <button class="city-btn" data-city="busan">부산</button>
+                <button class="city-btn" data-city="daegu">대구</button>
+                <button class="city-btn" data-city="incheon">인천</button>
+            </div>
+        </div>
+
+        <div class="weather-info">
+            <div class="current-city" id="currentCity">서울</div>
+            <div class="weather-icon" id="weatherIcon">☀️</div>
+            <div class="temperature" id="temperature">23°C</div>
+            <div class="weather-description" id="weatherDesc">맑음</div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-value" id="humidity">65%</div>
+                    <div class="detail-label">습도</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value" id="windSpeed">12km/h</div>
+                    <div class="detail-label">풍속</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value" id="pressure">1013hPa</div>
+                    <div class="detail-label">기압</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="last-updated" id="lastUpdated">
+            마지막 업데이트: 2024년 9월 13일 17:30
+        </div>
+    </div>
+
+    <script>
+        // 가짜 날씨 데이터
+        const weatherData = {
+            seoul: {
+                city: '서울',
+                temperature: '23°C',
+                description: '맑음',
+                icon: '☀️',
+                humidity: '65%',
+                windSpeed: '12km/h',
+                pressure: '1013hPa'
+            },
+            busan: {
+                city: '부산',
+                temperature: '26°C',
+                description: '구름 많음',
+                icon: '⛅',
+                humidity: '72%',
+                windSpeed: '15km/h',
+                pressure: '1010hPa'
+            },
+            daegu: {
+                city: '대구',
+                temperature: '25°C',
+                description: '흐림',
+                icon: '☁️',
+                humidity: '58%',
+                windSpeed: '8km/h',
+                pressure: '1015hPa'
+            },
+            incheon: {
+                city: '인천',
+                temperature: '21°C',
+                description: '비',
+                icon: '🌧️',
+                humidity: '85%',
+                windSpeed: '18km/h',
+                pressure: '1008hPa'
+            }
+        };
+
+        // DOM 요소들
+        const cityButtons = document.querySelectorAll('.city-btn');
+        const currentCityElement = document.getElementById('currentCity');
+        const weatherIconElement = document.getElementById('weatherIcon');
+        const temperatureElement = document.getElementById('temperature');
+        const weatherDescElement = document.getElementById('weatherDesc');
+        const humidityElement = document.getElementById('humidity');
+        const windSpeedElement = document.getElementById('windSpeed');
+        const pressureElement = document.getElementById('pressure');
+        const lastUpdatedElement = document.getElementById('lastUpdated');
+
+        // 날씨 정보 업데이트 함수
+        function updateWeather(cityKey) {
+            const data = weatherData[cityKey];
+
+            currentCityElement.textContent = data.city;
+            weatherIconElement.textContent = data.icon;
+            temperatureElement.textContent = data.temperature;
+            weatherDescElement.textContent = data.description;
+            humidityElement.textContent = data.humidity;
+            windSpeedElement.textContent = data.windSpeed;
+            pressureElement.textContent = data.pressure;
+
+            // 현재 시간으로 업데이트
+            const now = new Date();
+            const updateTime = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            lastUpdatedElement.textContent = `마지막 업데이트: ${updateTime}`;
+        }
+
+        // 도시 버튼 클릭 이벤트
+        cityButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 모든 버튼에서 active 클래스 제거
+                cityButtons.forEach(btn => btn.classList.remove('active'));
+
+                // 클릭된 버튼에 active 클래스 추가
+                button.classList.add('active');
+
+                // 날씨 정보 업데이트
+                const cityKey = button.getAttribute('data-city');
+                updateWeather(cityKey);
+            });
+        });
+
+        // 페이지 로드 시 서울 날씨로 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            updateWeather('seoul');
+        });
+    </script>
+</body>
+</html>

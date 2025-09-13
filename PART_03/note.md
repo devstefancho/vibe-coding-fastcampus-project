@@ -95,6 +95,9 @@ User Prompt에다가 User Prompt와 AI 응답 요약을 파일로 만들어달�
 
 mcp 설정도 claude code에게 맡길 수 있다. 문서링크까지 전달해준다면 가장 확실하다. (비슷한 이름으로 잘 못 검색하는 경우가 있어서 링크를 주는게 가장 확실할 수 있음)
 
+- context7 : https://github.com/upstash/context7
+- supabase : https://supabase.com/docs/guides/getting-started/mcp
+
 ```
 > .mcp.json에 supabase mcp 설정해줘 https://supabase.com/docs/guides/getting-started/mcp?queryGroups=os&os=mac를 참고해
 > .mcp.json에 context7 mcp 설정해줘

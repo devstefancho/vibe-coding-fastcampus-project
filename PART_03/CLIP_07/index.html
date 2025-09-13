@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 앱</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather-container">
+        <h1>날씨 정보</h1>
+
+        <div class="city-selector">
+            <div class="city-buttons">
+                <button class="city-btn active" data-city="seoul">뉴욕</button>
+                <button class="city-btn" data-city="busan">부산</button>
+                <button class="city-btn" data-city="daegu">대구</button>
+                <button class="city-btn" data-city="incheon">인천</button>
+            </div>
+        </div>
+
+        <div class="weather-info">
+            <div class="current-city" id="currentCity">서울</div>
+            <div class="weather-icon" id="weatherIcon">☀️</div>
+            <div class="temperature" id="temperature">23°C</div>
+            <div class="weather-description" id="weatherDesc">맑음</div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-value" id="humidity">65%</div>
+                    <div class="detail-label">습도</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value" id="windSpeed">12km/h</div>
+                    <div class="detail-label">풍속</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-value" id="pressure">1013hPa</div>
+                    <div class="detail-label">기압</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="last-updated" id="lastUpdated">
+            마지막 업데이트: 2024년 9월 13일 17:30
+        </div>
+    </div>
+
+    <!-- 설정 파일들 로드 -->
+    <script src="config.js"></script>
+    <script src="weather-data.js"></script>
+    <script src="theme.js"></script>
+
+    <!-- 메인 스크립트 -->
+    <script src="script.js"></script>
+</body>
+</html>

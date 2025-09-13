@@ -68,20 +68,35 @@ const weatherData = {
 
 ```
 CLIP_07/
-├── weather-app.html    # 메인 앱 파일 (HTML + CSS + JS)
-└── README.md          # 프로젝트 기획서
+├── index.html          # 메인 HTML 파일
+├── styles.css          # CSS 스타일 파일
+├── script.js           # JavaScript 로직
+├── config.js           # 앱 설정 파일
+├── weather-data.js     # 날씨 데이터
+├── theme.js            # 테마 및 색상 설정
+├── weather-app.html    # 원본 단일 파일 (참고용)
+├── README.md           # 프로젝트 기획서
+└── CONFIGURATION.md    # 설정 방법 가이드
 ```
 
 ## 🖥 사용 방법
 
-1. **파일 열기**: `weather-app.html` 파일을 웹 브라우저에서 열기
+### 기본 사용법
+1. **파일 열기**: `index.html` 파일을 웹 브라우저에서 열기
 2. **도시 선택**: 상단 버튼(서울, 부산, 대구, 인천) 중 하나 클릭
 3. **정보 확인**: 선택한 도시의 날씨 정보 즉시 확인
+
+### 설정 변경 방법
+1. **날씨 데이터 수정**: `weather-data.js` 파일에서 온도, 날씨 상태 등 조정
+2. **디자인 변경**: `theme.js`에서 색상, 크기 등 테마 설정 수정
+3. **앱 설정**: `config.js`에서 기본 도시, 언어, 단위 등 변경
+4. **자세한 설정 방법**: `CONFIGURATION.md` 파일 참조
 
 ## ✨ 특별한 특징
 
 - **인터넷 연결 불필요**: 모든 데이터가 파일 내부에 포함
-- **단일 파일**: HTML, CSS, JavaScript가 하나의 파일에 통합
+- **모듈화된 구조**: HTML, CSS, JavaScript가 분리되어 유지보수 용이
+- **쉬운 설정 변경**: 별도 설정 파일로 데이터와 테마 쉽게 조정 가능
 - **즉시 실행 가능**: 별도 설치나 설정 없이 브라우저에서 바로 실행
 - **크로스 플랫폼**: 모든 주요 브라우저에서 동작
 

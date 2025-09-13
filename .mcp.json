@@ -5,6 +5,27 @@
       "args": [
         "@playwright/mcp@latest"
       ]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase",
+        "--read-only",
+        "--project-ref=vezhhzmqchdmzcvakgrd"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sbp_8dca9f7dcc6fe4f155eefab0eb34682fa83f6401"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "@upstash/context7-mcp"
+      ],
+      "env": {
+        "CONTEXT7_API_KEY": "ctx7sk-ef8d1065-d3fd-405c-b2f1-e833f70aa5cd"
+      }
     }
   }
 }

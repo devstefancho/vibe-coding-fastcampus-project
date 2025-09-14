@@ -27,6 +27,8 @@ exaclidraw.com에 붙여넣기 하기
 
 2. 카카오 로그인 및 Supabase 인증 설정하기
 
+![카카오 및 Supabase 설정 정리](kakao-supabase-auth.png)
+
 2-1) Playwright 전용 [Output Style](https://docs.anthropic.com/ko/docs/claude-code/output-styles) 을 설정한다.
 ```
 > /output-style minimal-playwright

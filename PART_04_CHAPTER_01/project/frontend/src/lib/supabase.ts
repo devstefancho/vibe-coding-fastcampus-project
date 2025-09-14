@@ -41,3 +41,63 @@ export const getCurrentUser = async () => {
 
   return user
 }
+
+export interface Profile {
+  id: string
+  name?: string
+  phone?: string
+  address?: string
+  created_at: string
+  updated_at: string
+}
+
+export const getProfile = async (): Promise<Profile | null> => {
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+  if (authError || !user) {
+    console.error('Authentication error:', authError?.message)
+    return null
+  }
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+    .single()
+
+  if (error) {
+    if (error.code === 'PGRST116') {
+      return null
+    }
+    console.error('Profile fetch error:', error.message)
+    return null
+  }
+
+  return data
+}
+
+export const updateProfile = async (profileData: Partial<Pick<Profile, 'name' | 'phone' | 'address'>>): Promise<Profile> => {
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+  if (authError || !user) {
+    console.error('Authentication error:', authError?.message)
+    throw authError || new Error('User not authenticated')
+  }
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .upsert({
+      id: user.id,
+      ...profileData,
+      updated_at: new Date().toISOString()
+    })
+    .select()
+    .single()
+
+  if (error) {
+    console.error('Profile update error:', error.message)
+    throw error
+  }
+
+  return data
+}

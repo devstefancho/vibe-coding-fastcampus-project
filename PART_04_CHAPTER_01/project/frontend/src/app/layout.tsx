@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ToastProvider } from "@/contexts/ToastContext";
+import { LikesProvider } from "@/contexts/LikesContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -34,13 +35,15 @@ export default function RootLayout({
       >
         <ToastProvider>
           <AuthProvider>
-            <CartProvider>
-              <Header />
-              <main className="flex-grow container mx-auto px-4 py-8">
-                {children}
-              </main>
-              <Footer />
-            </CartProvider>
+            <LikesProvider>
+              <CartProvider>
+                <Header />
+                <main className="flex-grow container mx-auto px-4 py-8">
+                  {children}
+                </main>
+                <Footer />
+              </CartProvider>
+            </LikesProvider>
           </AuthProvider>
         </ToastProvider>
       </body>

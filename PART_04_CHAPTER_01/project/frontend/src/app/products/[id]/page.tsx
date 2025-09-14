@@ -7,6 +7,7 @@ import { getProductById, formatPrice } from '@/lib/products';
 import { useCart } from '@/contexts/CartContext';
 import { useToast } from '@/contexts/ToastContext';
 import ImageMagnifier from '@/components/ImageMagnifier';
+import LikeButton from '@/components/LikeButton';
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -105,7 +106,15 @@ export default function ProductPage({ params }: ProductPageProps) {
         {/* Product Information */}
         <div className="max-w-2xl mx-auto space-y-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">{product.name}</h1>
+            <div className="flex items-start justify-between mb-2">
+              <h1 className="text-3xl font-bold text-gray-800 flex-1">{product.name}</h1>
+              <LikeButton
+                productId={product.id}
+                productName={product.name}
+                size="lg"
+                className="ml-4"
+              />
+            </div>
             <p className="text-2xl font-semibold text-blue-600">{formatPrice(product.price)}</p>
           </div>
 

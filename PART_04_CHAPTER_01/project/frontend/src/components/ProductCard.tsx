@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types';
 import { formatPrice } from '@/lib/products';
+import LikeButton from './LikeButton';
 
 interface ProductCardProps {
   product: Product;
@@ -18,6 +19,16 @@ export default function ProductCard({ product }: ProductCardProps) {
             fill
             className="object-cover"
           />
+
+          {/* 좋아요 버튼 */}
+          <div className="absolute top-2 right-2 z-10">
+            <LikeButton
+              productId={product.id}
+              productName={product.name}
+              size="md"
+            />
+          </div>
+
           {!product.inStock && (
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
               <span className="bg-red-500 text-white px-3 py-1 rounded text-sm font-semibold">

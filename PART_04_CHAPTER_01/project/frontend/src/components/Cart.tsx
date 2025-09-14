@@ -3,10 +3,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/contexts/CartContext';
+import { useToast } from '@/contexts/ToastContext';
 import { formatPrice } from '@/lib/products';
 
 export default function Cart() {
   const { state, removeItem, updateQuantity, clearCart } = useCart();
+  const { showToast } = useToast();
+
+  const handleRemoveItem = (productId: string, size: string, color: string, productName: string) => {
+    removeItem(productId, size, color);
+    showToast(`${productName}이(가) 장바구니에서 삭제되었습니다.`, 'success');
+  };
+
+  const handleClearCart = () => {
+    clearCart();
+    showToast('장바구니가 비워졌습니다.', 'success');
+  };
 
   if (state.items.length === 0) {
     return (
@@ -28,7 +40,7 @@ export default function Cart() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-gray-800">장바구니</h1>
         <button
-          onClick={clearCart}
+          onClick={handleClearCart}
           className="text-red-600 hover:text-red-700 text-sm font-medium"
         >
           전체 삭제
@@ -79,7 +91,7 @@ export default function Cart() {
                   {formatPrice(item.product.price * item.quantity)}
                 </p>
                 <button
-                  onClick={() => removeItem(item.product.id, item.size, item.color)}
+                  onClick={() => handleRemoveItem(item.product.id, item.size, item.color, item.product.name)}
                   className="text-red-600 hover:text-red-700 text-sm mt-2"
                 >
                   삭제

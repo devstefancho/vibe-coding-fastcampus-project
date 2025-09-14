@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
 import { getProductById, formatPrice } from '@/lib/products';
 import { useCart } from '@/contexts/CartContext';
+import { useToast } from '@/contexts/ToastContext';
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -19,6 +20,8 @@ export default function ProductPage({ params }: ProductPageProps) {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
 
   const { addItem } = useCart();
+  const { showToast } = useToast();
+  const router = useRouter();
 
   // Resolve params promise
   useState(() => {
@@ -37,7 +40,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
   const handleAddToCart = async () => {
     if (!selectedSize || !selectedColor) {
-      alert('사이즈와 색상을 선택해주세요.');
+      showToast('사이즈와 색상을 선택해주세요.', 'error');
       return;
     }
 
@@ -46,8 +49,13 @@ export default function ProductPage({ params }: ProductPageProps) {
     try {
       addItem(product, selectedSize, selectedColor, quantity);
 
-      // Show success message
-      alert('장바구니에 상품이 추가되었습니다!');
+      // Show success message with action options
+      showToast('장바구니에 상품이 추가되었습니다!', 'success', {
+        actionButton: {
+          label: '장바구니 보기',
+          onClick: () => router.push('/cart')
+        }
+      });
 
       // Reset form
       setSelectedSize('');
@@ -55,7 +63,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       setQuantity(1);
     } catch (error) {
       console.error('Error adding to cart:', error);
-      alert('장바구니 추가 중 오류가 발생했습니다.');
+      showToast('장바구니 추가 중 오류가 발생했습니다.', 'error');
     } finally {
       setIsAddingToCart(false);
     }

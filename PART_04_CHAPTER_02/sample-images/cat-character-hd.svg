@@ -1,0 +1,39 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 고양이 몸체 -->
+  <ellipse cx="100" cy="140" rx="50" ry="35" fill="#FFB366"/>
+
+  <!-- 고양이 머리 -->
+  <circle cx="100" cy="80" r="45" fill="#FFB366"/>
+
+  <!-- 고양이 귀 -->
+  <polygon points="70,50 85,25 100,50" fill="#FFB366"/>
+  <polygon points="100,50 115,25 130,50" fill="#FFB366"/>
+  <polygon points="75,45 85,35 95,45" fill="#FF9A4D"/>
+  <polygon points="105,45 115,35 125,45" fill="#FF9A4D"/>
+
+  <!-- 고양이 눈 -->
+  <ellipse cx="85" cy="75" rx="8" ry="12" fill="#2C3E50"/>
+  <ellipse cx="115" cy="75" rx="8" ry="12" fill="#2C3E50"/>
+  <ellipse cx="85" cy="70" rx="3" ry="5" fill="#FFFFFF"/>
+  <ellipse cx="115" cy="70" rx="3" ry="5" fill="#FFFFFF"/>
+
+  <!-- 고양이 코 -->
+  <polygon points="100,85 95,95 105,95" fill="#FF6B9D"/>
+
+  <!-- 고양이 입 -->
+  <path d="M 100 95 Q 90 105 85 100" stroke="#2C3E50" stroke-width="2" fill="none"/>
+  <path d="M 100 95 Q 110 105 115 100" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 고양이 수염 -->
+  <line x1="60" y1="80" x2="40" y2="75" stroke="#2C3E50" stroke-width="2"/>
+  <line x1="60" y1="90" x2="40" y2="90" stroke="#2C3E50" stroke-width="2"/>
+  <line x1="140" y1="80" x2="160" y2="75" stroke="#2C3E50" stroke-width="2"/>
+  <line x1="140" y1="90" x2="160" y2="90" stroke="#2C3E50" stroke-width="2"/>
+
+  <!-- 고양이 꼬리 -->
+  <path d="M 50 140 Q 20 120 30 80" stroke="#FFB366" stroke-width="15" fill="none"/>
+
+  <!-- 고양이 발 -->
+  <ellipse cx="75" cy="175" rx="12" ry="8" fill="#FFB366"/>
+  <ellipse cx="125" cy="175" rx="12" ry="8" fill="#FFB366"/>
+</svg>

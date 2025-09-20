@@ -1,0 +1,57 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 여우 몸체 -->
+  <ellipse cx="100" cy="140" rx="45" ry="30" fill="#FF8C42"/>
+
+  <!-- 여우 머리 -->
+  <ellipse cx="100" cy="80" rx="35" ry="30" fill="#FF8C42"/>
+
+  <!-- 여우 귀 -->
+  <polygon points="75,50 85,25 95,50" fill="#FF8C42"/>
+  <polygon points="105,50 115,25 125,50" fill="#FF8C42"/>
+  <polygon points="80,45 85,35 90,45" fill="#FFFFFF"/>
+  <polygon points="110,45 115,35 120,45" fill="#FFFFFF"/>
+
+  <!-- 여우 눈 -->
+  <ellipse cx="88" cy="75" rx="6" ry="8" fill="#2C3E50"/>
+  <ellipse cx="112" cy="75" rx="6" ry="8" fill="#2C3E50"/>
+  <ellipse cx="88" cy="72" rx="2" ry="3" fill="#FFFFFF"/>
+  <ellipse cx="112" cy="72" rx="2" ry="3" fill="#FFFFFF"/>
+
+  <!-- 여우 코 -->
+  <polygon points="100,85 97,88 103,88" fill="#2C3E50"/>
+
+  <!-- 여우 입 -->
+  <path d="M 100 88 Q 92 95 88 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+  <path d="M 100 88 Q 108 95 112 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 기타 -->
+  <ellipse cx="140" cy="120" rx="25" ry="35" fill="#8B4513"/>
+  <circle cx="140" cy="120" r="15" fill="#2C3E50"/>
+  <line x1="140" y1="85" x2="140" y2="155" stroke="#D2691E" stroke-width="8"/>
+
+  <!-- 기타 줄 -->
+  <line x1="135" y1="85" x2="135" y2="155" stroke="#C0C0C0" stroke-width="1"/>
+  <line x1="137" y1="85" x2="137" y2="155" stroke="#C0C0C0" stroke-width="1"/>
+  <line x1="143" y1="85" x2="143" y2="155" stroke="#C0C0C0" stroke-width="1"/>
+  <line x1="145" y1="85" x2="145" y2="155" stroke="#C0C0C0" stroke-width="1"/>
+
+  <!-- 여우 팔 -->
+  <ellipse cx="75" cy="120" rx="12" ry="20" fill="#FF8C42"/>
+  <ellipse cx="125" cy="110" rx="12" ry="20" fill="#FF8C42"/>
+
+  <!-- 여우 다리 -->
+  <ellipse cx="85" cy="170" rx="10" ry="15" fill="#FF8C42"/>
+  <ellipse cx="115" cy="170" rx="10" ry="15" fill="#FF8C42"/>
+
+  <!-- 여우 꼬리 -->
+  <ellipse cx="50" cy="135" rx="20" ry="8" fill="#FF8C42"/>
+  <ellipse cx="45" cy="135" rx="8" ry="5" fill="#FFFFFF"/>
+
+  <!-- 음표 -->
+  <circle cx="60" cy="60" r="4" fill="#2C3E50"/>
+  <line x1="64" y1="60" x2="64" y2="40" stroke="#2C3E50" stroke-width="2"/>
+  <path d="M 64 40 Q 70 38 70 45" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <circle cx="170" cy="70" r="3" fill="#4ECDC4"/>
+  <line x1="173" y1="70" x2="173" y2="55" stroke="#4ECDC4" stroke-width="1"/>
+</svg>

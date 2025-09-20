@@ -1,0 +1,78 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pirate body -->
+  <ellipse cx="100" cy="130" rx="30" ry="35" fill="#8B4513" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate head -->
+  <circle cx="100" cy="75" r="22" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate bandana -->
+  <path d="M80 55 Q100 45 120 55 L115 70 L85 70 Z" fill="#DC143C" stroke="#333" stroke-width="2"/>
+  <path d="M120 55 L130 50 L125 60 Z" fill="#DC143C" stroke="#333" stroke-width="2"/>
+
+  <!-- Bandana pattern -->
+  <circle cx="95" cy="58" r="2" fill="#FFF"/>
+  <circle cx="105" cy="58" r="2" fill="#FFF"/>
+
+  <!-- Pirate eye patch -->
+  <circle cx="92" cy="72" r="5" fill="#333" stroke="#333" stroke-width="2"/>
+  <line x1="87" y1="68" x2="105" y2="62" stroke="#333" stroke-width="2"/>
+
+  <!-- Good eye -->
+  <circle cx="108" cy="72" r="3" fill="#333"/>
+  <circle cx="110" cy="70" r="1" fill="#FFF"/>
+
+  <!-- Pirate nose -->
+  <line x1="100" y1="77" x2="100" y2="80" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate mouth -->
+  <path d="M95 85 Q100 88 105 85" stroke="#333" stroke-width="2" fill="none"/>
+
+  <!-- Pirate beard -->
+  <path d="M90 88 Q100 95 110 88 Q105 92 100 95 Q95 92 90 88" fill="#8B4513" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate mustache -->
+  <path d="M93 83 Q100 85 107 83" stroke="#8B4513" stroke-width="3" fill="none"/>
+
+  <!-- Pirate shirt -->
+  <rect x="85" y="95" width="30" height="25" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Shirt laces -->
+  <line x1="98" y1="98" x2="102" y2="102" stroke="#333" stroke-width="1"/>
+  <line x1="102" y1="98" x2="98" y2="102" stroke="#333" stroke-width="1"/>
+  <line x1="98" y1="105" x2="102" y2="109" stroke="#333" stroke-width="1"/>
+  <line x1="102" y1="105" x2="98" y2="109" stroke="#333" stroke-width="1"/>
+
+  <!-- Pirate vest -->
+  <path d="M85 95 L85 120 Q90 125 100 125 Q110 125 115 120 L115 95" fill="#8B0000" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate arms -->
+  <ellipse cx="70" cy="110" rx="8" ry="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+  <ellipse cx="130" cy="110" rx="8" ry="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Hook hand -->
+  <path d="M62 120 Q58 125 62 130 Q68 125 62 120" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+
+  <!-- Sword -->
+  <rect x="135" y="100" width="3" height="25" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+  <rect x="133" y="95" width="7" height="5" fill="#8B4513" stroke="#333" stroke-width="1"/>
+  <circle cx="136" cy="92" r="2" fill="#FFD700"/>
+
+  <!-- Pirate legs -->
+  <ellipse cx="90" cy="155" rx="8" ry="18" fill="#000080" stroke="#333" stroke-width="2"/>
+  <ellipse cx="110" cy="155" rx="8" ry="18" fill="#000080" stroke="#333" stroke-width="2"/>
+
+  <!-- Pirate boots -->
+  <ellipse cx="90" cy="175" rx="10" ry="6" fill="#654321"/>
+  <ellipse cx="110" cy="175" rx="10" ry="6" fill="#654321"/>
+
+  <!-- Boot buckles -->
+  <rect x="87" y="172" width="6" height="3" fill="#FFD700"/>
+  <rect x="107" y="172" width="6" height="3" fill="#FFD700"/>
+
+  <!-- Belt -->
+  <rect x="85" y="125" width="30" height="4" fill="#654321"/>
+  <rect x="98" y="123" width="4" height="8" fill="#FFD700"/>
+
+  <!-- Earring -->
+  <circle cx="122" cy="68" r="2" fill="#FFD700"/>
+</svg>

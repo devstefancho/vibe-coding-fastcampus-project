@@ -1,0 +1,78 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot body -->
+  <rect x="70" y="90" width="60" height="70" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="10"/>
+
+  <!-- Robot head -->
+  <rect x="80" y="50" width="40" height="40" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="5"/>
+
+  <!-- Robot antenna -->
+  <line x1="100" y1="50" x2="100" y2="35" stroke="#333" stroke-width="3"/>
+  <circle cx="100" cy="32" r="3" fill="#FF0000"/>
+
+  <!-- Robot eyes -->
+  <rect x="88" y="60" width="8" height="8" fill="#00FF00" stroke="#333" stroke-width="2"/>
+  <rect x="104" y="60" width="8" height="8" fill="#00FF00" stroke="#333" stroke-width="2"/>
+
+  <!-- Robot eye lights -->
+  <circle cx="92" cy="64" r="2" fill="#00FF00" opacity="0.8"/>
+  <circle cx="108" cy="64" r="2" fill="#00FF00" opacity="0.8"/>
+
+  <!-- Robot mouth/speaker -->
+  <rect x="90" y="75" width="20" height="8" fill="#333" stroke="#333" stroke-width="2" rx="4"/>
+  <line x1="92" y1="77" x2="92" y2="81" stroke="#666" stroke-width="1"/>
+  <line x1="95" y1="77" x2="95" y2="81" stroke="#666" stroke-width="1"/>
+  <line x1="98" y1="77" x2="98" y2="81" stroke="#666" stroke-width="1"/>
+  <line x1="101" y1="77" x2="101" y2="81" stroke="#666" stroke-width="1"/>
+  <line x1="104" y1="77" x2="104" y2="81" stroke="#666" stroke-width="1"/>
+  <line x1="107" y1="77" x2="107" y2="81" stroke="#666" stroke-width="1"/>
+
+  <!-- Robot control panel -->
+  <rect x="85" y="105" width="30" height="20" fill="#4169E1" stroke="#333" stroke-width="2" rx="3"/>
+  <circle cx="95" cy="110" r="3" fill="#FF0000"/>
+  <circle cx="105" cy="110" r="3" fill="#00FF00"/>
+  <rect x="88" y="118" width="24" height="4" fill="#FFD700"/>
+
+  <!-- Robot chest plate -->
+  <rect x="75" y="130" width="50" height="25" fill="#A9A9A9" stroke="#333" stroke-width="2"/>
+
+  <!-- Chest bolts -->
+  <circle cx="85" cy="135" r="2" fill="#696969"/>
+  <circle cx="115" cy="135" r="2" fill="#696969"/>
+  <circle cx="85" cy="150" r="2" fill="#696969"/>
+  <circle cx="115" cy="150" r="2" fill="#696969"/>
+
+  <!-- Robot arms -->
+  <rect x="50" y="100" width="15" height="40" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="7"/>
+  <rect x="135" y="100" width="15" height="40" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="7"/>
+
+  <!-- Robot joints -->
+  <circle cx="57" cy="120" r="5" fill="#696969" stroke="#333" stroke-width="2"/>
+  <circle cx="142" cy="120" r="5" fill="#696969" stroke="#333" stroke-width="2"/>
+
+  <!-- Robot hands -->
+  <rect x="45" y="142" width="12" height="12" fill="#A9A9A9" stroke="#333" stroke-width="2" rx="2"/>
+  <rect x="143" y="142" width="12" height="12" fill="#A9A9A9" stroke="#333" stroke-width="2" rx="2"/>
+
+  <!-- Robot fingers -->
+  <rect x="47" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+  <rect x="50" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+  <rect x="53" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+  <rect x="145" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+  <rect x="148" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+  <rect x="151" y="155" width="2" height="6" fill="#A9A9A9" stroke="#333" stroke-width="1"/>
+
+  <!-- Robot legs -->
+  <rect x="80" y="160" width="15" height="25" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="7"/>
+  <rect x="105" y="160" width="15" height="25" fill="#C0C0C0" stroke="#333" stroke-width="3" rx="7"/>
+
+  <!-- Robot feet -->
+  <rect x="75" y="185" width="25" height="8" fill="#696969" stroke="#333" stroke-width="2" rx="4"/>
+  <rect x="100" y="185" width="25" height="8" fill="#696969" stroke="#333" stroke-width="2" rx="4"/>
+
+  <!-- Robot knee joints -->
+  <circle cx="87" cy="172" r="3" fill="#696969" stroke="#333" stroke-width="1"/>
+  <circle cx="112" cy="172" r="3" fill="#696969" stroke="#333" stroke-width="1"/>
+
+  <!-- Power indicator -->
+  <circle cx="115" cy="115" r="3" fill="#00FF00" opacity="0.8"/>
+</svg>

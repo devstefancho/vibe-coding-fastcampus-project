@@ -1,0 +1,49 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Knight body (armor) -->
+  <rect x="80" y="90" width="40" height="70" fill="#C0C0C0" stroke="#333" stroke-width="2" rx="5"/>
+
+  <!-- Knight head -->
+  <circle cx="100" cy="65" r="18" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Knight helmet -->
+  <path d="M85 55 Q100 40 115 55 L115 70 L85 70 Z" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+
+  <!-- Helmet visor -->
+  <rect x="90" y="60" width="20" height="8" fill="#333" rx="2"/>
+
+  <!-- Knight plume -->
+  <path d="M100 40 Q95 30 100 25 Q105 30 100 40" fill="#DC143C"/>
+
+  <!-- Knight arms -->
+  <ellipse cx="65" cy="105" rx="8" ry="25" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+  <ellipse cx="135" cy="105" rx="8" ry="25" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+
+  <!-- Knight sword -->
+  <rect x="145" y="80" width="4" height="40" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+  <rect x="143" y="75" width="8" height="8" fill="#8B4513" stroke="#333" stroke-width="1"/>
+  <circle cx="147" cy="71" r="3" fill="#FFD700"/>
+
+  <!-- Knight shield -->
+  <path d="M55 90 Q45 100 50 120 Q55 130 65 125 L65 95 Z" fill="#DC143C" stroke="#333" stroke-width="2"/>
+  <path d="M50 95 L60 105 L50 115" stroke="#FFD700" stroke-width="2" fill="none"/>
+
+  <!-- Knight legs -->
+  <rect x="85" y="160" width="12" height="25" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+  <rect x="103" y="160" width="12" height="25" fill="#C0C0C0" stroke="#333" stroke-width="2"/>
+
+  <!-- Knight boots -->
+  <ellipse cx="91" cy="188" rx="8" ry="5" fill="#8B4513"/>
+  <ellipse cx="109" cy="188" rx="8" ry="5" fill="#8B4513"/>
+
+  <!-- Armor details -->
+  <circle cx="100" cy="100" r="3" fill="#FFD700"/>
+  <circle cx="90" cy="110" r="2" fill="#FFD700"/>
+  <circle cx="110" cy="110" r="2" fill="#FFD700"/>
+  <circle cx="100" cy="120" r="2" fill="#FFD700"/>
+
+  <!-- Chain mail texture -->
+  <pattern id="chainmail" patternUnits="userSpaceOnUse" width="4" height="4">
+    <circle cx="2" cy="2" r="1" fill="none" stroke="#999" stroke-width="0.5"/>
+  </pattern>
+  <rect x="82" y="92" width="36" height="66" fill="url(#chainmail)" opacity="0.3"/>
+</svg>

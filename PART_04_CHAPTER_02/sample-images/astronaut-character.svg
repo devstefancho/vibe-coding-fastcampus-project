@@ -1,0 +1,62 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Astronaut suit body -->
+  <ellipse cx="100" cy="130" rx="40" ry="35" fill="#E6E6FA" stroke="#333" stroke-width="2"/>
+
+  <!-- Astronaut helmet -->
+  <circle cx="100" cy="80" r="35" fill="#87CEEB" stroke="#333" stroke-width="3" opacity="0.8"/>
+
+  <!-- Astronaut head inside helmet -->
+  <circle cx="100" cy="80" r="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Astronaut eyes -->
+  <circle cx="92" cy="75" r="3" fill="#333"/>
+  <circle cx="108" cy="75" r="3" fill="#333"/>
+  <circle cx="94" cy="73" r="1" fill="#FFF"/>
+  <circle cx="110" cy="73" r="1" fill="#FFF"/>
+
+  <!-- Astronaut nose -->
+  <line x1="100" y1="80" x2="100" y2="83" stroke="#333" stroke-width="1"/>
+
+  <!-- Astronaut mouth -->
+  <path d="M97 87 Q100 90 103 87" stroke="#333" stroke-width="1.5" fill="none"/>
+
+  <!-- Helmet reflection -->
+  <path d="M80 60 Q90 55 100 60 Q85 65 80 60" fill="#FFF" opacity="0.6"/>
+
+  <!-- Control panel on chest -->
+  <rect x="85" y="115" width="30" height="20" fill="#4169E1" stroke="#333" stroke-width="2" rx="3"/>
+  <circle cx="95" cy="120" r="2" fill="#32CD32"/>
+  <circle cx="105" cy="120" r="2" fill="#FF4500"/>
+  <rect x="90" y="128" width="8" height="3" fill="#FFD700"/>
+  <rect x="102" y="128" width="8" height="3" fill="#FFD700"/>
+
+  <!-- Astronaut arms -->
+  <ellipse cx="70" cy="115" rx="12" ry="25" fill="#E6E6FA" stroke="#333" stroke-width="2"/>
+  <ellipse cx="130" cy="115" rx="12" ry="25" fill="#E6E6FA" stroke="#333" stroke-width="2"/>
+
+  <!-- Astronaut gloves -->
+  <circle cx="70" cy="140" r="10" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <circle cx="130" cy="140" r="10" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Astronaut legs -->
+  <ellipse cx="85" cy="160" rx="10" ry="18" fill="#E6E6FA" stroke="#333" stroke-width="2"/>
+  <ellipse cx="115" cy="160" rx="10" ry="18" fill="#E6E6FA" stroke="#333" stroke-width="2"/>
+
+  <!-- Astronaut boots -->
+  <ellipse cx="85" cy="182" rx="12" ry="8" fill="#333" stroke="#333" stroke-width="2"/>
+  <ellipse cx="115" cy="182" rx="12" ry="8" fill="#333" stroke="#333" stroke-width="2"/>
+
+  <!-- Oxygen tubes -->
+  <path d="M85 105 Q75 100 70 110" stroke="#FF6347" stroke-width="3" fill="none"/>
+  <path d="M115 105 Q125 100 130 110" stroke="#FF6347" stroke-width="3" fill="none"/>
+
+  <!-- Suit joints -->
+  <circle cx="70" cy="100" r="4" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+  <circle cx="130" cy="100" r="4" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+  <circle cx="85" cy="145" r="4" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+  <circle cx="115" cy="145" r="4" fill="#C0C0C0" stroke="#333" stroke-width="1"/>
+
+  <!-- Flag patch -->
+  <rect x="110" y="108" width="12" height="8" fill="#FF0000" stroke="#333" stroke-width="1"/>
+  <rect x="110" y="108" width="6" height="4" fill="#0000FF"/>
+</svg>

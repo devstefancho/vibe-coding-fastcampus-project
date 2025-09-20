@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 팬더 몸체 -->
+  <ellipse cx="100" cy="140" rx="50" ry="35" fill="#FFFFFF"/>
+
+  <!-- 팬더 머리 -->
+  <circle cx="100" cy="80" r="40" fill="#FFFFFF"/>
+
+  <!-- 팬더 귀 (검은색) -->
+  <circle cx="75" cy="55" r="18" fill="#2C3E50"/>
+  <circle cx="125" cy="55" r="18" fill="#2C3E50"/>
+
+  <!-- 요리사 모자 -->
+  <ellipse cx="100" cy="35" rx="35" ry="15" fill="#FFFFFF"/>
+  <rect x="75" y="20" width="50" height="25" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="20" rx="25" ry="8" fill="#FFFFFF"/>
+
+  <!-- 팬더 눈 -->
+  <ellipse cx="85" cy="70" rx="12" ry="15" fill="#2C3E50"/>
+  <ellipse cx="115" cy="70" rx="12" ry="15" fill="#2C3E50"/>
+  <circle cx="85" cy="70" r="6" fill="#FFFFFF"/>
+  <circle cx="115" cy="70" r="6" fill="#FFFFFF"/>
+  <circle cx="85" cy="70" r="3" fill="#2C3E50"/>
+  <circle cx="115" cy="70" r="3" fill="#2C3E50"/>
+
+  <!-- 팬더 코 -->
+  <ellipse cx="100" cy="85" rx="4" ry="3" fill="#2C3E50"/>
+
+  <!-- 팬더 입 -->
+  <path d="M 100 88 Q 90 95 85 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+  <path d="M 100 88 Q 110 95 115 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 팬더 팔 (검은색) -->
+  <ellipse cx="55" cy="125" rx="15" ry="30" fill="#2C3E50"/>
+  <ellipse cx="145" cy="125" rx="15" ry="30" fill="#2C3E50"/>
+
+  <!-- 요리 도구 (주걱) -->
+  <line x1="145" y1="155" x2="170" y2="140" stroke="#8B4513" stroke-width="4"/>
+  <ellipse cx="172" cy="138" rx="8" ry="4" fill="#C0C0C0"/>
+
+  <!-- 팬더 다리 -->
+  <ellipse cx="80" cy="175" rx="15" ry="20" fill="#2C3E50"/>
+  <ellipse cx="120" cy="175" rx="15" ry="20" fill="#2C3E50"/>
+
+  <!-- 요리사 앞치마 -->
+  <rect x="75" y="115" width="50" height="40" fill="#FFB6C1"/>
+  <polygon points="75,115 85,105 115,105 125,115" fill="#FFB6C1"/>
+</svg>

@@ -1,0 +1,71 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fairy wings -->
+  <ellipse cx="75" cy="90" rx="15" ry="25" fill="#FFE4E1" stroke="#333" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="125" cy="90" rx="15" ry="25" fill="#FFE4E1" stroke="#333" stroke-width="1" opacity="0.8"/>
+
+  <!-- Wing patterns -->
+  <path d="M75 75 Q80 80 75 90 Q70 85 75 75" fill="#FF69B4" opacity="0.6"/>
+  <path d="M125 75 Q130 85 125 90 Q120 80 125 75" fill="#FF69B4" opacity="0.6"/>
+
+  <!-- Fairy body -->
+  <ellipse cx="100" cy="120" rx="20" ry="30" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Fairy head -->
+  <circle cx="100" cy="75" r="18" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Fairy hair -->
+  <path d="M85 65 Q100 50 115 65 Q110 60 100 55 Q90 60 85 65" fill="#FFD700" stroke="#333" stroke-width="2"/>
+
+  <!-- Fairy eyes -->
+  <circle cx="93" cy="72" r="3" fill="#333"/>
+  <circle cx="107" cy="72" r="3" fill="#333"/>
+  <circle cx="95" cy="70" r="1" fill="#FFF"/>
+  <circle cx="109" cy="70" r="1" fill="#FFF"/>
+
+  <!-- Fairy nose -->
+  <circle cx="100" cy="77" r="1" fill="#FFB6C1"/>
+
+  <!-- Fairy mouth -->
+  <path d="M97 82 Q100 85 103 82" stroke="#333" stroke-width="1.5" fill="none"/>
+
+  <!-- Fairy dress -->
+  <path d="M85 105 Q100 100 115 105 L120 140 Q100 145 80 140 Z" fill="#98FB98" stroke="#333" stroke-width="2"/>
+
+  <!-- Dress details -->
+  <path d="M90 110 Q100 108 110 110" stroke="#32CD32" stroke-width="1" fill="none"/>
+  <path d="M88 120 Q100 118 112 120" stroke="#32CD32" stroke-width="1" fill="none"/>
+  <path d="M86 130 Q100 128 114 130" stroke="#32CD32" stroke-width="1" fill="none"/>
+
+  <!-- Fairy arms -->
+  <ellipse cx="80" cy="110" rx="5" ry="12" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+  <ellipse cx="120" cy="110" rx="5" ry="12" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Magic wand -->
+  <line x1="125" y1="100" x2="140" y2="85" stroke="#8B4513" stroke-width="2"/>
+  <path d="M138 83 L142 87 L140 85 Z" fill="#FFD700"/>
+
+  <!-- Magic sparkles -->
+  <circle cx="145" cy="80" r="1.5" fill="#FFD700"/>
+  <circle cx="135" cy="75" r="1" fill="#FF69B4"/>
+  <circle cx="148" cy="88" r="1" fill="#87CEEB"/>
+
+  <!-- Fairy legs -->
+  <ellipse cx="92" cy="155" rx="4" ry="12" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+  <ellipse cx="108" cy="155" rx="4" ry="12" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Fairy shoes -->
+  <ellipse cx="92" cy="168" rx="6" ry="4" fill="#FF69B4"/>
+  <ellipse cx="108" cy="168" rx="6" ry="4" fill="#FF69B4"/>
+
+  <!-- Flowers around fairy -->
+  <circle cx="60" cy="160" r="3" fill="#FF69B4"/>
+  <circle cx="140" cy="150" r="3" fill="#FF1493"/>
+  <circle cx="50" cy="120" r="2" fill="#FFB6C1"/>
+  <circle cx="150" cy="130" r="2" fill="#FF69B4"/>
+
+  <!-- Flower petals -->
+  <path d="M58 158 L62 158 L60 154 Z" fill="#FF1493"/>
+  <path d="M58 162 L62 162 L60 166 Z" fill="#FF1493"/>
+  <path d="M56 160 L60 156 L60 164 Z" fill="#FF1493"/>
+  <path d="M64 160 L60 156 L60 164 Z" fill="#FF1493"/>
+</svg>

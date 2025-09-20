@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 강아지 몸체 -->
+  <ellipse cx="100" cy="140" rx="45" ry="30" fill="#D4A574"/>
+
+  <!-- 강아지 머리 -->
+  <ellipse cx="100" cy="80" rx="40" ry="35" fill="#D4A574"/>
+
+  <!-- 강아지 귀 -->
+  <ellipse cx="75" cy="55" rx="15" ry="25" fill="#8B4513"/>
+  <ellipse cx="125" cy="55" rx="15" ry="25" fill="#8B4513"/>
+
+  <!-- 강아지 눈 -->
+  <circle cx="85" cy="75" r="6" fill="#2C3E50"/>
+  <circle cx="115" cy="75" r="6" fill="#2C3E50"/>
+  <circle cx="87" cy="72" r="2" fill="#FFFFFF"/>
+  <circle cx="117" cy="72" r="2" fill="#FFFFFF"/>
+
+  <!-- 강아지 코 -->
+  <ellipse cx="100" cy="88" rx="6" ry="4" fill="#2C3E50"/>
+
+  <!-- 강아지 입 -->
+  <path d="M 100 92 Q 90 100 85 95" stroke="#2C3E50" stroke-width="2" fill="none"/>
+  <path d="M 100 92 Q 110 100 115 95" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 강아지 혀 -->
+  <ellipse cx="100" cy="105" rx="8" ry="6" fill="#FF69B4"/>
+
+  <!-- 강아지 꼬리 -->
+  <path d="M 145 130 Q 170 110 160 85" stroke="#D4A574" stroke-width="12" fill="none"/>
+
+  <!-- 강아지 발 -->
+  <ellipse cx="75" cy="170" rx="10" ry="6" fill="#D4A574"/>
+  <ellipse cx="125" cy="170" rx="10" ry="6" fill="#D4A574"/>
+
+  <!-- 반점 -->
+  <circle cx="120" cy="90" r="8" fill="#8B4513"/>
+  <circle cx="80" cy="120" r="6" fill="#8B4513"/>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wizard robe -->
+  <path d="M100 180 L70 120 L80 70 L120 70 L130 120 Z" fill="#4B0082" stroke="#333" stroke-width="2"/>
+
+  <!-- Wizard body -->
+  <ellipse cx="100" cy="110" rx="25" ry="35" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Wizard head -->
+  <circle cx="100" cy="75" r="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Wizard hat -->
+  <path d="M85 65 L100 25 L115 65 Z" fill="#4B0082" stroke="#333" stroke-width="2"/>
+  <circle cx="100" cy="25" r="4" fill="#FFD700"/>
+
+  <!-- Wizard beard -->
+  <path d="M90 85 Q100 100 110 85 Q105 95 100 100 Q95 95 90 85" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Wizard eyes -->
+  <circle cx="94" cy="70" r="3" fill="#333"/>
+  <circle cx="106" cy="70" r="3" fill="#333"/>
+
+  <!-- Wizard nose -->
+  <line x1="100" y1="75" x2="100" y2="80" stroke="#333" stroke-width="2"/>
+
+  <!-- Wizard arms -->
+  <ellipse cx="75" cy="95" rx="8" ry="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+  <ellipse cx="125" cy="95" rx="8" ry="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Magic wand -->
+  <line x1="135" y1="85" x2="155" y2="70" stroke="#8B4513" stroke-width="3"/>
+  <circle cx="155" cy="70" r="3" fill="#FFD700"/>
+
+  <!-- Magic sparkles -->
+  <path d="M160 65 L162 67 L160 69 L158 67 Z" fill="#FFD700"/>
+  <path d="M165 75 L167 77 L165 79 L163 77 Z" fill="#FFD700"/>
+  <path d="M150 60 L152 62 L150 64 L148 62 Z" fill="#FFD700"/>
+
+  <!-- Wizard belt -->
+  <rect x="85" y="100" width="30" height="4" fill="#8B4513"/>
+  <rect x="98" y="98" width="4" height="8" fill="#FFD700"/>
+
+  <!-- Wizard feet -->
+  <ellipse cx="90" cy="175" rx="8" ry="6" fill="#4B0082"/>
+  <ellipse cx="110" cy="175" rx="8" ry="6" fill="#4B0082"/>
+</svg>

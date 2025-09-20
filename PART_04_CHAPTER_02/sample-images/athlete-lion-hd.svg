@@ -1,0 +1,78 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 사자 몸체 -->
+  <ellipse cx="100" cy="140" rx="50" ry="35" fill="#DAA520"/>
+
+  <!-- 사자 머리 -->
+  <circle cx="100" cy="80" r="35" fill="#DAA520"/>
+
+  <!-- 사자 갈기 -->
+  <circle cx="100" cy="80" r="45" fill="#B8860B"/>
+
+  <!-- 갈기 디테일 -->
+  <circle cx="75" cy="65" r="8" fill="#CD853F"/>
+  <circle cx="125" cy="65" r="8" fill="#CD853F"/>
+  <circle cx="80" cy="95" r="6" fill="#CD853F"/>
+  <circle cx="120" cy="95" r="6" fill="#CD853F"/>
+  <circle cx="100" cy="50" r="7" fill="#CD853F"/>
+
+  <!-- 사자 얼굴 다시 그리기 -->
+  <circle cx="100" cy="80" r="30" fill="#DAA520"/>
+
+  <!-- 사자 눈 -->
+  <circle cx="90" cy="75" r="5" fill="#2C3E50"/>
+  <circle cx="110" cy="75" r="5" fill="#2C3E50"/>
+  <circle cx="91" cy="72" r="2" fill="#FFFFFF"/>
+  <circle cx="111" cy="72" r="2" fill="#FFFFFF"/>
+
+  <!-- 사자 코 -->
+  <polygon points="100,85 97,88 103,88" fill="#2C3E50"/>
+
+  <!-- 사자 입 -->
+  <path d="M 100 88 Q 92 95 88 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+  <path d="M 100 88 Q 108 95 112 90" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 운동복 상의 -->
+  <rect x="75" y="115" width="50" height="40" fill="#FF4500"/>
+
+  <!-- 운동복 번호 -->
+  <text x="100" y="140" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">7</text>
+
+  <!-- 운동복 줄무늬 -->
+  <rect x="75" y="125" width="50" height="3" fill="#FFFFFF"/>
+  <rect x="75" y="135" width="50" height="3" fill="#FFFFFF"/>
+  <rect x="75" y="145" width="50" height="3" fill="#FFFFFF"/>
+
+  <!-- 사자 팔 -->
+  <ellipse cx="60" cy="125" rx="15" ry="25" fill="#DAA520"/>
+  <ellipse cx="140" cy="125" rx="15" ry="25" fill="#DAA520"/>
+
+  <!-- 운동복 소매 -->
+  <ellipse cx="60" cy="115" rx="18" ry="12" fill="#FF4500"/>
+  <ellipse cx="140" cy="115" rx="18" ry="12" fill="#FF4500"/>
+
+  <!-- 사자 다리 -->
+  <ellipse cx="85" cy="175" rx="12" ry="20" fill="#DAA520"/>
+  <ellipse cx="115" cy="175" rx="12" ry="20" fill="#DAA520"/>
+
+  <!-- 운동화 -->
+  <ellipse cx="85" cy="190" rx="15" ry="8" fill="#FFFFFF"/>
+  <ellipse cx="115" cy="190" rx="15" ry="8" fill="#FFFFFF"/>
+
+  <!-- 운동화 줄무늬 -->
+  <ellipse cx="85" cy="190" rx="12" ry="5" fill="#FF4500"/>
+  <ellipse cx="115" cy="190" rx="12" ry="5" fill="#FF4500"/>
+
+  <!-- 사자 꼬리 -->
+  <path d="M 150 140 Q 170 130 165 110" stroke="#DAA520" stroke-width="8" fill="none"/>
+  <circle cx="165" cy="110" r="5" fill="#B8860B"/>
+
+  <!-- 덤벨 -->
+  <line x1="160" y1="120" x2="180" y2="110" stroke="#C0C0C0" stroke-width="4"/>
+  <circle cx="158" cy="122" r="6" fill="#696969"/>
+  <circle cx="182" cy="108" r="6" fill="#696969"/>
+
+  <!-- 메달 -->
+  <circle cx="100" cy="105" r="8" fill="#FFD700"/>
+  <circle cx="100" cy="105" r="5" fill="#FFA500"/>
+  <text x="100" y="109" font-family="Arial" font-size="8" font-weight="bold" text-anchor="middle" fill="#FFFFFF">1</text>
+</svg>

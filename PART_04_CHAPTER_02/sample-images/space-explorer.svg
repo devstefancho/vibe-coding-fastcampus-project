@@ -1,0 +1,47 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 우주복 몸체 -->
+  <ellipse cx="100" cy="130" rx="50" ry="40" fill="#E8E8E8"/>
+
+  <!-- 우주복 헬멧 -->
+  <circle cx="100" cy="70" r="45" fill="#B0E0E6" opacity="0.7"/>
+  <circle cx="100" cy="70" r="40" fill="none" stroke="#C0C0C0" stroke-width="3"/>
+
+  <!-- 얼굴 -->
+  <circle cx="100" cy="70" r="30" fill="#FFDBAC"/>
+
+  <!-- 눈 -->
+  <circle cx="90" cy="65" r="4" fill="#2C3E50"/>
+  <circle cx="110" cy="65" r="4" fill="#2C3E50"/>
+  <circle cx="91" cy="63" r="1" fill="#FFFFFF"/>
+  <circle cx="111" cy="63" r="1" fill="#FFFFFF"/>
+
+  <!-- 코 -->
+  <ellipse cx="100" cy="72" rx="2" ry="3" fill="#FFB366"/>
+
+  <!-- 입 -->
+  <path d="M 95 78 Q 100 82 105 78" stroke="#2C3E50" stroke-width="2" fill="none"/>
+
+  <!-- 우주복 장비 -->
+  <rect x="85" y="110" width="30" height="20" fill="#FF6B6B"/>
+  <circle cx="100" cy="120" r="3" fill="#4ECDC4"/>
+
+  <!-- 우주복 파이프 -->
+  <path d="M 70 100 Q 50 90 60 70" stroke="#C0C0C0" stroke-width="4" fill="none"/>
+  <path d="M 130 100 Q 150 90 140 70" stroke="#C0C0C0" stroke-width="4" fill="none"/>
+
+  <!-- 우주복 팔 -->
+  <ellipse cx="60" cy="120" rx="15" ry="25" fill="#E8E8E8"/>
+  <ellipse cx="140" cy="120" rx="15" ry="25" fill="#E8E8E8"/>
+
+  <!-- 우주복 다리 -->
+  <ellipse cx="85" cy="170" rx="12" ry="20" fill="#E8E8E8"/>
+  <ellipse cx="115" cy="170" rx="12" ry="20" fill="#E8E8E8"/>
+
+  <!-- 우주 부츠 -->
+  <ellipse cx="85" cy="185" rx="15" ry="8" fill="#2C3E50"/>
+  <ellipse cx="115" cy="185" rx="15" ry="8" fill="#2C3E50"/>
+
+  <!-- 별 장식 -->
+  <polygon points="160,30 162,36 168,36 163,40 165,46 160,42 155,46 157,40 152,36 158,36" fill="#FFD700"/>
+  <polygon points="40,40 41,44 45,44 42,47 43,51 40,48 37,51 38,47 35,44 39,44" fill="#FFD700"/>
+</svg>

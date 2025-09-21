@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { MBTIType } from '@/types';
-import { getRecommendedMovies } from '@/lib/movieRecommendations';
 import MBTIQuiz from '@/components/MBTIQuiz';
-import ResultDisplay from '@/components/ResultDisplay';
+import DBResultDisplay from '@/components/DBResultDisplay';
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<'home' | 'quiz' | 'result'>('home');
@@ -34,12 +33,10 @@ export default function Home() {
   }
 
   if (currentView === 'result' && mbtiResult) {
-    const recommendedMovies = getRecommendedMovies(mbtiResult);
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
-        <ResultDisplay
+        <DBResultDisplay
           mbtiType={mbtiResult}
-          recommendedMovies={recommendedMovies}
           onRestart={handleRestart}
         />
       </div>
@@ -103,7 +100,7 @@ export default function Home() {
 
         <p className="text-sm text-black mt-4">
           MBTI 테스트: 약 2분 소요 • 완전 무료<br/>
-          영화 탐색: TMDB API를 활용한 실시간 영화 정보
+          영화 탐색: 300개의 엄선된 영화 데이터베이스
         </p>
       </div>
     </div>

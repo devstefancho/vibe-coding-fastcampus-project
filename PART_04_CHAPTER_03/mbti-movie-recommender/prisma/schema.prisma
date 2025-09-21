@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Movie {
+  id            Int      @id @default(autoincrement())
+  tmdbId        Int?     @unique
+  title         String
+  originalTitle String?
+  overview      String   @default("")
+  posterPath    String?
+  backdropPath  String?
+  releaseDate   DateTime?
+  rating        Float    @default(0)
+  voteCount     Int      @default(0)
+  popularity    Float    @default(0)
+  runtime       Int?
+  budget        Int?
+  revenue       Int?
+  tagline       String?
+  homepage      String?
+  status        String?
+  originalLanguage String?
+  adult         Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  genres        MovieGenre[]
+  mbtiTypes     MovieMbtiType[]
+
+  @@map("movies")
+}
+
+model Genre {
+  id    Int    @id
+  name  String @unique
+
+  // Relations
+  movies MovieGenre[]
+
+  @@map("genres")
+}
+
+model MbtiType {
+  id   Int    @id @default(autoincrement())
+  type String @unique // "INTJ", "INFP", etc.
+
+  // Relations
+  movies MovieMbtiType[]
+
+  @@map("mbti_types")
+}
+
+// Junction tables for many-to-many relationships
+model MovieGenre {
+  movieId Int
+  genreId Int
+
+  movie Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  genre Genre @relation(fields: [genreId], references: [id], onDelete: Cascade)
+
+  @@id([movieId, genreId])
+  @@map("movie_genres")
+}
+
+model MovieMbtiType {
+  movieId    Int
+  mbtiTypeId Int
+
+  movie    Movie    @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  mbtiType MbtiType @relation(fields: [mbtiTypeId], references: [id], onDelete: Cascade)
+
+  @@id([movieId, mbtiTypeId])
+  @@map("movie_mbti_types")
+}

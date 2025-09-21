@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { MBTIType } from '@/types';
 import MBTIQuiz from '@/components/MBTIQuiz';
-import DBResultDisplay from '@/components/DBResultDisplay';
+import ResultDisplay from '@/components/ResultDisplay';
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<'home' | 'quiz' | 'result'>('home');
@@ -35,7 +35,7 @@ export default function Home() {
   if (currentView === 'result' && mbtiResult) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
-        <DBResultDisplay
+        <ResultDisplay
           mbtiType={mbtiResult}
           onRestart={handleRestart}
         />

@@ -1,15 +1,39 @@
-import { MBTIType, Movie } from '@/types';
+'use client';
+
+import { MBTIType } from '@/types';
 import { mbtiResults } from '@/lib/mbtiData';
-import MovieCard from './MovieCard';
+import { DBMovie, getRecommendedMoviesByMBTI } from '@/lib/db-movies';
+import DBMovieCard from './DBMovieCard';
+import { useEffect, useState } from 'react';
 
 interface ResultDisplayProps {
   mbtiType: MBTIType;
-  recommendedMovies: Movie[];
   onRestart: () => void;
 }
 
-export default function ResultDisplay({ mbtiType, recommendedMovies, onRestart }: ResultDisplayProps) {
+export default function ResultDisplay({ mbtiType, onRestart }: ResultDisplayProps) {
   const result = mbtiResults[mbtiType];
+  const [movies, setMovies] = useState<DBMovie[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchMovies() {
+      try {
+        setLoading(true);
+        setError(null);
+        const recommendedMovies = await getRecommendedMoviesByMBTI(mbtiType, 1, 20);
+        setMovies(recommendedMovies);
+      } catch (err) {
+        console.error('Failed to fetch movies:', err);
+        setError('영화 데이터를 불러오는 중 오류가 발생했습니다.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchMovies();
+  }, [mbtiType]);
 
   return (
     <div className="max-w-6xl mx-auto p-6">
@@ -63,12 +87,25 @@ export default function ResultDisplay({ mbtiType, recommendedMovies, onRestart }
           {mbtiType} 유형을 위한 추천 영화
         </h3>
 
-        {recommendedMovies.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {recommendedMovies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
+        {loading ? (
+          <div className="text-center py-12">
+            <p className="text-black text-lg">영화 데이터를 불러오는 중...</p>
           </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-red-600 text-lg">{error}</p>
+          </div>
+        ) : movies.length > 0 ? (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {movies.map((movie) => (
+                <DBMovieCard key={movie.id} movie={movie} />
+              ))}
+            </div>
+            <p className="text-center mt-6 text-gray-600">
+              총 {movies.length}개의 {mbtiType} 맞춤 영화를 찾았습니다
+            </p>
+          </>
         ) : (
           <div className="text-center py-12">
             <p className="text-black text-lg">

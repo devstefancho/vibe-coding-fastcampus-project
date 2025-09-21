@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
+    "dotenv": "^17.2.2",
     "next": "15.5.3",
     "prisma": "^6.16.2",
     "react": "19.1.0",

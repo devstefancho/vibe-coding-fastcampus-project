@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dog body -->
+  <ellipse cx="100" cy="135" rx="45" ry="35" fill="#8B4513" stroke="#333" stroke-width="2"/>
+
+  <!-- Dog head -->
+  <ellipse cx="100" cy="85" rx="30" ry="25" fill="#8B4513" stroke="#333" stroke-width="2"/>
+
+  <!-- Dog snout -->
+  <ellipse cx="100" cy="95" rx="15" ry="10" fill="#DEB887" stroke="#333" stroke-width="2"/>
+
+  <!-- Dog ears -->
+  <ellipse cx="80" cy="70" rx="12" ry="20" fill="#654321" stroke="#333" stroke-width="2" transform="rotate(-30 80 70)"/>
+  <ellipse cx="120" cy="70" rx="12" ry="20" fill="#654321" stroke="#333" stroke-width="2" transform="rotate(30 120 70)"/>
+
+  <!-- Dog eyes -->
+  <circle cx="90" cy="78" r="5" fill="#333"/>
+  <circle cx="110" cy="78" r="5" fill="#333"/>
+  <circle cx="92" cy="76" r="2" fill="#FFF"/>
+  <circle cx="112" cy="76" r="2" fill="#FFF"/>
+
+  <!-- Dog nose -->
+  <ellipse cx="100" cy="92" rx="3" ry="2" fill="#333"/>
+
+  <!-- Dog mouth -->
+  <path d="M100 95 Q95 100 90 98" stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M100 95 Q105 100 110 98" stroke="#333" stroke-width="2" fill="none"/>
+
+  <!-- Dog tongue -->
+  <ellipse cx="100" cy="103" rx="4" ry="6" fill="#FF69B4"/>
+
+  <!-- Dog tail -->
+  <path d="M145 135 Q165 125 160 105 Q155 90 170 85" stroke="#8B4513" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Dog legs -->
+  <rect x="75" y="155" width="8" height="20" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  <rect x="90" y="155" width="8" height="20" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  <rect x="105" y="155" width="8" height="20" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  <rect x="120" y="155" width="8" height="20" fill="#8B4513" stroke="#333" stroke-width="2"/>
+
+  <!-- Dog paws -->
+  <ellipse cx="79" cy="178" rx="6" ry="4" fill="#333"/>
+  <ellipse cx="94" cy="178" rx="6" ry="4" fill="#333"/>
+  <ellipse cx="109" cy="178" rx="6" ry="4" fill="#333"/>
+  <ellipse cx="124" cy="178" rx="6" ry="4" fill="#333"/>
+</svg>

@@ -1,0 +1,86 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Princess dress -->
+  <path d="M100 180 L60 140 L70 90 L130 90 L140 140 Z" fill="#FFB6C1" stroke="#333" stroke-width="2"/>
+
+  <!-- Dress decorations -->
+  <path d="M70 100 Q100 95 130 100" stroke="#FF69B4" stroke-width="2" fill="none"/>
+  <path d="M65 120 Q100 115 135 120" stroke="#FF69B4" stroke-width="2" fill="none"/>
+  <path d="M60 140 Q100 135 140 140" stroke="#FF69B4" stroke-width="2" fill="none"/>
+
+  <!-- Princess body -->
+  <ellipse cx="100" cy="80" rx="15" ry="20" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Princess head -->
+  <circle cx="100" cy="55" r="18" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Princess hair -->
+  <path d="M85 45 Q100 30 115 45 Q110 40 100 35 Q90 40 85 45" fill="#FFD700" stroke="#333" stroke-width="2"/>
+  <path d="M82 50 Q85 45 88 50" fill="#FFD700"/>
+  <path d="M112 50 Q115 45 118 50" fill="#FFD700"/>
+
+  <!-- Princess crown -->
+  <path d="M88 40 L92 25 L96 35 L100 20 L104 35 L108 25 L112 40 Z" fill="#FFD700" stroke="#333" stroke-width="2"/>
+
+  <!-- Crown jewels -->
+  <circle cx="92" cy="30" r="2" fill="#FF0000"/>
+  <circle cx="100" cy="25" r="2" fill="#0000FF"/>
+  <circle cx="108" cy="30" r="2" fill="#FF0000"/>
+
+  <!-- Princess eyes -->
+  <circle cx="93" cy="52" r="3" fill="#333"/>
+  <circle cx="107" cy="52" r="3" fill="#333"/>
+  <circle cx="95" cy="50" r="1" fill="#FFF"/>
+  <circle cx="109" cy="50" r="1" fill="#FFF"/>
+
+  <!-- Princess eyelashes -->
+  <path d="M90 48 L92 46" stroke="#333" stroke-width="1"/>
+  <path d="M96 47 L97 45" stroke="#333" stroke-width="1"/>
+  <path d="M104 47 L103 45" stroke="#333" stroke-width="1"/>
+  <path d="M110 48 L108 46" stroke="#333" stroke-width="1"/>
+
+  <!-- Princess nose -->
+  <circle cx="100" cy="57" r="1" fill="#FFB6C1"/>
+
+  <!-- Princess mouth -->
+  <path d="M97 62 Q100 65 103 62" stroke="#FF69B4" stroke-width="2" fill="none"/>
+
+  <!-- Princess necklace -->
+  <ellipse cx="100" cy="75" rx="12" ry="3" fill="none" stroke="#FFD700" stroke-width="2"/>
+  <circle cx="100" cy="75" r="3" fill="#FF69B4"/>
+
+  <!-- Princess arms -->
+  <ellipse cx="75" cy="85" rx="6" ry="15" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+  <ellipse cx="125" cy="85" rx="6" ry="15" fill="#FFE4C4" stroke="#333" stroke-width="2"/>
+
+  <!-- Princess gloves -->
+  <ellipse cx="75" cy="100" rx="4" ry="6" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <ellipse cx="125" cy="100" rx="4" ry="6" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Princess shoes -->
+  <ellipse cx="85" cy="175" rx="8" ry="5" fill="#FF69B4"/>
+  <ellipse cx="115" cy="175" rx="8" ry="5" fill="#FF69B4"/>
+
+  <!-- Shoe decorations -->
+  <circle cx="85" cy="175" r="2" fill="#FFD700"/>
+  <circle cx="115" cy="175" r="2" fill="#FFD700"/>
+
+  <!-- Princess sash -->
+  <rect x="85" y="95" width="30" height="6" fill="#FF1493"/>
+
+  <!-- Sash bow -->
+  <path d="M115 95 L125 100 L115 105 L120 98 Z" fill="#FF1493" stroke="#333" stroke-width="1"/>
+  <path d="M125 95 L135 100 L125 105 L130 98 Z" fill="#FF1493" stroke="#333" stroke-width="1"/>
+  <ellipse cx="125" cy="100" rx="3" ry="5" fill="#DC143C"/>
+
+  <!-- Magical sparkles around princess -->
+  <circle cx="60" cy="60" r="1.5" fill="#FFD700"/>
+  <circle cx="140" cy="70" r="1" fill="#FF69B4"/>
+  <circle cx="50" cy="120" r="1" fill="#87CEEB"/>
+  <circle cx="150" cy="110" r="1.5" fill="#FFD700"/>
+  <circle cx="45" cy="160" r="1" fill="#FF69B4"/>
+  <circle cx="155" cy="150" r="1" fill="#87CEEB"/>
+
+  <!-- Star shapes -->
+  <path d="M58 58 L60 62 L64 60 L60 64 L62 68 L58 64 L54 66 L58 62 L56 58 Z" fill="#FFD700"/>
+  <path d="M148 108 L150 112 L154 110 L150 114 L152 118 L148 114 L144 116 L148 112 L146 108 Z" fill="#FFD700"/>
+</svg>

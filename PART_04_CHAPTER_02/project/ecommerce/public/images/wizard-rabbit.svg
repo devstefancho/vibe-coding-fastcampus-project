@@ -1,0 +1,49 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 토끼 몸체 -->
+  <ellipse cx="100" cy="140" rx="40" ry="30" fill="#F5F5DC"/>
+
+  <!-- 토끼 머리 -->
+  <ellipse cx="100" cy="80" rx="35" ry="30" fill="#F5F5DC"/>
+
+  <!-- 토끼 귀 -->
+  <ellipse cx="85" cy="45" rx="8" ry="25" fill="#F5F5DC"/>
+  <ellipse cx="115" cy="45" rx="8" ry="25" fill="#F5F5DC"/>
+  <ellipse cx="85" cy="45" rx="4" ry="15" fill="#FFB6C1"/>
+  <ellipse cx="115" cy="45" rx="4" ry="15" fill="#FFB6C1"/>
+
+  <!-- 마법사 모자 -->
+  <polygon points="100,20 85,55 115,55" fill="#4B0082"/>
+  <circle cx="100" cy="20" r="4" fill="#FFD700"/>
+
+  <!-- 토끼 눈 -->
+  <circle cx="90" cy="75" r="5" fill="#2C3E50"/>
+  <circle cx="110" cy="75" r="5" fill="#2C3E50"/>
+  <circle cx="91" cy="72" r="2" fill="#FFFFFF"/>
+  <circle cx="111" cy="72" r="2" fill="#FFFFFF"/>
+
+  <!-- 토끼 코 -->
+  <polygon points="100,85 97,88 103,88" fill="#FFB6C1"/>
+
+  <!-- 토끼 입 -->
+  <path d="M 100 88 L 95 92" stroke="#2C3E50" stroke-width="2"/>
+  <path d="M 100 88 L 105 92" stroke="#2C3E50" stroke-width="2"/>
+
+  <!-- 앞니 -->
+  <rect x="97" y="90" width="2" height="6" fill="#FFFFFF"/>
+  <rect x="101" y="90" width="2" height="6" fill="#FFFFFF"/>
+
+  <!-- 마법 지팡이 -->
+  <line x1="140" y1="120" x2="160" y2="80" stroke="#8B4513" stroke-width="4"/>
+  <polygon points="160,80 158,75 162,75" fill="#FFD700"/>
+
+  <!-- 마법 효과 -->
+  <polygon points="170,70 172,76 178,76 173,80 175,86 170,82 165,86 167,80 162,76 168,76" fill="#FFD700"/>
+  <polygon points="165,85 166,88 169,88 167,90 168,93 165,91 162,93 163,90 161,88 164,88" fill="#87CEEB"/>
+
+  <!-- 토끼 발 -->
+  <ellipse cx="85" cy="170" rx="10" ry="6" fill="#F5F5DC"/>
+  <ellipse cx="115" cy="170" rx="10" ry="6" fill="#F5F5DC"/>
+
+  <!-- 토끼 꼬리 -->
+  <circle cx="60" cy="140" r="8" fill="#F5F5DC"/>
+</svg>

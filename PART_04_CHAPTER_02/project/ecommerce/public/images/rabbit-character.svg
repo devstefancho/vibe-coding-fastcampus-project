@@ -1,0 +1,58 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rabbit body -->
+  <ellipse cx="100" cy="130" rx="35" ry="30" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Rabbit head -->
+  <circle cx="100" cy="85" r="25" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Rabbit ears -->
+  <ellipse cx="85" cy="55" rx="8" ry="25" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <ellipse cx="115" cy="55" rx="8" ry="25" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Inner ears -->
+  <ellipse cx="85" cy="55" rx="4" ry="15" fill="#FFB6C1"/>
+  <ellipse cx="115" cy="55" rx="4" ry="15" fill="#FFB6C1"/>
+
+  <!-- Rabbit eyes -->
+  <circle cx="92" cy="80" r="4" fill="#333"/>
+  <circle cx="108" cy="80" r="4" fill="#333"/>
+  <circle cx="94" cy="78" r="1.5" fill="#FFF"/>
+  <circle cx="110" cy="78" r="1.5" fill="#FFF"/>
+
+  <!-- Rabbit nose -->
+  <ellipse cx="100" cy="88" rx="2" ry="1.5" fill="#FFB6C1"/>
+
+  <!-- Rabbit mouth -->
+  <path d="M100 90 Q97 93 94 91" stroke="#333" stroke-width="1.5" fill="none"/>
+  <path d="M100 90 Q103 93 106 91" stroke="#333" stroke-width="1.5" fill="none"/>
+
+  <!-- Rabbit whiskers -->
+  <line x1="75" y1="85" x2="88" y2="86" stroke="#333" stroke-width="1"/>
+  <line x1="75" y1="90" x2="88" y2="90" stroke="#333" stroke-width="1"/>
+  <line x1="112" y1="86" x2="125" y2="85" stroke="#333" stroke-width="1"/>
+  <line x1="112" y1="90" x2="125" y2="90" stroke="#333" stroke-width="1"/>
+
+  <!-- Rabbit arms -->
+  <ellipse cx="75" cy="115" rx="6" ry="15" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <ellipse cx="125" cy="115" rx="6" ry="15" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Carrot -->
+  <path d="M130 105 L145 115 L140 125 L125 115 Z" fill="#FF8C00" stroke="#333" stroke-width="2"/>
+  <path d="M145 115 L150 110 L148 108 L145 115" fill="#32CD32"/>
+  <path d="M145 115 L152 112 L150 110 L145 115" fill="#32CD32"/>
+
+  <!-- Rabbit tail -->
+  <circle cx="135" cy="135" r="8" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Rabbit legs -->
+  <ellipse cx="85" cy="155" rx="8" ry="12" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <ellipse cx="115" cy="155" rx="8" ry="12" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Rabbit feet -->
+  <ellipse cx="85" cy="170" rx="12" ry="6" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <ellipse cx="115" cy="170" rx="12" ry="6" fill="#FFF" stroke="#333" stroke-width="2"/>
+
+  <!-- Foot pads -->
+  <ellipse cx="85" cy="172" rx="4" ry="2" fill="#FFB6C1"/>
+  <ellipse cx="115" cy="172" rx="4" ry="2" fill="#FFB6C1"/>
+</svg>

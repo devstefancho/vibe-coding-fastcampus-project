@@ -1,0 +1,62 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 부엉이 몸체 -->
+  <ellipse cx="100" cy="130" rx="45" ry="40" fill="#8B7D6B"/>
+
+  <!-- 부엉이 머리 -->
+  <ellipse cx="100" cy="80" rx="40" ry="35" fill="#8B7D6B"/>
+
+  <!-- 부엉이 귀 -->
+  <polygon points="70,45 75,25 85,45" fill="#8B7D6B"/>
+  <polygon points="115,45 125,25 130,45" fill="#8B7D6B"/>
+
+  <!-- 부엉이 눈 -->
+  <circle cx="85" cy="75" r="15" fill="#FFFFFF"/>
+  <circle cx="115" cy="75" r="15" fill="#FFFFFF"/>
+  <circle cx="85" cy="75" r="8" fill="#FFD700"/>
+  <circle cx="115" cy="75" r="8" fill="#FFD700"/>
+  <circle cx="85" cy="75" r="4" fill="#2C3E50"/>
+  <circle cx="115" cy="75" r="4" fill="#2C3E50"/>
+
+  <!-- 부엉이 부리 -->
+  <polygon points="100,90 95,100 105,100" fill="#FFA500"/>
+
+  <!-- 베레모 -->
+  <ellipse cx="100" cy="50" rx="35" ry="12" fill="#8B0000"/>
+  <circle cx="85" cy="45" r="3" fill="#FFD700"/>
+
+  <!-- 팔레트 -->
+  <ellipse cx="150" cy="120" rx="20" ry="15" fill="#FFFFFF"/>
+
+  <!-- 팔레트 색상 -->
+  <circle cx="145" cy="115" r="3" fill="#FF0000"/>
+  <circle cx="155" cy="115" r="3" fill="#00FF00"/>
+  <circle cx="145" cy="125" r="3" fill="#0000FF"/>
+  <circle cx="155" cy="125" r="3" fill="#FFFF00"/>
+  <circle cx="150" cy="120" r="3" fill="#FF00FF"/>
+
+  <!-- 붓 -->
+  <line x1="130" y1="110" x2="140" y2="100" stroke="#8B4513" stroke-width="3"/>
+  <ellipse cx="142" cy="98" rx="2" ry="6" fill="#2C3E50"/>
+
+  <!-- 부엉이 날개 -->
+  <ellipse cx="65" cy="125" rx="20" ry="30" fill="#696969" transform="rotate(-20 65 125)"/>
+  <ellipse cx="135" cy="125" rx="20" ry="30" fill="#696969" transform="rotate(20 135 125)"/>
+
+  <!-- 부엉이 발 -->
+  <ellipse cx="85" cy="170" rx="8" ry="5" fill="#FFA500"/>
+  <ellipse cx="115" cy="170" rx="8" ry="5" fill="#FFA500"/>
+
+  <!-- 발가락 -->
+  <line x1="80" y1="170" x2="78" y2="175" stroke="#FFA500" stroke-width="2"/>
+  <line x1="85" y1="172" x2="83" y2="177" stroke="#FFA500" stroke-width="2"/>
+  <line x1="90" y1="170" x2="92" y2="175" stroke="#FFA500" stroke-width="2"/>
+
+  <line x1="110" y1="170" x2="108" y2="175" stroke="#FFA500" stroke-width="2"/>
+  <line x1="115" y1="172" x2="113" y2="177" stroke="#FFA500" stroke-width="2"/>
+  <line x1="120" y1="170" x2="122" y2="175" stroke="#FFA500" stroke-width="2"/>
+
+  <!-- 캔버스 -->
+  <rect x="30" y="100" width="25" height="20" fill="#FFFFFF"/>
+  <rect x="32" y="102" width="21" height="16" fill="#F0F8FF"/>
+  <path d="M 35 110 Q 45 105 50 115" stroke="#4169E1" stroke-width="1" fill="none"/>
+</svg>

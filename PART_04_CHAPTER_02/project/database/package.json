@@ -1,0 +1,20 @@
+{
+  "name": "database-server",
+  "version": "1.0.0",
+  "description": "SQLite database server for digital goods store",
+  "main": "database.js",
+  "scripts": {
+    "start": "node database.js",
+    "dev": "nodemon database.js",
+    "init": "node init-db.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "sqlite3": "^5.1.0",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

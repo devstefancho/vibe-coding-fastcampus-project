@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useAuth } from '@/contexts/AuthContext';
+import { useToast } from '@/contexts/ToastContext';
 import { Product } from '@/lib/types';
 import { api } from '@/lib/api';
 import Navbar from '@/components/Navbar';
@@ -11,6 +13,8 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
+  const { showToast } = useToast();
+  const router = useRouter();
 
   useEffect(() => {
     fetchProducts();
@@ -29,16 +33,21 @@ export default function Home() {
 
   const handleAddToCart = async (productId: number) => {
     if (!user) {
-      alert('로그인이 필요합니다.');
+      showToast('로그인이 필요합니다.', 'error');
       return;
     }
 
     try {
       await api.addToCart(user.id, productId);
-      alert('장바구니에 추가되었습니다!');
+      showToast('장바구니에 추가되었습니다!', 'success');
+
+      // 1초 후 장바구니 페이지로 이동
+      setTimeout(() => {
+        router.push('/cart');
+      }, 1000);
     } catch (error) {
       console.error('Error adding to cart:', error);
-      alert('장바구니 추가에 실패했습니다.');
+      showToast('장바구니 추가에 실패했습니다.', 'error');
     }
   };
 

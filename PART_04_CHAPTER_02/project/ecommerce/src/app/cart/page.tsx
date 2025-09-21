@@ -127,7 +127,7 @@ export default function CartPage() {
 
             <div className="bg-white rounded-lg shadow-md p-6">
               <div className="flex justify-between items-center mb-6">
-                <span className="text-xl font-semibold">총 결제금액</span>
+                <span className="text-xl font-semibold text-gray-900">총 결제금액</span>
                 <span className="text-2xl font-bold text-blue-600">
                   {getTotalAmount().toLocaleString()}원
                 </span>

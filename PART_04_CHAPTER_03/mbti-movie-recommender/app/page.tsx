@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { MBTIType } from '@/types';
 import { getRecommendedMovies } from '@/lib/movieRecommendations';
 import MBTIQuiz from '@/components/MBTIQuiz';
@@ -84,15 +85,25 @@ export default function Home() {
           </div>
         </div>
 
-        <button
-          onClick={handleStartQuiz}
-          className="bg-blue-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
-        >
-          테스트 시작하기 🚀
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={handleStartQuiz}
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+          >
+            테스트 시작하기 🚀
+          </button>
+
+          <Link
+            href="/movies"
+            className="bg-green-600 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-green-700 transition-colors duration-200 shadow-lg hover:shadow-xl inline-block text-center"
+          >
+            영화 탐색하기 🎬
+          </Link>
+        </div>
 
         <p className="text-sm text-black mt-4">
-          약 2분 소요 • 완전 무료
+          MBTI 테스트: 약 2분 소요 • 완전 무료<br/>
+          영화 탐색: TMDB API를 활용한 실시간 영화 정보
         </p>
       </div>
     </div>

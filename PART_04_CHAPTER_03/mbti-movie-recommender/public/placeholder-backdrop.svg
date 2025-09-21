@@ -1,0 +1,8 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1280" height="720" fill="#F3F4F6"/>
+<rect x="490" y="235" width="300" height="250" rx="15" fill="#D1D5DB"/>
+<circle cx="640" cy="320" r="40" fill="#9CA3AF"/>
+<rect x="565" y="370" width="150" height="60" rx="8" fill="#9CA3AF"/>
+<text x="640" y="520" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif" font-size="24">백드롭 이미지</text>
+<text x="640" y="550" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="18">로딩 중...</text>
+</svg>

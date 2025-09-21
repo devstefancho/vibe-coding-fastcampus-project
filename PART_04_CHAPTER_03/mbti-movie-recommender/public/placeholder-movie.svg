@@ -1,0 +1,8 @@
+<svg width="500" height="750" viewBox="0 0 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="500" height="750" fill="#F3F4F6"/>
+<rect x="150" y="200" width="200" height="150" rx="10" fill="#D1D5DB"/>
+<circle cx="250" cy="250" r="25" fill="#9CA3AF"/>
+<rect x="200" y="280" width="100" height="40" rx="5" fill="#9CA3AF"/>
+<text x="250" y="400" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif" font-size="18">영화 이미지</text>
+<text x="250" y="430" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="14">로딩 중...</text>
+</svg>

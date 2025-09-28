@@ -6,14 +6,17 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie }: MovieCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="relative">
+    <div className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+      <div className="relative overflow-hidden">
         <img
           src={movie.posterUrl}
           alt={movie.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-md text-sm font-semibold">
+        <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="text-white font-semibold text-lg">자세히 보기</span>
+        </div>
+        <div className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-md text-sm font-semibold transition-transform group-hover:scale-110">
           ⭐ {movie.rating}
         </div>
       </div>

@@ -19,17 +19,20 @@ export default function DBMovieCard({ movie }: DBMovieCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div className="relative">
+    <div className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+      <div className="relative overflow-hidden">
         <img
           src={movie.posterUrl}
           alt={movie.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             e.currentTarget.src = '/placeholder-movie.jpg';
           }}
         />
-        <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm">
+        <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="text-white font-semibold text-lg">자세히 보기</span>
+        </div>
+        <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm transition-transform group-hover:scale-110">
           ⭐ {formatRating(movie.rating)}
         </div>
       </div>

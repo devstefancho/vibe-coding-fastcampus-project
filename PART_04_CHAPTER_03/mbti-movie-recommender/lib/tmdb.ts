@@ -134,6 +134,52 @@ class TMDBClient {
       sort_by: 'popularity.desc'
     });
   }
+
+  // 고급 영화 검색 (필터 및 정렬 지원)
+  async discoverMovies(filters: {
+    query?: string;
+    genreId?: number;
+    minRating?: number;
+    maxRating?: number;
+    year?: number;
+    sortBy?: string;
+    page?: number;
+  }): Promise<TMDBSearchResponse | TMDBMovieResponse> {
+    const { query, genreId, minRating, maxRating, year, sortBy = 'popularity.desc', page = 1 } = filters;
+
+    // 검색어가 있으면 search API 사용, 없으면 discover API 사용
+    if (query && query.trim()) {
+      const params: Record<string, string> = {
+        query: encodeURIComponent(query.trim()),
+        page: page.toString()
+      };
+
+      return this.request<TMDBSearchResponse>('/search/movie', params);
+    } else {
+      const params: Record<string, string> = {
+        page: page.toString(),
+        sort_by: sortBy
+      };
+
+      if (genreId) {
+        params.with_genres = genreId.toString();
+      }
+
+      if (minRating !== undefined) {
+        params['vote_average.gte'] = minRating.toString();
+      }
+
+      if (maxRating !== undefined) {
+        params['vote_average.lte'] = maxRating.toString();
+      }
+
+      if (year) {
+        params.primary_release_year = year.toString();
+      }
+
+      return this.request<TMDBMovieResponse>('/discover/movie', params);
+    }
+  }
 }
 
 // 싱글톤 인스턴스 생성

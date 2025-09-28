@@ -137,7 +137,7 @@ export default function MovieDetail({ movieId, onClose }: MovieDetailProps) {
                   <p className="text-gray-600 text-lg mb-2">({movie.original_title})</p>
                 )}
                 {movie.tagline && (
-                  <p className="text-blue-600 italic text-lg mb-4">"{movie.tagline}"</p>
+                  <p className="text-blue-600 italic text-lg mb-4">&ldquo;{movie.tagline}&rdquo;</p>
                 )}
                 <p className="text-black leading-relaxed">{movie.overview}</p>
               </div>

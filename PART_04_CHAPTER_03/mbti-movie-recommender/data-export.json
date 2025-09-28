@@ -1,0 +1,4138 @@
+{
+  "movies": [
+    {
+      "id": 301,
+      "tmdbId": null,
+      "title": "인터스텔라",
+      "originalTitle": "Interstellar",
+      "overview": "지구의 미래를 위해 우주로 떠나는 한 아버지의 감동적인 이야기",
+      "posterPath": "/evoEi8SBSvIIEveM3V6nCJ6vKj8.jpg",
+      "backdropPath": "/vgnoBSVzWAV9sNQUORaDGvDp7wx.jpg",
+      "releaseDate": "2014-11-07T00:00:00.000Z",
+      "rating": 8.6,
+      "voteCount": 1500000,
+      "popularity": 150.5,
+      "runtime": 169,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.491Z",
+      "updatedAt": "2025-09-21T08:43:55.775Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "tmdbId": null,
+      "title": "블레이드 러너 2049",
+      "originalTitle": "Blade Runner 2049",
+      "overview": "미래 사회에서 인간과 리플리칸트의 경계를 탐구하는 영화",
+      "posterPath": "/jSIih1du6oqWEfO9dL6vZMxFGMh.jpg",
+      "backdropPath": "/m7ynwXIvSnhxQPR6pOICrC0L2sO.jpg",
+      "releaseDate": "2017-10-06T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 500000,
+      "popularity": 120.3,
+      "runtime": 164,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.518Z",
+      "updatedAt": "2025-09-21T08:43:56.322Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "tmdbId": null,
+      "title": "매트릭스",
+      "originalTitle": "The Matrix",
+      "overview": "현실과 가상현실의 경계를 다룬 혁신적인 SF 액션",
+      "posterPath": "/fxBxoXFAYKWde6lKzXxSusn18Av.jpg",
+      "backdropPath": "/8K9qHeM6G6QjQN0C5XKFGvK5lzM.jpg",
+      "releaseDate": "1999-03-31T00:00:00.000Z",
+      "rating": 8.7,
+      "voteCount": 1800000,
+      "popularity": 140.2,
+      "runtime": 136,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.539Z",
+      "updatedAt": "2025-09-21T08:43:56.857Z",
+      "genres": [
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "tmdbId": null,
+      "title": "스타워즈: 새로운 희망",
+      "originalTitle": "Star Wars",
+      "overview": "은하계를 구하기 위한 반란군의 모험",
+      "posterPath": "/7XFfURIFCJxN1mfBg0SAjk5yGzg.jpg",
+      "backdropPath": "/2w4xG178RpB4MDAIfTkqAuSJzec.jpg",
+      "releaseDate": "1977-05-25T00:00:00.000Z",
+      "rating": 8.6,
+      "voteCount": 1300000,
+      "popularity": 130.4,
+      "runtime": 121,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.580Z",
+      "updatedAt": "2025-09-21T08:43:57.422Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "tmdbId": null,
+      "title": "아바타",
+      "originalTitle": "Avatar",
+      "overview": "판도라 행성에서 펼쳐지는 장대한 모험",
+      "posterPath": "/m5lCha2XcbDowDoYHPc0DTNaCPU.jpg",
+      "backdropPath": "/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg",
+      "releaseDate": "2009-12-18T00:00:00.000Z",
+      "rating": 7.8,
+      "voteCount": 1200000,
+      "popularity": 160.1,
+      "runtime": 162,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.610Z",
+      "updatedAt": "2025-09-21T08:43:57.967Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 14,
+          "name": "판타지"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "tmdbId": null,
+      "title": "어벤져스: 엔드게임",
+      "originalTitle": "Avengers: Endgame",
+      "overview": "마블 히어로들의 최종 결전",
+      "posterPath": "/z7ilT5rNN9kDo8JZmgyhM6ej2xv.jpg",
+      "backdropPath": "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+      "releaseDate": "2019-04-26T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 1200000,
+      "popularity": 200.8,
+      "runtime": 181,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.660Z",
+      "updatedAt": "2025-09-21T08:43:58.503Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "tmdbId": null,
+      "title": "다크 나이트",
+      "originalTitle": "The Dark Knight",
+      "overview": "배트맨과 조커의 대결을 그린 걸작",
+      "posterPath": "/f6dNinWX8rBM79JXKcShkfSh2oA.jpg",
+      "backdropPath": "/enNubozHn9pXi0ycTVYUWfpHZm.jpg",
+      "releaseDate": "2008-07-18T00:00:00.000Z",
+      "rating": 9,
+      "voteCount": 2200000,
+      "popularity": 140.6,
+      "runtime": 152,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.692Z",
+      "updatedAt": "2025-09-21T08:43:59.035Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "tmdbId": null,
+      "title": "매드 맥스: 분노의 도로",
+      "originalTitle": "Mad Max: Fury Road",
+      "overview": "포스트 아포칼립스 세계의 추격전",
+      "posterPath": "/cadVm6gKYYukmPysHGCwrawUHHa.jpg",
+      "backdropPath": "/gqrnQA6Xppdl8vIb2eJc58VC1tW.jpg",
+      "releaseDate": "2015-05-15T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 900000,
+      "popularity": 95.3,
+      "runtime": 120,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.728Z",
+      "updatedAt": "2025-09-21T08:43:59.570Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "tmdbId": null,
+      "title": "존 윅",
+      "originalTitle": "John Wick",
+      "overview": "전설적인 킬러의 복수 이야기",
+      "posterPath": "/mjKe6CmoxRcdiwbDeghyQKY09J.jpg",
+      "backdropPath": "/7dzngS8pLkGJpyeskCFcjPO9qLF.jpg",
+      "releaseDate": "2014-10-24T00:00:00.000Z",
+      "rating": 7.4,
+      "voteCount": 600000,
+      "popularity": 85.2,
+      "runtime": 101,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.753Z",
+      "updatedAt": "2025-09-21T08:44:00.119Z",
+      "genres": [
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "tmdbId": null,
+      "title": "레옹",
+      "originalTitle": "Léon: The Professional",
+      "overview": "킬러와 소녀의 특별한 우정",
+      "posterPath": "/cVNasmF1Egd3v3mpq747Hizxx4x.jpg",
+      "backdropPath": "/jynfI114q3kOAbIiVjVfFFmttU2.jpg",
+      "releaseDate": "1994-09-14T00:00:00.000Z",
+      "rating": 8.5,
+      "voteCount": 1100000,
+      "popularity": 75.4,
+      "runtime": 110,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.767Z",
+      "updatedAt": "2025-09-21T08:44:00.669Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "tmdbId": null,
+      "title": "쇼생크 탈출",
+      "originalTitle": "The Shawshank Redemption",
+      "overview": "희망을 잃지 않는 한 남자의 감동적인 이야기",
+      "posterPath": "/qV9BQZdiM8foEzDz0Ag5hGWE5qM.jpg",
+      "backdropPath": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+      "releaseDate": "1994-09-23T00:00:00.000Z",
+      "rating": 9.3,
+      "voteCount": 2500000,
+      "popularity": 95.2,
+      "runtime": 142,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.785Z",
+      "updatedAt": "2025-09-21T08:44:01.206Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 312,
+      "tmdbId": null,
+      "title": "대부",
+      "originalTitle": "The Godfather",
+      "overview": "마피아 가문의 권력 승계를 그린 걸작",
+      "posterPath": "/I1fkNd5CeJGv56mhrTDoOeMc2r.jpg",
+      "backdropPath": "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
+      "releaseDate": "1972-03-24T00:00:00.000Z",
+      "rating": 9.2,
+      "voteCount": 1700000,
+      "popularity": 120.5,
+      "runtime": 175,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.793Z",
+      "updatedAt": "2025-09-21T08:44:01.738Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 313,
+      "tmdbId": null,
+      "title": "기생충",
+      "originalTitle": "기생충",
+      "overview": "계급 갈등을 다룬 봉준호 감독의 작품",
+      "posterPath": "/mSi0gskYpmf1FbXngM37s2HppXh.jpg",
+      "backdropPath": "/hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg",
+      "releaseDate": "2019-05-30T00:00:00.000Z",
+      "rating": 8.5,
+      "voteCount": 800000,
+      "popularity": 120.3,
+      "runtime": 132,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.820Z",
+      "updatedAt": "2025-09-21T08:44:02.359Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 314,
+      "tmdbId": null,
+      "title": "포레스트 검프",
+      "originalTitle": "Forrest Gump",
+      "overview": "단순하지만 따뜻한 마음을 가진 포레스트의 인생 이야기",
+      "posterPath": "/xdJxoq0dtkchOkUz5UVKuxn7a2V.jpg",
+      "backdropPath": "/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg",
+      "releaseDate": "1994-07-06T00:00:00.000Z",
+      "rating": 8.8,
+      "voteCount": 1800000,
+      "popularity": 110.5,
+      "runtime": 142,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.855Z",
+      "updatedAt": "2025-09-21T08:44:02.899Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 315,
+      "tmdbId": null,
+      "title": "굿 윌 헌팅",
+      "originalTitle": "Good Will Hunting",
+      "overview": "천재 청년의 성장과 치유 이야기",
+      "posterPath": "/iHRY9YuBOyga9MHi59pt6KRGXcB.jpg",
+      "backdropPath": "/oLsts7ct0NVkdYpx5rZg10MG6zh.jpg",
+      "releaseDate": "1997-12-05T00:00:00.000Z",
+      "rating": 8.3,
+      "voteCount": 900000,
+      "popularity": 70.2,
+      "runtime": 126,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.869Z",
+      "updatedAt": "2025-09-21T08:44:03.453Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "tmdbId": null,
+      "title": "타이타닉",
+      "originalTitle": "Titanic",
+      "overview": "침몰하는 타이타닉호에서 피어난 사랑",
+      "posterPath": "/132KjhVrWUqKFVfMAKKNkherytA.jpg",
+      "backdropPath": "/tupgjqhWx5oieQrdyesO3aclUX9.jpg",
+      "releaseDate": "1997-12-19T00:00:00.000Z",
+      "rating": 7.8,
+      "voteCount": 1000000,
+      "popularity": 120,
+      "runtime": 194,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.891Z",
+      "updatedAt": "2025-09-21T08:44:03.994Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 317,
+      "tmdbId": null,
+      "title": "라라랜드",
+      "originalTitle": "La La Land",
+      "overview": "꿈을 향한 두 연인의 뮤지컬 로맨스",
+      "posterPath": "/ad9ndytwOckyShSc0A6tx1rZRkW.jpg",
+      "backdropPath": "/nlPCdZlHtRNcF6C9hzUH4ebmV1w.jpg",
+      "releaseDate": "2016-12-25T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 800000,
+      "popularity": 110.4,
+      "runtime": 128,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.924Z",
+      "updatedAt": "2025-09-21T08:44:04.543Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 318,
+      "tmdbId": null,
+      "title": "비포 선라이즈",
+      "originalTitle": "Before Sunrise",
+      "overview": "우연히 만난 두 사람의 하룻밤 로맨스",
+      "posterPath": "/o7mLGNdzY1z6w2bQv0NJNOoVKks.jpg",
+      "backdropPath": "/qA2TyqPldTtoTVY3LKrNIG5g6bH.jpg",
+      "releaseDate": "1995-01-27T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 300000,
+      "popularity": 45.2,
+      "runtime": 101,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.940Z",
+      "updatedAt": "2025-09-21T08:44:05.074Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 319,
+      "tmdbId": null,
+      "title": "노트북",
+      "originalTitle": "The Notebook",
+      "overview": "알츠하이머에 걸린 아내를 위한 남편의 사랑",
+      "posterPath": "/ntdgcdsmMuHd9s4oEKTvWDiUyU7.jpg",
+      "backdropPath": "/eEN7tsCCHppGhONHngvHKSdxi7r.jpg",
+      "releaseDate": "2004-06-25T00:00:00.000Z",
+      "rating": 7.8,
+      "voteCount": 550000,
+      "popularity": 85.3,
+      "runtime": 123,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.955Z",
+      "updatedAt": "2025-09-21T08:44:05.606Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 320,
+      "tmdbId": null,
+      "title": "카사블랑카",
+      "originalTitle": "Casablanca",
+      "overview": "전쟁 중 카사블랑카에서 피어난 사랑",
+      "posterPath": "/2y4FgbomoL5Aa9EGM3dqDEvvDdT.jpg",
+      "backdropPath": "/87wqeMeUeMRLjsE1IWNKJcPlpuC.jpg",
+      "releaseDate": "1942-11-26T00:00:00.000Z",
+      "rating": 8.5,
+      "voteCount": 550000,
+      "popularity": 60.1,
+      "runtime": 102,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:20.985Z",
+      "updatedAt": "2025-09-21T08:44:06.141Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 321,
+      "tmdbId": null,
+      "title": "백 투 더 퓨처",
+      "originalTitle": "Back to the Future",
+      "overview": "시간여행을 소재로 한 클래식 코미디",
+      "posterPath": "/7gGicAJdHRzaUd6qLjH5bSW4Cgi.jpg",
+      "backdropPath": "/yz8QL8WFD8yj0LA5zIlNOgcHvZK.jpg",
+      "releaseDate": "1985-07-03T00:00:00.000Z",
+      "rating": 8.5,
+      "voteCount": 1100000,
+      "popularity": 85.9,
+      "runtime": 116,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.001Z",
+      "updatedAt": "2025-09-21T08:44:06.690Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "tmdbId": null,
+      "title": "그랜드 부다페스트 호텔",
+      "originalTitle": "The Grand Budapest Hotel",
+      "overview": "웨스 앤더슨 특유의 시각적 코미디",
+      "posterPath": "/kDByLWU30umAUyetDnmdptUMVap.jpg",
+      "backdropPath": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+      "releaseDate": "2014-03-28T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 800000,
+      "popularity": 75.5,
+      "runtime": 99,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.014Z",
+      "updatedAt": "2025-09-21T08:44:07.228Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 323,
+      "tmdbId": null,
+      "title": "인사이드 아웃",
+      "originalTitle": "Inside Out",
+      "overview": "감정들의 모험을 그린 픽사 애니메이션",
+      "posterPath": "/rMXHvHzpuYZXrJUhRVJ3TvDSwe5.jpg",
+      "backdropPath": "/jJKZaTBNenlFclQyjrnvzkRmvWE.jpg",
+      "releaseDate": "2015-06-19T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 650000,
+      "popularity": 120.7,
+      "runtime": 95,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.054Z",
+      "updatedAt": "2025-09-21T08:44:07.773Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 324,
+      "tmdbId": null,
+      "title": "토이 스토리",
+      "originalTitle": "Toy Story",
+      "overview": "장난감들의 모험을 그린 첫 3D 애니메이션",
+      "posterPath": "/iJbm78MxPjLutWUYixbeege8EVe.jpg",
+      "backdropPath": "/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg",
+      "releaseDate": "1995-11-22T00:00:00.000Z",
+      "rating": 8.3,
+      "voteCount": 900000,
+      "popularity": 100.2,
+      "runtime": 81,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.093Z",
+      "updatedAt": "2025-09-21T08:44:08.309Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 325,
+      "tmdbId": null,
+      "title": "주토피아",
+      "originalTitle": "Zootopia",
+      "overview": "동물들의 도시에서 펼쳐지는 모험",
+      "posterPath": "/fZcab1yiKXsjx3S8D4KRHZsnMGC.jpg",
+      "backdropPath": "/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+      "releaseDate": "2016-03-04T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 500000,
+      "popularity": 95.8,
+      "runtime": 108,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.118Z",
+      "updatedAt": "2025-09-21T08:44:08.843Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 326,
+      "tmdbId": null,
+      "title": "센과 치히로의 행방불명",
+      "originalTitle": "千と千尋の神隠し",
+      "overview": "미야자키 하야오의 환상적인 애니메이션",
+      "posterPath": "/aZuBfbR0PnCb2up7lqHDsgJlLjs.jpg",
+      "backdropPath": "/ukfI9QkU1aIhOhKXYWE9n3z1mFR.jpg",
+      "releaseDate": "2001-07-20T00:00:00.000Z",
+      "rating": 9.3,
+      "voteCount": 900000,
+      "popularity": 88.7,
+      "runtime": 125,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.130Z",
+      "updatedAt": "2025-09-21T08:44:09.396Z",
+      "genres": [
+        {
+          "id": 14,
+          "name": "판타지"
+        },
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 327,
+      "tmdbId": null,
+      "title": "월-E",
+      "originalTitle": "WALL-E",
+      "overview": "외로운 로봇의 사랑 이야기",
+      "posterPath": null,
+      "backdropPath": null,
+      "releaseDate": "2008-06-27T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 1000000,
+      "popularity": 110.3,
+      "runtime": 98,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.156Z",
+      "updatedAt": "2025-09-21T08:16:21.156Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 328,
+      "tmdbId": null,
+      "title": "하울의 움직이는 성",
+      "originalTitle": "ハウルの動く城",
+      "overview": "마법사 하울과 소피의 이야기",
+      "posterPath": "/3sVFlmzBCZpwlsosKHxyK4d9oDw.jpg",
+      "backdropPath": "/nv5wwZou159v5OC61i4ElR7OqyY.jpg",
+      "releaseDate": "2004-11-20T00:00:00.000Z",
+      "rating": 8.2,
+      "voteCount": 400000,
+      "popularity": 70.5,
+      "runtime": 119,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.170Z",
+      "updatedAt": "2025-09-21T08:44:10.475Z",
+      "genres": [
+        {
+          "id": 14,
+          "name": "판타지"
+        },
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 329,
+      "tmdbId": null,
+      "title": "토토로",
+      "originalTitle": "톤네르노모포",
+      "overview": "시골에서 만난 신비한 존재 토토로",
+      "posterPath": "/c9zCkL0rTkNQ1HB9cmeFIqbkS50.jpg",
+      "backdropPath": "/95ozIP0A2fKaAXxwDxUEVn74Iux.jpg",
+      "releaseDate": "1988-04-16T00:00:00.000Z",
+      "rating": 8.2,
+      "voteCount": 300000,
+      "popularity": 65.2,
+      "runtime": 86,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.189Z",
+      "updatedAt": "2025-09-21T08:44:11.270Z",
+      "genres": [
+        {
+          "id": 14,
+          "name": "판타지"
+        },
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "tmdbId": null,
+      "title": "코코",
+      "originalTitle": "Coco",
+      "overview": "멕시코 죽음의 날을 배경으로 한 가족 이야기",
+      "posterPath": "/pQu93NuwR90AaCULzglVD5Ge4Ml.jpg",
+      "backdropPath": "/wSJHuSD7ojzoXifWjOAjxV7UpEL.jpg",
+      "releaseDate": "2017-11-22T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 450000,
+      "popularity": 95.1,
+      "runtime": 105,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.207Z",
+      "updatedAt": "2025-09-21T08:44:11.815Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 331,
+      "tmdbId": null,
+      "title": "살인의 추억",
+      "originalTitle": "살인의 추억",
+      "overview": "연쇄살인 사건을 다룬 봉준호 감독의 작품",
+      "posterPath": "/3I1Ng4sxDUyPOdVu3lQ20N14PGE.jpg",
+      "backdropPath": "/2NArMoObkAbnIPvqlHC3gRGsfBb.jpg",
+      "releaseDate": "2003-05-02T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 170000,
+      "popularity": 60.3,
+      "runtime": 132,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.227Z",
+      "updatedAt": "2025-09-21T08:44:12.352Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "tmdbId": null,
+      "title": "식스 센스",
+      "originalTitle": "The Sixth Sense",
+      "overview": "죽은 자를 보는 소년의 이야기",
+      "posterPath": "/74iA0M8TI2N0E1kQpcB6ZWocPO5.jpg",
+      "backdropPath": "/6TjllWT3cGrPFyqDXurVZ3L8bBi.jpg",
+      "releaseDate": "1999-08-06T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 950000,
+      "popularity": 80.4,
+      "runtime": 107,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.252Z",
+      "updatedAt": "2025-09-21T08:44:12.895Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 333,
+      "tmdbId": null,
+      "title": "셔터 아일랜드",
+      "originalTitle": "Shutter Island",
+      "overview": "정신병원에서 벌어지는 미스터리",
+      "posterPath": "/aywZdSOXtwcqqLTl271EUJemi2.jpg",
+      "backdropPath": "/rbZvGN1A1QyZuoKzhCw8QPmf2q0.jpg",
+      "releaseDate": "2010-02-19T00:00:00.000Z",
+      "rating": 8.2,
+      "voteCount": 1200000,
+      "popularity": 85.7,
+      "runtime": 138,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.265Z",
+      "updatedAt": "2025-09-21T08:44:13.424Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 334,
+      "tmdbId": null,
+      "title": "양들의 침묵",
+      "originalTitle": "The Silence of the Lambs",
+      "overview": "한니발 렉터와 클라리스의 심리전",
+      "posterPath": "/2hBAfjDlRbamiX7TuzLes2EcnCM.jpg",
+      "backdropPath": "/aYcnDyLMnpKce1FOYUpZrXtgUye.jpg",
+      "releaseDate": "1991-02-14T00:00:00.000Z",
+      "rating": 8.6,
+      "voteCount": 1400000,
+      "popularity": 90.2,
+      "runtime": 118,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.282Z",
+      "updatedAt": "2025-09-21T08:44:13.969Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 335,
+      "tmdbId": null,
+      "title": "메멘토",
+      "originalTitle": "Memento",
+      "overview": "기억을 잃은 남자의 복수 이야기",
+      "posterPath": "/vqxdADPdy0ZVJr8dMB3mh6C5Vsv.jpg",
+      "backdropPath": "/7Wev9JMo6R5XAfz2KDvXb7oPMmy.jpg",
+      "releaseDate": "2000-10-11T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 1200000,
+      "popularity": 75.8,
+      "runtime": 113,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.305Z",
+      "updatedAt": "2025-09-21T08:44:14.496Z",
+      "genres": [
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "tmdbId": null,
+      "title": "샤이닝",
+      "originalTitle": "The Shining",
+      "overview": "스탠리 큐브릭의 심리 공포 걸작",
+      "posterPath": "/e3pxD5asVzFMcH3UvmGxolZ7wS.jpg",
+      "backdropPath": "/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg",
+      "releaseDate": "1980-05-23T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 950000,
+      "popularity": 70.5,
+      "runtime": 146,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.315Z",
+      "updatedAt": "2025-09-21T08:44:15.031Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 27,
+          "name": "공포"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 337,
+      "tmdbId": null,
+      "title": "엑소시스트",
+      "originalTitle": "The Exorcist",
+      "overview": "악령에 씌인 소녀의 이야기",
+      "posterPath": "/1Y0h6vedMbWPJNzqBnRkik16MO4.jpg",
+      "backdropPath": "/xcjJ5khg2yzOa282mza39Lbrm7j.jpg",
+      "releaseDate": "1973-12-26T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 400000,
+      "popularity": 65.3,
+      "runtime": 122,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.335Z",
+      "updatedAt": "2025-09-21T08:44:15.574Z",
+      "genres": [
+        {
+          "id": 27,
+          "name": "공포"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 338,
+      "tmdbId": null,
+      "title": "헤레디터리",
+      "originalTitle": "Hereditary",
+      "overview": "가족을 덮친 저주의 비밀",
+      "posterPath": "/zAEhUJB5ytmDtjVZP0aooPkdGyq.jpg",
+      "backdropPath": "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg",
+      "releaseDate": "2018-06-08T00:00:00.000Z",
+      "rating": 7.3,
+      "voteCount": 300000,
+      "popularity": 55.2,
+      "runtime": 127,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.357Z",
+      "updatedAt": "2025-09-21T08:44:16.109Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 27,
+          "name": "공포"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 339,
+      "tmdbId": null,
+      "title": "겟 아웃",
+      "originalTitle": "Get Out",
+      "overview": "인종차별을 다룬 사회적 공포영화",
+      "posterPath": "/paPvmoLgUUQojsSdAZmf7dwkKGT.jpg",
+      "backdropPath": "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg",
+      "releaseDate": "2017-02-24T00:00:00.000Z",
+      "rating": 7.7,
+      "voteCount": 550000,
+      "popularity": 80.1,
+      "runtime": 104,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.373Z",
+      "updatedAt": "2025-09-21T08:44:16.644Z",
+      "genres": [
+        {
+          "id": 27,
+          "name": "공포"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 340,
+      "tmdbId": null,
+      "title": "컨저링",
+      "originalTitle": "The Conjuring",
+      "overview": "실화를 바탕으로 한 초자연적 공포",
+      "posterPath": "/pWpTToZ32bG09PaZ1rvYG5mpOyV.jpg",
+      "backdropPath": "/fMlAg1CyHTsCktwQrp74rl9RMwJ.jpg",
+      "releaseDate": "2013-07-19T00:00:00.000Z",
+      "rating": 7.5,
+      "voteCount": 480000,
+      "popularity": 75.4,
+      "runtime": 112,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.392Z",
+      "updatedAt": "2025-09-21T08:44:17.190Z",
+      "genres": [
+        {
+          "id": 27,
+          "name": "공포"
+        },
+        {
+          "id": 9648,
+          "name": "미스터리"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "tmdbId": null,
+      "title": "라이언 일병 구하기",
+      "originalTitle": "Saving Private Ryan",
+      "overview": "2차 대전 노르망디 상륙 작전",
+      "posterPath": "/2ATMbU4EljWkWcEJT9TElbQOMYY.jpg",
+      "backdropPath": "/rW2xRFlJRbTnBJlQTSjQmjevIwb.jpg",
+      "releaseDate": "1998-07-24T00:00:00.000Z",
+      "rating": 8.6,
+      "voteCount": 1300000,
+      "popularity": 100.2,
+      "runtime": 169,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.410Z",
+      "updatedAt": "2025-09-21T08:44:17.725Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10752,
+          "name": "전쟁"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 342,
+      "tmdbId": null,
+      "title": "쉰들러 리스트",
+      "originalTitle": "Schindler's List",
+      "overview": "홀로코스트 속에서 유대인을 구한 실화",
+      "posterPath": "/oyyUcGwLX7LTFS1pQbLrQpyzIyt.jpg",
+      "backdropPath": "/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
+      "releaseDate": "1993-12-15T00:00:00.000Z",
+      "rating": 8.9,
+      "voteCount": 1300000,
+      "popularity": 95.1,
+      "runtime": 195,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.446Z",
+      "updatedAt": "2025-09-21T08:44:18.259Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 36,
+          "name": "역사"
+        },
+        {
+          "id": 10752,
+          "name": "전쟁"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 343,
+      "tmdbId": null,
+      "title": "덩케르크",
+      "originalTitle": "Dunkirk",
+      "overview": "덩케르크 철수 작전을 그린 전쟁영화",
+      "posterPath": "/r8GRroYelxUID8dOxcyeNKKol6W.jpg",
+      "backdropPath": "/ddIkmH3TpR6XSc47jj0BrGK5Rbz.jpg",
+      "releaseDate": "2017-07-21T00:00:00.000Z",
+      "rating": 7.8,
+      "voteCount": 650000,
+      "popularity": 85.3,
+      "runtime": 106,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.460Z",
+      "updatedAt": "2025-09-21T08:44:18.807Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 10752,
+          "name": "전쟁"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 344,
+      "tmdbId": null,
+      "title": "1917",
+      "originalTitle": "1917",
+      "overview": "1차 대전을 배경으로 한 원테이크 영화",
+      "posterPath": "/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg",
+      "backdropPath": "/vDQwbN2ymkMQ8ldL3Sc275FGBw3.jpg",
+      "releaseDate": "2019-12-25T00:00:00.000Z",
+      "rating": 8.3,
+      "voteCount": 550000,
+      "popularity": 90.4,
+      "runtime": 119,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.469Z",
+      "updatedAt": "2025-09-21T08:44:19.347Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10752,
+          "name": "전쟁"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 345,
+      "tmdbId": null,
+      "title": "아포칼립토 나우",
+      "originalTitle": "Apocalypse Now",
+      "overview": "베트남 전쟁의 광기를 그린 걸작",
+      "posterPath": "/giP5yeJBrsqglkM05pbiTyRsoBa.jpg",
+      "backdropPath": "/9Qs9oyn4iE8QtQjGZ0Hp2WyYNXT.jpg",
+      "releaseDate": "1979-08-15T00:00:00.000Z",
+      "rating": 8.4,
+      "voteCount": 650000,
+      "popularity": 70.2,
+      "runtime": 147,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.481Z",
+      "updatedAt": "2025-09-21T08:44:19.920Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10752,
+          "name": "전쟁"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        }
+      ]
+    },
+    {
+      "id": 346,
+      "tmdbId": null,
+      "title": "E.T.",
+      "originalTitle": "E.T. the Extra-Terrestrial",
+      "overview": "외계인과 소년의 우정",
+      "posterPath": "/9Kl6z0J1Hu3cFOFXNBrqqVWoNmI.jpg",
+      "backdropPath": "/mXLVA0YL6tcXi6SJSuAh9ONXFj5.jpg",
+      "releaseDate": "1982-06-11T00:00:00.000Z",
+      "rating": 7.8,
+      "voteCount": 400000,
+      "popularity": 60.5,
+      "runtime": 115,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.497Z",
+      "updatedAt": "2025-09-21T08:44:20.485Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 347,
+      "tmdbId": null,
+      "title": "인디아나 존스: 레이더스",
+      "originalTitle": "Raiders of the Lost Ark",
+      "overview": "고고학자 인디아나 존스의 모험",
+      "posterPath": "/xB8nOHHz8bmuM3GoW3gFttUvEks.jpg",
+      "backdropPath": "/ueDw7djPgKPZfph0vC43aD2EMyF.jpg",
+      "releaseDate": "1981-06-12T00:00:00.000Z",
+      "rating": 8.5,
+      "voteCount": 950000,
+      "popularity": 85.2,
+      "runtime": 115,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.532Z",
+      "updatedAt": "2025-09-21T08:44:21.045Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 28,
+          "name": "액션"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "tmdbId": null,
+      "title": "주라기 공원",
+      "originalTitle": "Jurassic Park",
+      "overview": "공룡들이 되살아난 테마파크",
+      "posterPath": "/m4T4h20ame5nG7a5iNPCwk0pHEG.jpg",
+      "backdropPath": "/jzt9HuhIAdH9qp0K2MA1m5V8sgq.jpg",
+      "releaseDate": "1993-06-11T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 900000,
+      "popularity": 120.3,
+      "runtime": 127,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.552Z",
+      "updatedAt": "2025-09-21T08:44:21.595Z",
+      "genres": [
+        {
+          "id": 12,
+          "name": "모험"
+        },
+        {
+          "id": 53,
+          "name": "스릴러"
+        },
+        {
+          "id": 878,
+          "name": "SF"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 2,
+          "type": "INTP"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        }
+      ]
+    },
+    {
+      "id": 349,
+      "tmdbId": null,
+      "title": "겨울왕국",
+      "originalTitle": "Frozen",
+      "overview": "자매의 사랑과 용기를 그린 디즈니 애니메이션",
+      "posterPath": "/bXR62Afcn5ouxMNrlnnFugwXEQM.jpg",
+      "backdropPath": "/u2bZhH3nTf0So0UIC1QxAqBvC07.jpg",
+      "releaseDate": "2013-11-27T00:00:00.000Z",
+      "rating": 7.4,
+      "voteCount": 600000,
+      "popularity": 150.1,
+      "runtime": 102,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.569Z",
+      "updatedAt": "2025-09-21T08:44:22.134Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 350,
+      "tmdbId": null,
+      "title": "니모를 찾아서",
+      "originalTitle": "Finding Nemo",
+      "overview": "아버지 물고기가 아들을 찾는 모험",
+      "posterPath": "/9ViCYfZ0whpwtKbM2WJP5PfsG2x.jpg",
+      "backdropPath": "/eCynaAOgYYiw5yN5lBwz3IxqvaW.jpg",
+      "releaseDate": "2003-05-30T00:00:00.000Z",
+      "rating": 8.1,
+      "voteCount": 950000,
+      "popularity": 110.5,
+      "runtime": 100,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.602Z",
+      "updatedAt": "2025-09-21T08:44:22.668Z",
+      "genres": [
+        {
+          "id": 16,
+          "name": "애니메이션"
+        },
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "tmdbId": null,
+      "title": "보헤미안 랩소디",
+      "originalTitle": "Bohemian Rhapsody",
+      "overview": "퀸의 프레디 머큐리 이야기",
+      "posterPath": "/xrlVhwi6OKMyQuDebpgaqU2LGju.jpg",
+      "backdropPath": "/7mmXWuBeNJiBO0NIOUWOuFve4Tb.jpg",
+      "releaseDate": "2018-10-24T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 900000,
+      "popularity": 130.2,
+      "runtime": 134,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.625Z",
+      "updatedAt": "2025-09-21T08:44:23.202Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "tmdbId": null,
+      "title": "사운드 오브 뮤직",
+      "originalTitle": "The Sound of Music",
+      "overview": "오스트리아를 배경으로 한 뮤지컬",
+      "posterPath": "/3l1ATCYNuHep6evzX8GSUigWOLs.jpg",
+      "backdropPath": "/ioQYjcRnU54ir5ltgyS7k53zw5x.jpg",
+      "releaseDate": "1965-03-02T00:00:00.000Z",
+      "rating": 8,
+      "voteCount": 220000,
+      "popularity": 50.3,
+      "runtime": 172,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.645Z",
+      "updatedAt": "2025-09-21T08:44:23.747Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10751,
+          "name": "가족"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "tmdbId": null,
+      "title": "시카고",
+      "originalTitle": "Chicago",
+      "overview": "1920년대 시카고를 배경으로 한 뮤지컬",
+      "posterPath": "/mEkMT13H2HXoTP6KdCwhaPYSSdD.jpg",
+      "backdropPath": "/euxYhuuJjChU755u2YHj0ZPjww3.jpg",
+      "releaseDate": "2002-12-27T00:00:00.000Z",
+      "rating": 7.1,
+      "voteCount": 220000,
+      "popularity": 40.2,
+      "runtime": 113,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.684Z",
+      "updatedAt": "2025-09-21T08:44:24.300Z",
+      "genres": [
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 80,
+          "name": "범죄"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 11,
+          "type": "ESTJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 13,
+          "type": "ISTP"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 354,
+      "tmdbId": null,
+      "title": "무랑 루즈",
+      "originalTitle": "Moulin Rouge!",
+      "overview": "파리 몽마르트의 카바레를 배경으로 한 로맨스",
+      "posterPath": "/oTJn5I4Fs4TFKOH2nyXGx4IkGmV.jpg",
+      "backdropPath": "/vvcLSgiviCIU0J0UcwLqWdU8Iup.jpg",
+      "releaseDate": "2001-05-18T00:00:00.000Z",
+      "rating": 7.6,
+      "voteCount": 280000,
+      "popularity": 60.1,
+      "runtime": 127,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.704Z",
+      "updatedAt": "2025-09-21T08:44:24.838Z",
+      "genres": [
+        {
+          "id": 18,
+          "name": "드라마"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 1,
+          "type": "INTJ"
+        },
+        {
+          "id": 3,
+          "type": "ENTJ"
+        },
+        {
+          "id": 5,
+          "type": "INFJ"
+        },
+        {
+          "id": 7,
+          "type": "ENFJ"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 9,
+          "type": "ISTJ"
+        },
+        {
+          "id": 10,
+          "type": "ISFJ"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "tmdbId": null,
+      "title": "머머 미아!",
+      "originalTitle": "Mamma Mia!",
+      "overview": "ABBA의 음악으로 만든 유쾌한 뮤지컬",
+      "posterPath": "/9fnWov6Mb7LJKA2dJLV9h1mcSnF.jpg",
+      "backdropPath": "/85BQpS3lEA7wESlGUCFQZNoPoo8.jpg",
+      "releaseDate": "2008-07-10T00:00:00.000Z",
+      "rating": 6.4,
+      "voteCount": 250000,
+      "popularity": 70.4,
+      "runtime": 108,
+      "budget": null,
+      "revenue": null,
+      "tagline": null,
+      "homepage": null,
+      "status": null,
+      "originalLanguage": "ko",
+      "adult": false,
+      "createdAt": "2025-09-21T08:16:21.730Z",
+      "updatedAt": "2025-09-21T08:44:25.387Z",
+      "genres": [
+        {
+          "id": 35,
+          "name": "코미디"
+        },
+        {
+          "id": 10402,
+          "name": "음악"
+        },
+        {
+          "id": 10749,
+          "name": "로맨스"
+        }
+      ],
+      "mbtiTypes": [
+        {
+          "id": 4,
+          "type": "ENTP"
+        },
+        {
+          "id": 8,
+          "type": "ENFP"
+        },
+        {
+          "id": 12,
+          "type": "ESFJ"
+        },
+        {
+          "id": 14,
+          "type": "ISFP"
+        },
+        {
+          "id": 15,
+          "type": "ESTP"
+        },
+        {
+          "id": 16,
+          "type": "ESFP"
+        }
+      ]
+    }
+  ],
+  "genres": [
+    {
+      "id": 12,
+      "name": "모험"
+    },
+    {
+      "id": 14,
+      "name": "판타지"
+    },
+    {
+      "id": 16,
+      "name": "애니메이션"
+    },
+    {
+      "id": 18,
+      "name": "드라마"
+    },
+    {
+      "id": 27,
+      "name": "공포"
+    },
+    {
+      "id": 28,
+      "name": "액션"
+    },
+    {
+      "id": 35,
+      "name": "코미디"
+    },
+    {
+      "id": 36,
+      "name": "역사"
+    },
+    {
+      "id": 37,
+      "name": "서부"
+    },
+    {
+      "id": 53,
+      "name": "스릴러"
+    },
+    {
+      "id": 80,
+      "name": "범죄"
+    },
+    {
+      "id": 99,
+      "name": "다큐멘터리"
+    },
+    {
+      "id": 878,
+      "name": "SF"
+    },
+    {
+      "id": 9648,
+      "name": "미스터리"
+    },
+    {
+      "id": 10402,
+      "name": "음악"
+    },
+    {
+      "id": 10749,
+      "name": "로맨스"
+    },
+    {
+      "id": 10751,
+      "name": "가족"
+    },
+    {
+      "id": 10752,
+      "name": "전쟁"
+    },
+    {
+      "id": 10770,
+      "name": "TV 영화"
+    }
+  ],
+  "mbtiTypes": [
+    {
+      "id": 1,
+      "type": "INTJ"
+    },
+    {
+      "id": 2,
+      "type": "INTP"
+    },
+    {
+      "id": 3,
+      "type": "ENTJ"
+    },
+    {
+      "id": 4,
+      "type": "ENTP"
+    },
+    {
+      "id": 5,
+      "type": "INFJ"
+    },
+    {
+      "id": 6,
+      "type": "INFP"
+    },
+    {
+      "id": 7,
+      "type": "ENFJ"
+    },
+    {
+      "id": 8,
+      "type": "ENFP"
+    },
+    {
+      "id": 9,
+      "type": "ISTJ"
+    },
+    {
+      "id": 10,
+      "type": "ISFJ"
+    },
+    {
+      "id": 11,
+      "type": "ESTJ"
+    },
+    {
+      "id": 12,
+      "type": "ESFJ"
+    },
+    {
+      "id": 13,
+      "type": "ISTP"
+    },
+    {
+      "id": 14,
+      "type": "ISFP"
+    },
+    {
+      "id": 15,
+      "type": "ESTP"
+    },
+    {
+      "id": 16,
+      "type": "ESFP"
+    }
+  ],
+  "exportedAt": "2025-09-28T06:59:59.517Z"
+}

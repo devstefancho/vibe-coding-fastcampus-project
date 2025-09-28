@@ -4,6 +4,7 @@ import { MBTIType } from '@/types';
 import { mbtiResults } from '@/lib/mbtiData';
 import { DBMovie, getRecommendedMoviesByMBTI } from '@/lib/db-movies';
 import DBMovieCard from './DBMovieCard';
+import { MovieCardSkeletonGrid } from './ui/MovieCardSkeleton';
 import { useEffect, useState } from 'react';
 
 interface ResultDisplayProps {
@@ -88,9 +89,7 @@ export default function ResultDisplay({ mbtiType, onRestart }: ResultDisplayProp
         </h3>
 
         {loading ? (
-          <div className="text-center py-12">
-            <p className="text-black text-lg">영화 데이터를 불러오는 중...</p>
-          </div>
+          <MovieCardSkeletonGrid count={8} />
         ) : error ? (
           <div className="text-center py-12">
             <p className="text-red-600 text-lg">{error}</p>

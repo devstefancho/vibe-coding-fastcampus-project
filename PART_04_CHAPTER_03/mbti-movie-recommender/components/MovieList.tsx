@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { TMDBMovie, TMDBMovieResponse } from '@/types';
 import tmdbClient from '@/lib/tmdb';
 import TMDBMovieCard from './TMDBMovieCard';
+import { MovieCardSkeletonGrid } from './ui/MovieCardSkeleton';
 
 type MovieListType = 'popular' | 'now_playing' | 'top_rated' | 'upcoming' | 'korean';
 
@@ -82,11 +83,7 @@ export default function MovieList({ type, title, limit }: MovieListProps) {
     return (
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4 text-black">{title}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {Array.from({ length: limit || 10 }).map((_, index) => (
-            <div key={index} className="bg-gray-200 rounded-lg h-80 animate-pulse"></div>
-          ))}
-        </div>
+        <MovieCardSkeletonGrid count={limit || 10} className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5" />
       </div>
     );
   }

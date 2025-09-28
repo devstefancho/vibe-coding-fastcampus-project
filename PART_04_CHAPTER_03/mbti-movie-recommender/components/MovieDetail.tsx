@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { TMDBMovieDetail } from '@/types';
 import tmdbClient from '@/lib/tmdb';
+import MovieDetailSkeleton from './ui/MovieDetailSkeleton';
 
 interface MovieDetailProps {
   movieId: number;
@@ -52,23 +53,7 @@ export default function MovieDetail({ movieId, onClose }: MovieDetailProps) {
   };
 
   if (loading) {
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded mb-4"></div>
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="w-full md:w-1/3 h-64 bg-gray-200 rounded"></div>
-              <div className="flex-1 space-y-4">
-                <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-                <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <MovieDetailSkeleton onClose={onClose} />;
   }
 
   if (error) {

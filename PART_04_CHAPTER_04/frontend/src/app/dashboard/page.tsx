@@ -1,22 +1,40 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import MonthlyTrendChart from '@/components/charts/MonthlyTrendChart';
 import CategoryPieChart from '@/components/charts/CategoryPieChart';
-import {
-  getMonthSummaries,
-  getCurrentMonthTransactions,
-  getRecentTransactions,
-  getCategoryExpenses,
-  getCategoryName
-} from '@/lib/mock-data';
+import { DataService } from '@/lib/data-service';
+import { Transaction, MonthSummary } from '@/types/budget';
 import { TrendingUp, TrendingDown, DollarSign, Calendar } from 'lucide-react';
 
 export default function DashboardPage() {
-  const monthSummaries = getMonthSummaries();
-  const currentMonthTransactions = getCurrentMonthTransactions();
-  const recentTransactions = getRecentTransactions(5);
-  const categoryExpenses = getCategoryExpenses('2025-09');
+  const [monthSummaries, setMonthSummaries] = useState<MonthSummary[]>([]);
+  const [currentMonthTransactions, setCurrentMonthTransactions] = useState<Transaction[]>([]);
+  const [recentTransactions, setRecentTransactions] = useState<Transaction[]>([]);
+  const [categoryExpenses, setCategoryExpenses] = useState<{ name: string; value: number; color: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 데이터 로드 함수
+  const loadData = () => {
+    const summaries = DataService.getMonthSummaries();
+    const currentTransactions = DataService.getCurrentMonthTransactions();
+    const recent = DataService.getRecentTransactions(5);
+    const expenses = DataService.getCategoryExpenses('2025-09');
+
+    setMonthSummaries(summaries);
+    setCurrentMonthTransactions(currentTransactions);
+    setRecentTransactions(recent);
+    setCategoryExpenses(expenses);
+  };
+
+  // 데이터 로드
+  useEffect(() => {
+    setIsLoading(true);
+    loadData();
+    setIsLoading(false);
+  }, []);
+
 
   // 현재 월 요약 계산
   const currentMonth = monthSummaries.find(summary => summary.month === '2025-09');
@@ -46,6 +64,14 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-bold text-gray-900">대시보드</h1>
           <p className="text-gray-600 mt-2">2025년 9월 예산 현황</p>
         </div>
+
+        {/* 로딩 상태 */}
+        {isLoading && (
+          <div className="flex justify-center items-center py-12">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <span className="ml-2 text-gray-600">데이터 로딩 중...</span>
+          </div>
+        )}
 
         {/* 요약 카드들 */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -127,7 +153,7 @@ export default function DashboardPage() {
                     }`} />
                     <div>
                       <p className="text-sm font-medium text-gray-900">
-                        {getCategoryName(transaction.categoryId)}
+                        {DataService.getCategoryName(transaction.categoryId)}
                       </p>
                       <p className="text-sm text-gray-500">
                         {transaction.memo || '메모 없음'} • {formatDate(transaction.date)}

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { SyncMeta } from '@/types/budget';
+import { SyncService } from '@/lib/sync-service';
 import {
   RefreshCw,
   CheckCircle,
@@ -22,62 +23,132 @@ export default function SyncPage() {
 
   const [isConnected, setIsConnected] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
-  const [sheetUrl, setSheetUrl] = useState('');
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'success' | 'error' | 'info'>('info');
 
-  const handleConnect = async () => {
-    if (!sheetUrl) {
-      alert('Google Sheets URL을 입력해주세요.');
-      return;
+  // 컴포넌트 로드 시 로컬 동기화 메타데이터 확인
+  useEffect(() => {
+    const localData = SyncService.getLocalData();
+    if (localData.syncMeta.lastSyncAt) {
+      setSyncMeta({
+        sheetId: localData.syncMeta.sheetId || '',
+        lastSyncAt: localData.syncMeta.lastSyncAt,
+        pendingCount: localData.syncMeta.pendingCount || 0,
+      });
+      setIsConnected(true);
     }
+  }, []);
 
-    // 간단한 URL 형식 검증
-    if (!sheetUrl.includes('docs.google.com/spreadsheets')) {
-      alert('올바른 Google Sheets URL을 입력해주세요.');
-      return;
-    }
-
-    // URL에서 Sheet ID 추출 (실제 구현에서는 더 정교한 파싱 필요)
-    const sheetId = sheetUrl.split('/d/')[1]?.split('/')[0] || '';
-
-    setSyncMeta({
-      sheetId: sheetId,
-      lastSyncAt: new Date().toISOString(),
-      pendingCount: 3,
-    });
-
-    setIsConnected(true);
-    alert('Google Sheets 연결이 완료되었습니다!');
+  const showMessage = (msg: string, type: 'success' | 'error' | 'info' = 'info') => {
+    setMessage(msg);
+    setMessageType(type);
+    setTimeout(() => setMessage(''), 5000);
   };
 
-  const handleSync = async () => {
+  const handleTestConnection = async () => {
+    setIsConnecting(true);
+
+    try {
+      const connected = await SyncService.testConnection();
+
+      if (connected) {
+        setIsConnected(true);
+        setSyncMeta(prev => ({
+          ...prev,
+          sheetId: process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID || 'configured',
+        }));
+        showMessage('Google Sheets 연결 성공!', 'success');
+      } else {
+        setIsConnected(false);
+        showMessage('Google Sheets 연결 실패. 환경변수 설정을 확인해주세요.', 'error');
+      }
+    } catch (error) {
+      setIsConnected(false);
+      showMessage('연결 테스트 중 오류가 발생했습니다.', 'error');
+    } finally {
+      setIsConnecting(false);
+    }
+  };
+
+  const handleBackupToSheets = async () => {
     if (!isConnected) {
-      alert('먼저 Google Sheets를 연결해주세요.');
+      showMessage('먼저 Google Sheets 연결을 확인해주세요.', 'error');
       return;
     }
 
     setIsSyncing(true);
 
-    // 동기화 시뮬레이션
-    setTimeout(() => {
-      setSyncMeta(prev => ({
-        ...prev,
-        lastSyncAt: new Date().toISOString(),
-        pendingCount: 0,
-      }));
+    try {
+      const result = await SyncService.backupToSheets();
+
+      if (result.success && result.data) {
+        setSyncMeta({
+          sheetId: syncMeta.sheetId,
+          lastSyncAt: result.data.lastSyncAt,
+          pendingCount: 0,
+        });
+        showMessage(result.message, 'success');
+      } else {
+        showMessage(result.message, 'error');
+      }
+    } catch (error) {
+      showMessage('백업 중 오류가 발생했습니다.', 'error');
+    } finally {
       setIsSyncing(false);
-      alert('동기화가 완료되었습니다!');
-    }, 2000);
+    }
   };
 
+  const handleRestoreFromSheets = async () => {
+    if (!isConnected) {
+      showMessage('먼저 Google Sheets 연결을 확인해주세요.', 'error');
+      return;
+    }
+
+    if (!confirm('Google Sheets에서 데이터를 복원하면 현재 로컬 데이터가 덮어쓰기됩니다. 계속하시겠습니까?')) {
+      return;
+    }
+
+    setIsSyncing(true);
+
+    try {
+      const result = await SyncService.restoreFromSheets();
+
+      if (result.success && result.data) {
+        setSyncMeta({
+          sheetId: syncMeta.sheetId,
+          lastSyncAt: result.data.lastSyncAt,
+          pendingCount: 0,
+        });
+        showMessage(result.message, 'success');
+
+        // 페이지 새로고침으로 UI 업데이트
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      } else {
+        showMessage(result.message, 'error');
+      }
+    } catch (error) {
+      showMessage('복원 중 오류가 발생했습니다.', 'error');
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
+
   const handleDisconnect = () => {
-    if (confirm('Google Sheets 연결을 해제하시겠습니까?')) {
+    if (confirm('Google Sheets 연결을 해제하시겠습니까?\n로컬 데이터는 유지됩니다.')) {
       setSyncMeta({
         sheetId: '',
         lastSyncAt: '',
         pendingCount: 0,
       });
       setIsConnected(false);
-      setSheetUrl('');
+
+      // 로컬 동기화 메타데이터 클리어
+      localStorage.removeItem('bk.v1.sync');
+      showMessage('연결이 해제되었습니다.', 'info');
     }
   };
 
@@ -91,9 +162,20 @@ export default function SyncPage() {
       <div className="max-w-4xl mx-auto space-y-8">
         {/* 페이지 헤더 */}
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">동기화 설정</h1>
-          <p className="text-gray-600 mt-2">Google Sheets와 데이터를 동기화하세요</p>
+          <h1 className="text-3xl font-bold text-gray-900">백업 및 복원</h1>
+          <p className="text-gray-600 mt-2">Google Sheets에 데이터를 백업하거나 복원하세요</p>
         </div>
+
+        {/* 메시지 알림 */}
+        {message && (
+          <div className={`p-4 rounded-lg ${
+            messageType === 'success' ? 'bg-green-50 text-green-700 border border-green-200' :
+            messageType === 'error' ? 'bg-red-50 text-red-700 border border-red-200' :
+            'bg-blue-50 text-blue-700 border border-blue-200'
+          }`}>
+            {message}
+          </div>
+        )}
 
         {/* 연결 상태 카드 */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
@@ -132,7 +214,7 @@ export default function SyncPage() {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex items-center space-x-2 mb-2">
                     <Clock className="h-4 w-4 text-green-600" />
-                    <span className="text-sm font-medium text-gray-700">마지막 동기화</span>
+                    <span className="text-sm font-medium text-gray-700">마지막 백업</span>
                   </div>
                   <p className="text-xs text-gray-600">{formatDateTime(syncMeta.lastSyncAt)}</p>
                 </div>
@@ -146,15 +228,25 @@ export default function SyncPage() {
                 </div>
               </div>
 
-              <div className="flex space-x-3">
+              <div className="flex flex-wrap gap-3">
                 <button
-                  onClick={handleSync}
+                  onClick={handleBackupToSheets}
                   disabled={isSyncing}
                   className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
                 >
-                  <RefreshCw className={`h-4 w-4 ${isSyncing ? 'animate-spin' : ''}`} />
-                  <span>{isSyncing ? '동기화 중...' : '지금 동기화'}</span>
+                  <Cloud className="h-4 w-4" />
+                  <span>{isSyncing ? '백업 중...' : 'Google Sheets에 백업'}</span>
                 </button>
+
+                <button
+                  onClick={handleRestoreFromSheets}
+                  disabled={isSyncing}
+                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
+                >
+                  <RefreshCw className={`h-4 w-4 ${isSyncing ? 'animate-spin' : ''}`} />
+                  <span>{isSyncing ? '복원 중...' : 'Google Sheets에서 복원'}</span>
+                </button>
+
                 <button
                   onClick={handleDisconnect}
                   className="border border-red-300 text-red-600 px-4 py-2 rounded-lg hover:bg-red-50 transition-colors"
@@ -165,66 +257,60 @@ export default function SyncPage() {
             </div>
           ) : (
             <div className="space-y-4">
-              <div>
-                <label htmlFor="sheetUrl" className="block text-sm font-medium text-gray-700 mb-2">
-                  Google Sheets URL
-                </label>
-                <input
-                  type="url"
-                  id="sheetUrl"
-                  value={sheetUrl}
-                  onChange={(e) => setSheetUrl(e.target.value)}
-                  placeholder="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <p className="text-sm text-yellow-800">
+                  <strong>환경변수 설정 필요:</strong> Google Sheets 연동을 위해서는 .env.local 파일에 인증 정보가 설정되어야 합니다.
+                </p>
               </div>
+
               <button
-                onClick={handleConnect}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                onClick={handleTestConnection}
+                disabled={isConnecting}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
               >
-                <Cloud className="h-4 w-4" />
-                <span>Google Sheets 연결</span>
+                <Cloud className={`h-4 w-4 ${isConnecting ? 'animate-spin' : ''}`} />
+                <span>{isConnecting ? '연결 테스트 중...' : 'Google Sheets 연결 테스트'}</span>
               </button>
             </div>
           )}
         </div>
 
-        {/* 동기화 설명 */}
+        {/* 백업 및 복원 설명 */}
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <div className="flex items-start space-x-3">
             <Settings className="h-6 w-6 text-blue-600 mt-0.5" />
             <div>
-              <h3 className="text-lg font-semibold text-blue-900 mb-2">동기화 설정 방법</h3>
+              <h3 className="text-lg font-semibold text-blue-900 mb-2">백업 및 복원 사용법</h3>
               <div className="space-y-2 text-sm text-blue-800">
-                <p><strong>1단계:</strong> Google Sheets에서 새 스프레드시트를 생성하세요.</p>
-                <p><strong>2단계:</strong> 스프레드시트 URL을 복사하여 위 입력란에 붙여넣으세요.</p>
-                <p><strong>3단계:</strong> '연결' 버튼을 클릭하면 자동으로 시트 구조가 설정됩니다.</p>
-                <p><strong>4단계:</strong> 이후 데이터 변경 시 자동으로 동기화가 진행됩니다.</p>
+                <p><strong>백업:</strong> 현재 로컬 데이터를 Google Sheets에 저장합니다.</p>
+                <p><strong>복원:</strong> Google Sheets의 데이터로 로컬 데이터를 덮어씁니다.</p>
+                <p><strong>주의:</strong> 복원 시 현재 로컬 데이터는 삭제되므로 백업을 먼저 진행하세요.</p>
+                <p><strong>자동 백업:</strong> 거래나 카테고리 추가/수정 시 자동으로 백업됩니다.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 동기화 규칙 */}
+        {/* 백업 규칙 */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">동기화 규칙</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">백업 규칙</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-medium text-gray-900 mb-2">자동 동기화</h4>
+              <h4 className="font-medium text-gray-900 mb-2">자동 백업</h4>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• 새 거래 추가 시 즉시 업로드</li>
-                <li>• 카테고리 변경 시 자동 반영</li>
-                <li>• 앱 시작 시 최신 데이터 다운로드</li>
-                <li>• 인터넷 연결 시 대기중인 변경사항 전송</li>
+                <li>• 새 거래 추가 시 즉시 백업</li>
+                <li>• 카테고리 변경 시 자동 백업</li>
+                <li>• 거래 수정/삭제 시 백업</li>
+                <li>• 인터넷 연결 시 자동 백업 시도</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-medium text-gray-900 mb-2">충돌 해결</h4>
+              <h4 className="font-medium text-gray-900 mb-2">데이터 관리</h4>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• 최신 수정 시간 우선 (Last-Write-Wins)</li>
-                <li>• 로컬 변경사항은 별도 백업</li>
-                <li>• 삭제된 항목은 비활성화로 처리</li>
-                <li>• 수동 동기화로 강제 업데이트 가능</li>
+                <li>• 단방향 백업으로 데이터 무결성 보장</li>
+                <li>• 복원 시 사용자 확인 후 진행</li>
+                <li>• 중복 데이터 자동 제거</li>
+                <li>• 수동 백업/복원으로 완전 제어</li>
               </ul>
             </div>
           </div>
@@ -235,7 +321,7 @@ export default function SyncPage() {
           <div className="flex items-center justify-between">
             <div>
               <h4 className="font-medium text-gray-900">도움이 필요하신가요?</h4>
-              <p className="text-sm text-gray-600">Google Sheets 설정 가이드를 확인해보세요</p>
+              <p className="text-sm text-gray-600">Google Sheets 백업 설정 가이드를 확인해보세요</p>
             </div>
             <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700">
               <span>가이드 보기</span>

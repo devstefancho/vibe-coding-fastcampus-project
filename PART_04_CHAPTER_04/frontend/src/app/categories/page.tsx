@@ -1,20 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { mockCategories } from '@/lib/mock-data';
+import { DataService } from '@/lib/data-service';
 import { Category, TxnType } from '@/types/budget';
-import { Plus, Edit, Trash2, Eye, EyeOff } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, EyeOff, RefreshCw } from 'lucide-react';
 
 export default function CategoriesPage() {
-  const [categories, setCategories] = useState<Category[]>(mockCategories);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [selectedTab, setSelectedTab] = useState<TxnType>('expense');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     type: 'expense' as TxnType,
   });
+
+  // 카테고리 데이터 로드
+  const loadCategories = () => {
+    const allCategories = DataService.getCategories();
+    // 비활성화된 카테고리도 포함해서 가져오기
+    const localData = DataService.getTransactions(); // getCategories는 active만 가져오므로 직접 LocalStorage 조회
+    const allCategoriesIncludingInactive = JSON.parse(localStorage.getItem('bk.v1.categories') || '[]') as Category[];
+    setCategories(allCategoriesIncludingInactive);
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    loadCategories();
+    setIsLoading(false);
+  }, []);
 
   const filteredCategories = categories.filter(cat => cat.type === selectedTab);
 
@@ -41,42 +58,70 @@ export default function CategoriesPage() {
     setFormData({ name: '', type: 'expense' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (editingCategory) {
-      // 수정
-      setCategories(prev => prev.map(cat =>
-        cat.id === editingCategory.id
-          ? { ...cat, name: formData.name, type: formData.type, updatedAt: new Date().toISOString() }
-          : cat
-      ));
-    } else {
-      // 새 카테고리 추가
-      const newCategory: Category = {
-        id: `cat_${Date.now()}`,
-        name: formData.name,
-        type: formData.type,
-        active: true,
-        updatedAt: new Date().toISOString(),
-      };
-      setCategories(prev => [...prev, newCategory]);
+    if (!formData.name.trim()) {
+      alert('카테고리 이름을 입력해주세요.');
+      return;
     }
 
-    handleCloseModal();
+    setIsSubmitting(true);
+
+    try {
+      if (editingCategory) {
+        // 수정
+        await DataService.updateCategory(editingCategory.id, {
+          name: formData.name.trim(),
+          type: formData.type,
+        });
+        alert('카테고리가 성공적으로 수정되었습니다.');
+      } else {
+        // 추가
+        await DataService.addCategory({
+          name: formData.name.trim(),
+          type: formData.type,
+          active: true,
+        });
+        alert('카테고리가 성공적으로 추가되었습니다.');
+      }
+
+      loadCategories(); // 데이터 새로고침
+      handleCloseModal();
+    } catch (error) {
+      console.error('카테고리 저장 실패:', error);
+      alert('카테고리 저장 중 오류가 발생했습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleToggleActive = (categoryId: string) => {
-    setCategories(prev => prev.map(cat =>
-      cat.id === categoryId
-        ? { ...cat, active: !cat.active, updatedAt: new Date().toISOString() }
-        : cat
-    ));
+  const handleToggleActive = async (categoryId: string) => {
+    try {
+      const category = categories.find(cat => cat.id === categoryId);
+      if (!category) return;
+
+      await DataService.updateCategory(categoryId, {
+        active: !category.active,
+      });
+
+      loadCategories(); // 데이터 새로고침
+    } catch (error) {
+      console.error('카테고리 활성화 토글 실패:', error);
+      alert('카테고리 상태 변경 중 오류가 발생했습니다.');
+    }
   };
 
-  const handleDelete = (categoryId: string) => {
-    if (confirm('정말로 이 카테고리를 삭제하시겠습니까?')) {
-      setCategories(prev => prev.filter(cat => cat.id !== categoryId));
+  const handleDelete = async (categoryId: string) => {
+    if (confirm('정말로 이 카테고리를 비활성화하시겠습니까?')) {
+      try {
+        await DataService.deleteCategory(categoryId);
+        loadCategories(); // 데이터 새로고침
+        alert('카테고리가 비활성화되었습니다.');
+      } catch (error) {
+        console.error('카테고리 삭제 실패:', error);
+        alert('카테고리 삭제 중 오류가 발생했습니다.');
+      }
     }
   };
 
@@ -238,9 +283,11 @@ export default function CategoriesPage() {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    disabled={isSubmitting}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
                   >
-                    {editingCategory ? '수정' : '추가'}
+                    {isSubmitting && <RefreshCw className="h-4 w-4 animate-spin" />}
+                    <span>{isSubmitting ? '저장 중...' : (editingCategory ? '수정' : '추가')}</span>
                   </button>
                 </div>
               </form>

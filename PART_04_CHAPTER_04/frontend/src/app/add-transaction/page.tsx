@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { mockCategories } from '@/lib/mock-data';
-import { TxnType } from '@/types/budget';
+import { DataService } from '@/lib/data-service';
+import { TxnType, Category } from '@/types/budget';
 import { Save, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -18,20 +18,53 @@ export default function AddTransactionPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
 
-  const incomeCategories = mockCategories.filter(cat => cat.type === 'income' && cat.active);
-  const expenseCategories = mockCategories.filter(cat => cat.type === 'expense' && cat.active);
+  // 카테고리 데이터 로드
+  useEffect(() => {
+    const loadCategories = () => {
+      const allCategories = DataService.getCategories();
+      setCategories(allCategories);
+    };
+
+    loadCategories();
+  }, []);
+
+  const incomeCategories = categories.filter(cat => cat.type === 'income' && cat.active);
+  const expenseCategories = categories.filter(cat => cat.type === 'expense' && cat.active);
 
   const availableCategories = formData.type === 'income' ? incomeCategories : expenseCategories;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 폼 유효성 검사
+    if (!formData.amount || !formData.categoryId) {
+      alert('금액과 카테고리를 입력해주세요.');
+      return;
+    }
+
+    const amount = parseFloat(formData.amount);
+    if (isNaN(amount) || amount <= 0) {
+      alert('올바른 금액을 입력해주세요.');
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // 실제 구현에서는 여기서 API 호출 또는 로컬 스토리지에 저장
-    setTimeout(() => {
+    try {
+      // DataService를 통해 거래 추가
+      const newTransaction = await DataService.addTransaction({
+        date: formData.date as `${number}-${number}-${number}`,
+        type: formData.type,
+        amount: amount,
+        categoryId: formData.categoryId,
+        memo: formData.memo || undefined,
+      });
+
+      console.log('거래 추가 완료:', newTransaction);
       alert('거래가 성공적으로 추가되었습니다!');
-      setIsSubmitting(false);
+
       // 폼 초기화
       setFormData({
         date: new Date().toISOString().split('T')[0],
@@ -40,7 +73,15 @@ export default function AddTransactionPage() {
         categoryId: '',
         memo: '',
       });
-    }, 1000);
+
+      // 대시보드로 이동
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('거래 추가 실패:', error);
+      alert('거래 추가 중 오류가 발생했습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

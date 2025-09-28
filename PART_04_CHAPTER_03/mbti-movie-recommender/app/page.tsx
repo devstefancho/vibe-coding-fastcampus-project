@@ -6,6 +6,7 @@ import { MBTIType, TMDBMovie } from '@/types';
 import MBTIQuiz from '@/components/MBTIQuiz';
 import ResultDisplay from '@/components/ResultDisplay';
 import MovieCarousel from '@/components/MovieCarousel';
+import MBTISelector from '@/components/MBTISelector';
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<'home' | 'quiz' | 'result'>('home');
@@ -20,6 +21,11 @@ export default function Home() {
   };
 
   const handleQuizComplete = (mbtiType: MBTIType) => {
+    setMbtiResult(mbtiType);
+    setCurrentView('result');
+  };
+
+  const handleMBTISelect = (mbtiType: MBTIType) => {
     setMbtiResult(mbtiType);
     setCurrentView('result');
   };
@@ -68,9 +74,9 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 text-left">
             <div className="text-center">
               <div className="text-4xl mb-3">📝</div>
-              <h3 className="font-semibold mb-2">간단한 테스트</h3>
+              <h3 className="font-semibold mb-2">정밀한 테스트</h3>
               <p className="text-black text-sm">
-                4개의 질문으로 당신의 영화 취향을 파악합니다
+                12개의 질문으로 당신의 영화 취향을 정확히 파악합니다
               </p>
             </div>
             <div className="text-center">
@@ -90,6 +96,10 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mb-8">
+          <MBTISelector onSelect={handleMBTISelect} />
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={handleStartQuiz}
@@ -107,7 +117,7 @@ export default function Home() {
         </div>
 
         <p className="text-sm text-black mt-4">
-          MBTI 테스트: 약 2분 소요 • 완전 무료<br/>
+          MBTI 테스트: 약 3분 소요 • 완전 무료<br/>
           영화 탐색: 300개의 엄선된 영화 데이터베이스
         </p>
         </div>

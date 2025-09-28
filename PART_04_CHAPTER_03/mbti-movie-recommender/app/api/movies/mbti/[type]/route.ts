@@ -4,10 +4,11 @@ import { MBTIType } from '@/types';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { type: string } }
+  { params }: { params: Promise<{ type: string }> }
 ) {
   try {
-    const mbtiType = params.type.toUpperCase() as MBTIType;
+    const { type } = await params;
+    const mbtiType = type.toUpperCase() as MBTIType;
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '20');

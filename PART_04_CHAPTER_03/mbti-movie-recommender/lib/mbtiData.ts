@@ -1,6 +1,7 @@
 import { MBTIQuestion, MBTIResult, MBTIType } from '@/types';
 
 export const mbtiQuestions: MBTIQuestion[] = [
+  // E-I (외향/내향) 질문들
   {
     id: 1,
     question: "새로운 영화를 선택할 때 어떤 방식을 선호하나요?",
@@ -15,6 +16,32 @@ export const mbtiQuestions: MBTIQuestion[] = [
   },
   {
     id: 2,
+    question: "영화관에서 영화를 볼 때 선호하는 방식은?",
+    optionA: {
+      text: "여러 사람과 함께 가서 재미있게 관람",
+      trait: "E"
+    },
+    optionB: {
+      text: "혼자 또는 가까운 사람과 조용히 관람",
+      trait: "I"
+    }
+  },
+  {
+    id: 3,
+    question: "영화를 본 후 어떤 행동을 주로 하나요?",
+    optionA: {
+      text: "바로 다른 사람들과 감상평을 나누기",
+      trait: "E"
+    },
+    optionB: {
+      text: "혼자만의 시간을 가지며 여운을 즐기기",
+      trait: "I"
+    }
+  },
+
+  // S-N (감각/직관) 질문들
+  {
+    id: 4,
     question: "영화를 볼 때 무엇에 더 주목하나요?",
     optionA: {
       text: "현실적인 스토리와 실제 상황들",
@@ -26,7 +53,33 @@ export const mbtiQuestions: MBTIQuestion[] = [
     }
   },
   {
-    id: 3,
+    id: 5,
+    question: "영화의 결말에 대한 선호도는?",
+    optionA: {
+      text: "명확하고 확실한 결말",
+      trait: "S"
+    },
+    optionB: {
+      text: "여운이 남고 해석의 여지가 있는 결말",
+      trait: "N"
+    }
+  },
+  {
+    id: 6,
+    question: "영화를 해석할 때 중점을 두는 부분은?",
+    optionA: {
+      text: "실제로 화면에 보이는 장면과 대사",
+      trait: "S"
+    },
+    optionB: {
+      text: "숨겨진 상징과 메타포적 의미",
+      trait: "N"
+    }
+  },
+
+  // T-F (사고/감정) 질문들
+  {
+    id: 7,
     question: "영화 평가 시 무엇을 더 중요하게 생각하나요?",
     optionA: {
       text: "논리적 구성과 객관적 완성도",
@@ -38,7 +91,33 @@ export const mbtiQuestions: MBTIQuestion[] = [
     }
   },
   {
-    id: 4,
+    id: 8,
+    question: "영화 속 캐릭터를 평가할 때 기준은?",
+    optionA: {
+      text: "행동의 합리성과 논리적 일관성",
+      trait: "T"
+    },
+    optionB: {
+      text: "감정의 진정성과 인간적 매력",
+      trait: "F"
+    }
+  },
+  {
+    id: 9,
+    question: "다른 사람에게 영화를 추천할 때 강조하는 점은?",
+    optionA: {
+      text: "뛰어난 연출력과 기술적 완성도",
+      trait: "T"
+    },
+    optionB: {
+      text: "감동적인 스토리와 따뜻한 메시지",
+      trait: "F"
+    }
+  },
+
+  // J-P (판단/인식) 질문들
+  {
+    id: 10,
     question: "영화 선택에 대한 당신의 스타일은?",
     optionA: {
       text: "미리 계획을 세우고 예매까지 완료",
@@ -46,6 +125,30 @@ export const mbtiQuestions: MBTIQuestion[] = [
     },
     optionB: {
       text: "그때그때 기분에 따라 즉흥적으로",
+      trait: "P"
+    }
+  },
+  {
+    id: 11,
+    question: "시리즈물을 볼 때 선호하는 방식은?",
+    optionA: {
+      text: "순서대로 차근차근 모든 편을 시청",
+      trait: "J"
+    },
+    optionB: {
+      text: "관심 있는 편부터 자유롭게 시청",
+      trait: "P"
+    }
+  },
+  {
+    id: 12,
+    question: "새로운 장르의 영화에 대한 태도는?",
+    optionA: {
+      text: "충분히 알아본 후 신중하게 도전",
+      trait: "J"
+    },
+    optionB: {
+      text: "호기심이 생기면 바로 시도해보기",
       trait: "P"
     }
   }

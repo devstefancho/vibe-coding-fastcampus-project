@@ -2,13 +2,18 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MBTIType } from '@/types';
+import { MBTIType, TMDBMovie } from '@/types';
 import MBTIQuiz from '@/components/MBTIQuiz';
 import ResultDisplay from '@/components/ResultDisplay';
+import MovieCarousel from '@/components/MovieCarousel';
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<'home' | 'quiz' | 'result'>('home');
   const [mbtiResult, setMbtiResult] = useState<MBTIType | null>(null);
+
+  const handleMovieClick = (movie: TMDBMovie) => {
+    console.log('Movie clicked:', movie.title);
+  };
 
   const handleStartQuiz = () => {
     setCurrentView('quiz');
@@ -44,8 +49,11 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-      <div className="max-w-4xl mx-auto text-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <MovieCarousel onMovieClick={handleMovieClick} />
+
+      <div className="flex items-center justify-center py-12">
+        <div className="max-w-4xl mx-auto text-center p-8">
         <div className="mb-8">
           <h1 className="text-5xl font-bold text-black mb-4">
             🎬 MBTI 영화 추천
@@ -102,6 +110,7 @@ export default function Home() {
           MBTI 테스트: 약 2분 소요 • 완전 무료<br/>
           영화 탐색: 300개의 엄선된 영화 데이터베이스
         </p>
+        </div>
       </div>
     </div>
   );

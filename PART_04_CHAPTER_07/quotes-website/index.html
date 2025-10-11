@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 명언</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1 class="title">오늘의 명언</h1>
+            <p class="subtitle">당신의 하루를 빛낼 한 마디</p>
+        </header>
+
+        <!-- 검색 영역 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="명언, 작가, 카테고리로 검색하세요..."
+                >
+                <button id="clearSearch" class="clear-btn" style="display: none;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/>
+                    </svg>
+                </button>
+            </div>
+            <button id="randomBtn" class="random-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;">
+                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z"/>
+                </svg>
+                랜덤 명언
+            </button>
+        </div>
+
+        <!-- 현재 표시 중인 명언 카드 -->
+        <div class="quote-display" id="quoteDisplay">
+            <div class="quote-card main-card" id="mainQuoteCard">
+                <div class="quote-content">
+                    <p class="quote-text" id="mainQuoteText">명언을 불러오는 중...</p>
+                </div>
+                <div class="quote-footer">
+                    <p class="quote-author" id="mainQuoteAuthor"></p>
+                    <p class="quote-category" id="mainQuoteCategory"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 검색 결과 영역 -->
+        <div class="search-results" id="searchResults" style="display: none;">
+            <div class="results-header">
+                <h2 class="results-title">검색 결과</h2>
+                <span class="results-count" id="resultsCount">0개</span>
+            </div>
+            <div class="results-grid" id="resultsGrid">
+                <!-- 검색 결과 카드들이 여기에 동적으로 추가됩니다 -->
+            </div>
+        </div>
+
+        <!-- 로딩 스피너 -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -13,6 +13,7 @@ AI를 활용해 대량의 명언 데이터를 생성하고, Supabase를 사용�
 - Database: Supabase PostgreSQL
 - Tools: Supabase MCP, Node.js (데이터 업로드)
 
+![hugging face, my computer, supabase](dataflow.png)
 
 ## 사전 준비: Supabase MCP 설정
 

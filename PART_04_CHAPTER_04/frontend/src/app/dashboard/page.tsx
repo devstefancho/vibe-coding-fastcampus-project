@@ -15,12 +15,25 @@ export default function DashboardPage() {
   const [categoryExpenses, setCategoryExpenses] = useState<{ name: string; value: number; color: string }[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // 현재 월 계산
+  const getCurrentMonth = (): `${number}-${number}` => {
+    return new Date().toISOString().slice(0, 7) as `${number}-${number}`;
+  };
+
+  const formatCurrentMonth = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    return `${year}년 ${month}월`;
+  };
+
   // 데이터 로드 함수
   const loadData = () => {
+    const currentMonthStr = getCurrentMonth();
     const summaries = DataService.getMonthSummaries();
     const currentTransactions = DataService.getCurrentMonthTransactions();
     const recent = DataService.getRecentTransactions(5);
-    const expenses = DataService.getCategoryExpenses('2025-09');
+    const expenses = DataService.getCategoryExpenses(currentMonthStr);
 
     setMonthSummaries(summaries);
     setCurrentMonthTransactions(currentTransactions);
@@ -37,7 +50,8 @@ export default function DashboardPage() {
 
 
   // 현재 월 요약 계산
-  const currentMonth = monthSummaries.find(summary => summary.month === '2025-09');
+  const currentMonthStr = getCurrentMonth();
+  const currentMonth = monthSummaries.find(summary => summary.month === currentMonthStr);
   const currentIncome = currentMonth?.income || 0;
   const currentExpense = currentMonth?.expense || 0;
   const currentNet = currentMonth?.net || 0;
@@ -62,7 +76,7 @@ export default function DashboardPage() {
         {/* 페이지 헤더 */}
         <div>
           <h1 className="text-3xl font-bold text-gray-900">대시보드</h1>
-          <p className="text-gray-600 mt-2">2025년 9월 예산 현황</p>
+          <p className="text-gray-600 mt-2">{formatCurrentMonth()} 예산 현황</p>
         </div>
 
         {/* 로딩 상태 */}

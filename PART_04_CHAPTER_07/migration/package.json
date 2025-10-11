@@ -1,0 +1,20 @@
+{
+  "name": "quotes-migration",
+  "version": "1.0.0",
+  "description": "Upload quotes data to Supabase",
+  "main": "upload-to-supabase.js",
+  "scripts": {
+    "upload": "node upload-to-supabase.js"
+  },
+  "keywords": [
+    "supabase",
+    "migration",
+    "quotes"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1"
+  }
+}

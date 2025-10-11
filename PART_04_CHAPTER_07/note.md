@@ -104,34 +104,104 @@ Supabase MCP가 정상적으로 연결되면:
 이 파일의 내용을 확인하고 Supabase에 업로드할 준비를 해줘.
 ```
 
-4. Supabase 테이블 생성 및 데이터 자동 업로드
+4. Supabase 데이터 마이그레이션
+
+**실제 사용한 프롬프트:**
 
 ```
-> quotes.json 파일을 Supabase에 자동으로 업로드하는 시스템을 만들어줘.
-Supabase MCP로 테이블을 생성하고, Node.js 스크립트로 2000개 데이터를 업로드할 수 있게 해줘.
-진행률 표시와 에러 처리도 포함해줘.
+> 내 작업은 supabase table 생성까지 완료되었다.
+데이터 마이그레이션 작업을 진행하면 될것 같다.
 ```
 
-**Claude Code가 자동으로 처리하는 내용:**
-1. Supabase MCP를 통해 `quotes` 테이블 생성
-2. RLS(Row Level Security) 정책 설정
-3. Node.js 업로드 스크립트 생성 (upload-to-supabase.js)
-4. .env 설정 파일 생성
+```
+> 작업은 이해했다. migration용 디렉토리를 생성해서 거기내에서 작업해줘
+```
 
-**사용자가 할 일:**
-1. Supabase URL과 API Key를 .env 파일에 입력
-2. `npm install @supabase/supabase-js dotenv` 실행
-3. `node upload-to-supabase.js` 실행
+```
+> 1번, 2번까지 진행해줘
+```
+(1번: npm install, 2번: .env 설정)
 
-**예상 결과:**
+```
+> 3단계 진행해줘
+```
+(3번: 데이터 업로드 실행)
+
+---
+
+**Claude Code가 자동으로 처리한 내용:**
+
+1. **migration 디렉토리 생성**
+   ```
+   migration/
+   ├── upload-to-supabase.js    # 업로드 스크립트
+   ├── package.json              # 의존성 관리
+   ├── .env.example              # 환경변수 템플릿
+   └── .env                      # 실제 설정 (자동 생성)
+   ```
+
+2. **upload-to-supabase.js 기능**
+   - quotes.json 파일 읽기 (상위 디렉토리 참조)
+   - 100개씩 배치로 나누어 업로드
+   - 실시간 프로그레스 바 표시
+   - 에러 처리 및 로그 기록
+   - 최종 결과 요약 출력
+
+3. **package.json 생성**
+   - @supabase/supabase-js 의존성
+   - dotenv 의존성
+   - npm run upload 스크립트
+
+4. **환경 변수 자동 설정**
+   - Supabase MCP를 통해 프로젝트 URL 자동 조회
+   - ANON KEY 자동 조회
+   - .env 파일에 자동 입력
+
+5. **RLS 정책 문제 해결**
+   - 첫 업로드 시도: RLS 정책으로 인한 실패 발견
+   - 임시로 public insert 정책 추가
+   - 데이터 업로드 성공
+   - 보안을 위해 authenticated insert 정책으로 복원
+
+---
+
+**실행 과정:**
+
+```bash
+cd migration
+npm install          # 의존성 설치 완료
+# .env 자동 생성됨 (Supabase URL & ANON KEY)
+node upload-to-supabase.js
+```
+
+**실제 업로드 결과:**
 ```
 🚀 Supabase 명언 데이터 업로드 시작
+
+📋 총 2000개의 명언을 발견했습니다.
+
 📋 테이블 확인 중...
 ✅ quotes 테이블이 존재합니다.
+
 📤 업로드 시작 (배치 크기: 100)
+
 [██████████████████████████████████████████████████] 100% (2000/2000)
-🎉 업로드 완료!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 업로드 결과 요약
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ 성공: 2000개
+❌ 실패: 0개
+
+🎉 모든 데이터가 성공적으로 업로드되었습니다!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
+
+**최종 상태:**
+- 테이블: public.quotes
+- 행 수: 2000개
+- RLS: 활성화 (읽기: public, 쓰기: authenticated)
+- 데이터 마이그레이션 완료!
 
 5. Supabase API를 웹사이트에 연동하기
 

@@ -49,6 +49,26 @@
             </button>
         </div>
 
+        <!-- 검색 필터 -->
+        <div class="search-filters">
+            <div class="filter-group">
+                <label class="filter-label">검색 모드:</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-mode="all">전체</button>
+                    <button class="filter-btn" data-mode="quote">명언</button>
+                    <button class="filter-btn" data-mode="author">작가</button>
+                    <button class="filter-btn" data-mode="category">카테고리</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">카테고리 필터:</label>
+                <select id="categoryFilter" class="category-select">
+                    <option value="">전체 카테고리</option>
+                </select>
+            </div>
+        </div>
+
         <!-- 현재 표시 중인 명언 카드 -->
         <div class="quote-display" id="quoteDisplay">
             <div class="quote-card main-card" id="mainQuoteCard">
@@ -60,7 +80,23 @@
                     <p class="quote-category" id="mainQuoteCategory"></p>
                 </div>
             </div>
+
+            <!-- 공유 버튼 그룹 -->
+            <div class="share-buttons">
+                <button class="share-btn btn-download" id="downloadBtn">
+                    📥 PNG 다운로드
+                </button>
+                <button class="share-btn btn-copy" id="copyBtn">
+                    📋 클립보드 복사
+                </button>
+                <button class="share-btn btn-twitter" id="twitterBtn">
+                    🐦 Twitter 공유
+                </button>
+            </div>
         </div>
+
+        <!-- 숨겨진 Canvas (이미지 생성용) -->
+        <canvas id="quoteCanvas" width="1200" height="630" style="display: none;"></canvas>
 
         <!-- 검색 결과 영역 -->
         <div class="search-results" id="searchResults" style="display: none;">
@@ -68,6 +104,7 @@
                 <h2 class="results-title">검색 결과</h2>
                 <span class="results-count" id="resultsCount">0개</span>
             </div>
+
             <div class="results-grid" id="resultsGrid">
                 <!-- 검색 결과 카드들이 여기에 동적으로 추가됩니다 -->
             </div>
@@ -78,6 +115,9 @@
             <div class="spinner"></div>
         </div>
     </div>
+
+    <!-- 메시지 알림 컨테이너 -->
+    <div id="messageContainer"></div>
 
     <script src="app.js"></script>
 </body>

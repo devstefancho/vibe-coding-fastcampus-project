@@ -8,6 +8,8 @@ const supabase = window.supabase.createClient(
 let allQuotes = [];
 let currentQuote = null;
 let searchTimeout = null;
+let searchMode = 'all'; // 'all', 'quote', 'author', 'category'
+let selectedCategory = ''; // 선택된 카테고리 필터
 
 // DOM 요소
 const searchInput = document.getElementById('searchInput');
@@ -28,8 +30,10 @@ async function init() {
     try {
         showLoading();
         await loadQuotes();
+        populateCategoryFilter(); // 카테고리 필터 초기화
         displayRandomQuote();
         setupEventListeners();
+        setupShareButtons(); // 공유 버튼 이벤트 초기화
         hideLoading();
     } catch (error) {
         console.error('초기화 오류:', error);
@@ -132,6 +136,36 @@ function setupEventListeners() {
         searchInput.value = '';
         clearSearchBtn.style.display = 'none';
     });
+
+    // 검색 필터 버튼
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 활성 버튼 변경
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 검색 모드 변경
+            searchMode = btn.dataset.mode;
+
+            // 검색어가 있으면 재검색
+            const query = searchInput.value.trim();
+            if (query) {
+                performSearch(query);
+            }
+        });
+    });
+
+    // 카테고리 필터
+    const categoryFilter = document.getElementById('categoryFilter');
+    categoryFilter.addEventListener('change', () => {
+        selectedCategory = categoryFilter.value;
+
+        // 검색어가 있으면 재검색
+        const query = searchInput.value.trim();
+        if (query) {
+            performSearch(query);
+        }
+    });
 }
 
 // 랜덤 명언 표시
@@ -165,17 +199,61 @@ function displayMainQuote(quote) {
 function performSearch(query) {
     const lowerQuery = query.toLowerCase();
 
-    const results = allQuotes.filter(quote => {
+    let results = allQuotes.filter(quote => {
         const quoteText = quote.quote.toLowerCase();
         const author = quote.author.toLowerCase();
         const category = (quote.category || '').toLowerCase();
 
-        return quoteText.includes(lowerQuery) ||
-               author.includes(lowerQuery) ||
-               category.includes(lowerQuery);
+        // 검색 모드에 따른 필터링
+        let modeMatch = false;
+        switch (searchMode) {
+            case 'quote':
+                modeMatch = quoteText.includes(lowerQuery);
+                break;
+            case 'author':
+                modeMatch = author.includes(lowerQuery);
+                break;
+            case 'category':
+                modeMatch = category.includes(lowerQuery);
+                break;
+            case 'all':
+            default:
+                modeMatch = quoteText.includes(lowerQuery) ||
+                           author.includes(lowerQuery) ||
+                           category.includes(lowerQuery);
+                break;
+        }
+
+        // 카테고리 필터 적용
+        let categoryMatch = true;
+        if (selectedCategory) {
+            categoryMatch = category === selectedCategory.toLowerCase();
+        }
+
+        return modeMatch && categoryMatch;
     });
 
     displaySearchResults(results, query);
+}
+
+// 카테고리 목록 추출 및 필터 드롭다운 채우기
+function populateCategoryFilter() {
+    const categories = new Set();
+    allQuotes.forEach(quote => {
+        if (quote.category) {
+            categories.add(quote.category);
+        }
+    });
+
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sortedCategories = Array.from(categories).sort();
+
+    sortedCategories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+    });
 }
 
 // 검색 결과 표시
@@ -298,6 +376,214 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// 공유 버튼 이벤트 설정
+function setupShareButtons() {
+    document.getElementById('downloadBtn').addEventListener('click', downloadQuoteImage);
+    document.getElementById('copyBtn').addEventListener('click', copyQuoteToClipboard);
+    document.getElementById('twitterBtn').addEventListener('click', shareQuoteToTwitter);
+}
+
+// Canvas에 명언 이미지 생성
+function generateQuoteImage() {
+    if (!currentQuote) return null;
+
+    const canvas = document.getElementById('quoteCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Canvas 초기화
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // 배경 그라데이션
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#6366f1');
+    gradient.addColorStop(0.5, '#8b5cf6');
+    gradient.addColorStop(1, '#ec4899');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 반투명 오버레이
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 명언 텍스트
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 48px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    // 텍스트 줄바꿈 처리
+    const maxWidth = canvas.width - 200;
+    const lineHeight = 70;
+    const words = currentQuote.quote.split(' ');
+    const lines = [];
+    let currentLine = '';
+
+    words.forEach(word => {
+        const testLine = currentLine + word + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && currentLine !== '') {
+            lines.push(currentLine);
+            currentLine = word + ' ';
+        } else {
+            currentLine = testLine;
+        }
+    });
+    lines.push(currentLine);
+
+    // 명언 텍스트 그리기 (중앙)
+    const startY = (canvas.height - lines.length * lineHeight) / 2;
+    lines.forEach((line, index) => {
+        ctx.fillText(line.trim(), canvas.width / 2, startY + index * lineHeight);
+    });
+
+    // 작가명
+    ctx.font = '32px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.fillText(`- ${currentQuote.author}`, canvas.width / 2, canvas.height - 120);
+
+    // 카테고리
+    if (currentQuote.category) {
+        ctx.font = '24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+        ctx.fillText(currentQuote.category.toUpperCase(), canvas.width / 2, canvas.height - 70);
+    }
+
+    return canvas;
+}
+
+// PNG 다운로드
+async function downloadQuoteImage() {
+    const button = document.getElementById('downloadBtn');
+    button.classList.add('loading');
+
+    try {
+        const canvas = generateQuoteImage();
+        if (!canvas) {
+            showMessage('명언을 먼저 선택해주세요.', 'error');
+            return;
+        }
+
+        canvas.toBlob((blob) => {
+            const link = document.createElement('a');
+            link.download = `quote_${new Date().getTime()}.png`;
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            URL.revokeObjectURL(link.href);
+
+            showMessage('이미지가 다운로드되었습니다!', 'success');
+        }, 'image/png', 1.0);
+    } catch (error) {
+        console.error('다운로드 실패:', error);
+        showMessage('다운로드에 실패했습니다.', 'error');
+    } finally {
+        setTimeout(() => {
+            button.classList.remove('loading');
+        }, 500);
+    }
+}
+
+// 클립보드 복사
+async function copyQuoteToClipboard() {
+    const button = document.getElementById('copyBtn');
+    button.classList.add('loading');
+
+    try {
+        const canvas = generateQuoteImage();
+        if (!canvas) {
+            showMessage('명언을 먼저 선택해주세요.', 'error');
+            button.classList.remove('loading');
+            return;
+        }
+
+        canvas.toBlob(async (blob) => {
+            try {
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'image/png': blob
+                    })
+                ]);
+                showMessage('이미지가 클립보드에 복사되었습니다!', 'success');
+            } catch (error) {
+                console.error('클립보드 복사 실패:', error);
+                showMessage('클립보드 복사에 실패했습니다. HTTPS 환경에서만 작동합니다.', 'error');
+            } finally {
+                button.classList.remove('loading');
+            }
+        }, 'image/png', 1.0);
+    } catch (error) {
+        console.error('Blob 변환 실패:', error);
+        showMessage('이미지 복사에 실패했습니다.', 'error');
+        button.classList.remove('loading');
+    }
+}
+
+// Twitter 공유
+async function shareQuoteToTwitter() {
+    const button = document.getElementById('twitterBtn');
+    button.classList.add('loading');
+
+    try {
+        const canvas = generateQuoteImage();
+        if (!canvas) {
+            showMessage('명언을 먼저 선택해주세요.', 'error');
+            button.classList.remove('loading');
+            return;
+        }
+
+        // 먼저 클립보드에 복사
+        canvas.toBlob(async (blob) => {
+            try {
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'image/png': blob
+                    })
+                ]);
+
+                // Twitter 공유 URL 생성
+                const text = `"${currentQuote.quote}" - ${currentQuote.author}`;
+                const hashtags = '오늘의명언,명언,Quotes';
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&hashtags=${encodeURIComponent(hashtags)}`;
+
+                // 새 창으로 Twitter 열기
+                window.open(url, '_blank', 'width=550,height=420');
+
+                // 사용자에게 안내
+                setTimeout(() => {
+                    showMessage('이미지가 클립보드에 복사되었습니다.\nTwitter에서 트윗에 붙여넣기 하세요! (Ctrl+V 또는 Cmd+V)', 'success');
+                }, 500);
+            } catch (error) {
+                console.error('클립보드 복사 실패:', error);
+                showMessage('클립보드 복사에 실패했습니다. HTTPS 환경에서만 작동합니다.', 'error');
+            } finally {
+                button.classList.remove('loading');
+            }
+        }, 'image/png', 1.0);
+    } catch (error) {
+        console.error('Twitter 공유 실패:', error);
+        showMessage('Twitter 공유에 실패했습니다.', 'error');
+        button.classList.remove('loading');
+    }
+}
+
+// 메시지 표시
+function showMessage(message, type = 'success') {
+    const container = document.getElementById('messageContainer');
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    messageDiv.textContent = message;
+
+    container.appendChild(messageDiv);
+
+    // 3초 후 제거
+    setTimeout(() => {
+        messageDiv.classList.add('fade-out');
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 300);
+    }, 3000);
+}
 
 // 앱 시작
 init();

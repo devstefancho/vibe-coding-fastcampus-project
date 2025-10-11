@@ -1,3 +1,9 @@
+// Supabase 클라이언트 초기화
+const supabase = window.supabase.createClient(
+    window.SUPABASE_CONFIG.url,
+    window.SUPABASE_CONFIG.anonKey
+);
+
 // 전역 상태
 let allQuotes = [];
 let currentQuote = null;
@@ -34,9 +40,60 @@ async function init() {
 
 // 명언 데이터 로드
 async function loadQuotes() {
-    const response = await fetch('quotes.json');
-    allQuotes = await response.json();
-    console.log(`${allQuotes.length}개의 명언을 불러왔습니다.`);
+    try {
+        console.log('🔄 Supabase에서 데이터를 불러오는 중...');
+
+        // Supabase에서 모든 명언 데이터 가져오기
+        // Supabase는 한 번에 최대 1000개까지만 반환하므로, 여러 번에 나눠서 가져오기
+        const BATCH_SIZE = 1000;
+        let allData = [];
+        let offset = 0;
+        let hasMore = true;
+
+        while (hasMore) {
+            const { data, error } = await supabase
+                .from('quotes')
+                .select('*')
+                .order('id', { ascending: true })
+                .range(offset, offset + BATCH_SIZE - 1);
+
+            if (error) {
+                console.error('❌ Supabase 에러:', error);
+                throw error;
+            }
+
+            allData = allData.concat(data);
+            console.log(`📦 배치 ${Math.floor(offset / BATCH_SIZE) + 1}: ${data.length}개 로드됨 (누적: ${allData.length}개)`);
+
+            // 받아온 데이터가 BATCH_SIZE보다 적으면 더 이상 데이터가 없음
+            if (data.length < BATCH_SIZE) {
+                hasMore = false;
+            } else {
+                offset += BATCH_SIZE;
+            }
+        }
+
+        allQuotes = allData;
+        console.log(`✅ Supabase에서 총 ${allQuotes.length}개의 명언을 불러왔습니다.`);
+
+        // 디버그: 마지막 5개 데이터 확인
+        console.log('📊 마지막 5개 데이터:', allQuotes.slice(-5).map(q => ({
+            id: q.id,
+            quote: q.quote.substring(0, 30) + '...',
+            author: q.author
+        })));
+
+        // 디버그: "하면 된다." 검색
+        const testQuote = allQuotes.find(q => q.quote === '하면 된다.');
+        if (testQuote) {
+            console.log('✅ "하면 된다." 명언 발견!', testQuote);
+        } else {
+            console.warn('⚠️ "하면 된다." 명언을 찾을 수 없습니다.');
+        }
+    } catch (error) {
+        console.error('❌ Supabase 연결 오류:', error);
+        throw new Error('명언 데이터를 불러오는 중 오류가 발생했습니다. 네트워크 연결을 확인해주세요.');
+    }
 }
 
 // 이벤트 리스너 설정

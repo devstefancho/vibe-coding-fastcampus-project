@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 팀 매칭</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">랜덤 팀 매칭</h1>
+
+        <!-- 프로그레스바 -->
+        <div class="progress-container">
+            <div class="progress-step active" data-step="1">
+                <div class="progress-circle">1</div>
+                <div class="progress-label">설정</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="2">
+                <div class="progress-circle">2</div>
+                <div class="progress-label">이름 입력</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="3">
+                <div class="progress-circle">3</div>
+                <div class="progress-label">매칭 중</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="4">
+                <div class="progress-circle">4</div>
+                <div class="progress-label">결과</div>
+            </div>
+        </div>
+
+        <!-- 섹션 1: 설정 -->
+        <section id="section-1" class="section active">
+            <div class="content-box">
+                <h2>매칭 모드 선택</h2>
+                <div class="mode-selection">
+                    <label class="mode-option">
+                        <input type="radio" name="mode" value="equal" checked>
+                        <div class="mode-card">
+                            <h3>균등 분배</h3>
+                            <p>팀 개수를 입력하면<br>인원을 고르게 분배합니다</p>
+                        </div>
+                    </label>
+                    <label class="mode-option">
+                        <input type="radio" name="mode" value="fixed">
+                        <div class="mode-card">
+                            <h3>고정 인원</h3>
+                            <p>팀당 인원수를 정하면<br>필요한 팀을 자동 생성합니다</p>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="equal-mode-input" class="mode-input">
+                    <label for="team-count">팀 개수</label>
+                    <input type="number" id="team-count" min="2" max="10" value="2" placeholder="팀 개수 입력">
+                </div>
+
+                <div id="fixed-mode-input" class="mode-input" style="display: none;">
+                    <label for="members-per-team">팀당 인원 수</label>
+                    <input type="number" id="members-per-team" min="2" max="10" value="3" placeholder="팀당 인원 수 입력">
+                </div>
+
+                <button class="btn btn-primary" onclick="goToSection(2)">다음</button>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 이름 입력 -->
+        <section id="section-2" class="section">
+            <div class="content-box">
+                <h2>참가자 이름 입력</h2>
+                <p class="description">한 줄에 한 명씩 입력해주세요</p>
+                <textarea id="member-input" placeholder="홍길동&#10;김철수&#10;이영희&#10;박민수&#10;최지우"></textarea>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToSection(1)">이전</button>
+                    <button class="btn btn-primary" onclick="goToSection(3)">매칭 시작</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 매칭 중 -->
+        <section id="section-3" class="section">
+            <div class="content-box">
+                <h2>팀을 매칭하고 있습니다...</h2>
+                <div id="shuffle-container" class="shuffle-container">
+                    <!-- 카드 셔플 애니메이션이 들어갈 영역 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 결과 -->
+        <section id="section-4" class="section">
+            <div class="content-box">
+                <h2>팀 매칭 완료!</h2>
+                <div id="capture-area">
+                    <div id="result-container" class="result-container">
+                        <!-- 팀 결과가 카드 형태로 표시됨 -->
+                    </div>
+                </div>
+                <div class="share-buttons">
+                    <button class="btn btn-share" onclick="downloadImage()">
+                        <span>📥</span> 이미지 다운로드
+                    </button>
+                    <button class="btn btn-share" onclick="copyImageToClipboard()">
+                        <span>📋</span> 이미지 복사
+                    </button>
+                    <button class="btn btn-share" onclick="shareToTwitter()">
+                        <span>🐦</span> Twitter 공유
+                    </button>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToSection(1)">다시 하기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

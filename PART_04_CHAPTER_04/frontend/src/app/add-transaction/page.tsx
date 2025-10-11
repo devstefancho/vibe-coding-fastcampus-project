@@ -106,7 +106,7 @@ export default function AddTransactionPage() {
           </button>
           <div>
             <h1 className="text-3xl font-bold text-gray-900">거래 추가</h1>
-            <p className="text-gray-600 mt-2">새로운 수입 또는 지출을 기록하세요</p>
+            <p className="text-black mt-2">새로운 수입 또는 지출을 기록하세요</p>
           </div>
         </div>
 
@@ -115,7 +115,7 @@ export default function AddTransactionPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* 날짜 */}
             <div>
-              <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="date" className="block text-sm font-medium text-black mb-2">
                 날짜 *
               </label>
               <input
@@ -130,7 +130,7 @@ export default function AddTransactionPage() {
 
             {/* 거래 유형 */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-black mb-2">
                 거래 유형 *
               </label>
               <div className="grid grid-cols-2 gap-4">
@@ -145,7 +145,7 @@ export default function AddTransactionPage() {
                 >
                   <div className="text-center">
                     <div className="text-lg font-semibold">수입</div>
-                    <div className="text-sm text-gray-600">돈이 들어오는 거래</div>
+                    <div className={`text-sm ${formData.type === 'income' ? 'text-green-600' : 'text-black'}`}>돈이 들어오는 거래</div>
                   </div>
                 </button>
                 <button
@@ -159,7 +159,7 @@ export default function AddTransactionPage() {
                 >
                   <div className="text-center">
                     <div className="text-lg font-semibold">지출</div>
-                    <div className="text-sm text-gray-600">돈이 나가는 거래</div>
+                    <div className={`text-sm ${formData.type === 'expense' ? 'text-red-600' : 'text-black'}`}>돈이 나가는 거래</div>
                   </div>
                 </button>
               </div>
@@ -167,7 +167,7 @@ export default function AddTransactionPage() {
 
             {/* 금액 */}
             <div>
-              <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="amount" className="block text-sm font-medium text-black mb-2">
                 금액 (원) *
               </label>
               <input
@@ -185,7 +185,7 @@ export default function AddTransactionPage() {
 
             {/* 카테고리 */}
             <div>
-              <label htmlFor="categoryId" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="categoryId" className="block text-sm font-medium text-black mb-2">
                 카테고리 *
               </label>
               <select
@@ -206,7 +206,7 @@ export default function AddTransactionPage() {
 
             {/* 메모 */}
             <div>
-              <label htmlFor="memo" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="memo" className="block text-sm font-medium text-black mb-2">
                 메모
               </label>
               <textarea
@@ -224,7 +224,7 @@ export default function AddTransactionPage() {
               <button
                 type="button"
                 onClick={() => router.back()}
-                className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                className="px-6 py-2 border border-gray-300 rounded-lg text-black hover:bg-gray-50 transition-colors"
               >
                 취소
               </button>

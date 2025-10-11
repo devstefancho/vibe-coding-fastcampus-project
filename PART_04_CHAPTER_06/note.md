@@ -75,3 +75,51 @@ Clipboard API와 Web Share API를 활용해줘
 ```
 > 드래그 외에도 X, Y 좌표와 회전 각도를 숫자로 직접 입력받아서 정밀하게 조정할 수 있도록 개선해줘
 ```
+
+---
+
+## Claude Code 권한 관리 시스템
+
+### `/permissions` 명령어
+
+Claude Code에서 MCP 도구와 작업 디렉토리에 대한 권한을 관리하는 명령어입니다.
+
+#### Allow 섹션
+
+- 도구 접두사를 등록하여 해당 접두사로 시작하는 모든 도구를 자동으로 승인
+- 예시: `mcp__playwright`를 등록하면 `mcp__playwright__browser_navigate`, `mcp__playwright__browser_close` 등 모든 Playwright 도구가 자동 승인됨
+- **주의**: `mcp__playwright__*` 같은 와일드카드 패턴은 유효하지 않음. 접두사만 입력해야 함
+
+#### Ask 섹션
+
+- 특정 도구 이름을 등록하여 사용 시 항상 사용자 확인을 요청
+- 예시: `mcp__playwright__browser_close`를 등록하면 브라우저를 닫을 때마다 사용자에게 확인 요청
+- 전체 도구 이름을 정확히 입력해야 함
+
+#### Deny 섹션
+
+- 특정 도구 이름을 등록하여 사용을 항상 거부
+- 등록된 도구는 Claude Code가 사용할 수 없음
+
+#### Workspace 섹션
+
+- `/add-dir` 명령어로 추가한 작업 디렉토리 목록이 표시됨
+- 여러 프로젝트를 동시에 작업할 때 유용함
+
+### `/mcp` 명령어
+
+- 현재 설치된 MCP 서버와 사용 가능한 도구 이름을 확인할 수 있는 명령어
+- 권한 설정 시 정확한 도구 이름을 확인하는 데 사용
+
+### `/add-dir` 명령어
+
+- 추가 작업 디렉토리를 등록하는 명령어
+- 등록된 디렉토리는 `/permissions`의 Workspace 섹션에 표시됨
+
+#### 사용 예시
+
+```
+/add-dir /Users/Shared/SharedFastCampus/lectures/PART_04_CHAPTER_05
+```
+
+위 명령어를 실행하면 PART_04_CHAPTER_05 디렉토리가 작업 공간에 추가되어, Claude Code가 해당 디렉토리의 파일들에도 접근할 수 있게 됩니다.

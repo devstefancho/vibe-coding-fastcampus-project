@@ -35,9 +35,45 @@ Claude Code에서 Supabase를 직접 제어할 수 있게 해주는 연결 도�
 ```
 명령어 실행 시 "Connected to supabase" 메시지가 보이면 성공!
 
+**연결 후 데이터베이스 확인:**
+```
+> supabase에 연결된 database 확인해줘
+```
+
+Supabase MCP가 정상적으로 연결되면:
+- 데이터베이스 스키마 목록 확인 가능 (auth, storage, public)
+- 테이블 목록 및 구조 확인 가능
+- 설치된 확장 기능 확인 가능
+- 마이그레이션 이력 확인 가능
+
+이제 Claude Code에서 직접 테이블을 생성하고 관리할 수 있습니다!
+
 ---
 
 ## Prompt
+
+0. Supabase 테이블 설정
+
+```
+> @note.md 를 읽어보고, 여기 기반으로 table 세팅해줘
+```
+
+**자동 처리 내용:**
+1. quotes.json 파일 구조 분석
+2. Supabase MCP로 마이그레이션 생성 및 실행
+3. quotes 테이블 생성 (id, quote, author, category, created_at)
+4. 검색 최적화 인덱스 생성 (작가명, 카테고리, 전문검색용 GIN)
+5. RLS 정책 설정 (공개 읽기, 인증된 쓰기)
+
+**생성 결과 확인:**
+- 테이블: public.quotes
+- 행 수: 0개 (데이터 업로드 대기 중)
+- RLS: 활성화됨
+- 인덱스: 3개 (성능 최적화)
+
+이제 quotes.json 데이터를 업로드할 준비가 완료되었습니다!
+
+---
 
 1. 명언 추천 웹서비스 기본 구조 만들기
 

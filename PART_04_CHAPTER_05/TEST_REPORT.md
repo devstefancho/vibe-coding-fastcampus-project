@@ -307,6 +307,114 @@ result.push({
 
 ---
 
+### 2. 이미지 캡처 - 빈 화면 버그 ❌
+
+**심각도**: 높음 (High)
+**발견 일시**: 2025-10-11 (후속 테스트)
+**상태**: ✅ 수정 완료
+
+#### 버그 상세
+
+**현상**:
+- "이미지 다운로드", "이미지 복사" 클릭 시 빈 회색 박스만 캡처됨
+- 브라우저 화면에는 팀 결과가 정상 표시되지만, html2canvas가 투명한 이미지 생성
+- Twitter 공유 시에도 빈 이미지 붙여넣기
+
+**재현 단계**:
+1. 팀 매칭 완료 (결과 화면 정상 표시 확인)
+2. "이미지 다운로드" 버튼 클릭
+3. 다운로드된 PNG 파일 열기
+4. 결과: 빈 회색 박스 (팀 카드 없음)
+
+**근본 원인**:
+```css
+/* style.css:506-514 - 문제의 CSS */
+.team-card {
+    opacity: 0;  /* ⚠️ 초기값이 문제 */
+    transform: translateY(30px);
+    animation: slideUp 0.5s ease forwards;
+}
+```
+
+html2canvas가 DOM을 복제할 때:
+- 브라우저는 애니메이션 완료 후 시각적으로 `opacity: 1` 표시
+- 하지만 CSS 정의상 초기 `opacity: 0`이 여전히 존재
+- html2canvas는 **애니메이션의 최종 상태가 아닌 CSS 정의 상태**를 캡처
+- 결과: 투명한 팀 카드 → 빈 배경만 렌더링
+
+**시도한 해결책 (실패)**:
+```javascript
+// ❌ 대기 시간만 늘리기 - 효과 없음
+await new Promise(resolve => setTimeout(resolve, 2000));
+```
+
+**최종 해결책**:
+```javascript
+// script.js:442-492 - !important로 강제 스타일 덮어쓰기
+async function captureResultImage() {
+    const teamCards = document.querySelectorAll('.team-card');
+    const memberTags = document.querySelectorAll('.member-tag');
+
+    // !important로 CSS 애니메이션 초기값 무효화
+    teamCards.forEach(card => {
+        card.style.setProperty('opacity', '1', 'important');
+        card.style.setProperty('transform', 'translateY(0)', 'important');
+        card.style.setProperty('animation', 'none', 'important');
+    });
+
+    memberTags.forEach(tag => {
+        tag.style.setProperty('opacity', '1', 'important');
+        tag.style.setProperty('transform', 'scale(1)', 'important');
+        tag.style.setProperty('animation', 'none', 'important');
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    const canvas = await html2canvas(captureArea, {
+        backgroundColor: '#f8fafc',
+        scale: 2,
+        logging: false,
+        useCORS: true
+    });
+
+    // 캡처 후 스타일 복원 (다음 애니메이션 유지)
+    teamCards.forEach(card => {
+        card.style.removeProperty('opacity');
+        card.style.removeProperty('transform');
+        card.style.removeProperty('animation');
+    });
+
+    return canvas;
+}
+```
+
+**핵심 포인트**:
+1. `setProperty()` 세 번째 인자 `'important'`로 CSS 우선순위 최상위 설정
+2. 캡처 전 100ms 대기로 DOM 업데이트 보장
+3. 캡처 후 `removeProperty()`로 원래 애니메이션 복원
+
+**수정 전/후 비교**:
+
+| 항목 | 수정 전 | 수정 후 |
+|-----|--------|--------|
+| 다운로드 이미지 | ❌ 빈 회색 박스 | ✅ 팀 카드 정상 표시 |
+| 클립보드 복사 | ❌ 빈 이미지 | ✅ 정상 이미지 |
+| Twitter 공유 | ❌ 빈 박스 붙여넣기 | ✅ 정상 이미지 붙여넣기 |
+| 파일 크기 | ~5KB | ~50KB (정상) |
+| 이미지 해상도 | 1408×932px | 1408×932px |
+
+**재테스트 결과**: ✅ **PASS**
+- 모든 공유 기능 정상 작동
+- 팀 카드, 멤버 태그, 그라데이션 배경 모두 정상 캡처
+- 다음 매칭 시에도 애니메이션 정상 작동 (스타일 복원 확인)
+
+**교훈**:
+- html2canvas는 CSS 애니메이션의 최종 상태를 자동으로 캡처하지 않음
+- 초기 `opacity: 0` 대신 애니메이션 `from` 블록 사용 권장
+- 또는 캡처 시점에 명시적으로 스타일 덮어쓰기 필요
+
+---
+
 ## 📊 성능 측정
 
 | 항목 | 측정값 |

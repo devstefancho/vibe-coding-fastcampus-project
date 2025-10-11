@@ -444,12 +444,45 @@ async function captureResultImage() {
     const captureArea = document.getElementById('capture-area');
 
     try {
+        // 팀 카드와 멤버 태그의 애니메이션을 강제로 완료 상태로 설정
+        const teamCards = document.querySelectorAll('.team-card');
+        const memberTags = document.querySelectorAll('.member-tag');
+
+        teamCards.forEach(card => {
+            card.style.setProperty('opacity', '1', 'important');
+            card.style.setProperty('transform', 'translateY(0)', 'important');
+            card.style.setProperty('animation', 'none', 'important');
+        });
+
+        memberTags.forEach(tag => {
+            tag.style.setProperty('opacity', '1', 'important');
+            tag.style.setProperty('transform', 'scale(1)', 'important');
+            tag.style.setProperty('animation', 'none', 'important');
+        });
+
+        // DOM 업데이트 대기
+        await new Promise(resolve => setTimeout(resolve, 100));
+
         const canvas = await html2canvas(captureArea, {
             backgroundColor: '#f8fafc',
             scale: 2,
             logging: false,
             useCORS: true
         });
+
+        // 스타일 복원
+        teamCards.forEach(card => {
+            card.style.removeProperty('opacity');
+            card.style.removeProperty('transform');
+            card.style.removeProperty('animation');
+        });
+
+        memberTags.forEach(tag => {
+            tag.style.removeProperty('opacity');
+            tag.style.removeProperty('transform');
+            tag.style.removeProperty('animation');
+        });
+
         return canvas;
     } catch (error) {
         console.error('이미지 생성 실패:', error);

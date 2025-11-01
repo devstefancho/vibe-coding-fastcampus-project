@@ -6,6 +6,7 @@ export interface BucketList {
   user_id: string;
   created_at: string;
   updated_at: string;
+  user_email?: string; // Added for social features
 }
 
 export interface Comment {

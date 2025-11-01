@@ -10,6 +10,7 @@ import {
 import { supabase } from '../lib/supabase';
 import { BucketList } from '../lib/types';
 import { CommentSection } from '../components/CommentSection';
+import { useAuth } from '../contexts/AuthContext';
 
 interface DetailScreenProps {
   item: BucketList;
@@ -20,6 +21,9 @@ interface DetailScreenProps {
 export const DetailScreen: React.FC<DetailScreenProps> = ({ item, onBack, onEdit }) => {
   const [bucketList, setBucketList] = useState<BucketList>(item);
   const [updating, setUpdating] = useState(false);
+  const { session } = useAuth();
+
+  const isOwnItem = session?.user.id === bucketList.user_id;
 
   // Sync local state when item prop changes (e.g., after edit)
   useEffect(() => {
@@ -88,9 +92,11 @@ export const DetailScreen: React.FC<DetailScreenProps> = ({ item, onBack, onEdit
         <TouchableOpacity onPress={onBack} style={styles.backButton}>
           <Text style={styles.backButtonText}>← Back</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={onEdit} style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit</Text>
-        </TouchableOpacity>
+        {isOwnItem && (
+          <TouchableOpacity onPress={onEdit} style={styles.editButton}>
+            <Text style={styles.editButtonText}>Edit</Text>
+          </TouchableOpacity>
+        )}
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
@@ -104,6 +110,16 @@ export const DetailScreen: React.FC<DetailScreenProps> = ({ item, onBack, onEdit
             {bucketList.title}
           </Text>
           <Text style={styles.date}>Created {formatDate(bucketList.created_at)}</Text>
+          {bucketList.user_email && (
+            <Text style={styles.author}>
+              By: {bucketList.user_email}
+            </Text>
+          )}
+          {!isOwnItem && (
+            <View style={styles.readOnlyBadge}>
+              <Text style={styles.readOnlyText}>👁️ Read-only (Not your bucket list)</Text>
+            </View>
+          )}
         </View>
 
         <View style={styles.contentSection}>
@@ -117,33 +133,35 @@ export const DetailScreen: React.FC<DetailScreenProps> = ({ item, onBack, onEdit
           </Text>
         </View>
 
-        <View style={styles.actionsSection}>
-          <TouchableOpacity
-            style={[
-              styles.completeButton,
-              bucketList.completed && styles.completeButtonActive,
-              updating && styles.buttonDisabled,
-            ]}
-            onPress={handleToggleComplete}
-            disabled={updating}
-          >
-            <Text
+        {isOwnItem && (
+          <View style={styles.actionsSection}>
+            <TouchableOpacity
               style={[
-                styles.completeButtonText,
-                bucketList.completed && styles.completeButtonTextActive,
+                styles.completeButton,
+                bucketList.completed && styles.completeButtonActive,
+                updating && styles.buttonDisabled,
               ]}
+              onPress={handleToggleComplete}
+              disabled={updating}
             >
-              {bucketList.completed ? '✓ Completed' : 'Mark as Complete'}
-            </Text>
-          </TouchableOpacity>
+              <Text
+                style={[
+                  styles.completeButtonText,
+                  bucketList.completed && styles.completeButtonTextActive,
+                ]}
+              >
+                {bucketList.completed ? '✓ Completed' : 'Mark as Complete'}
+              </Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.deleteButton}
-            onPress={handleDelete}
-          >
-            <Text style={styles.deleteButtonText}>Delete</Text>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity
+              style={styles.deleteButton}
+              onPress={handleDelete}
+            >
+              <Text style={styles.deleteButtonText}>Delete</Text>
+            </TouchableOpacity>
+          </View>
+        )}
 
         <CommentSection bucketListId={bucketList.id} />
       </ScrollView>
@@ -203,6 +221,25 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 14,
     color: '#999',
+  },
+  author: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 4,
+    fontStyle: 'italic',
+  },
+  readOnlyBadge: {
+    backgroundColor: '#FFF3CD',
+    borderWidth: 1,
+    borderColor: '#FFC107',
+    borderRadius: 8,
+    padding: 12,
+    marginTop: 12,
+  },
+  readOnlyText: {
+    color: '#856404',
+    fontSize: 14,
+    textAlign: 'center',
   },
   contentSection: {
     marginBottom: 24,

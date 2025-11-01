@@ -27,17 +27,31 @@ export const BucketListScreen: React.FC<BucketListScreenProps> = ({
   const [bucketLists, setBucketLists] = useState<BucketList[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [filterMode, setFilterMode] = useState<'all' | 'mine'>('all');
   const { session } = useAuth();
 
   const fetchBucketLists = async () => {
     try {
-      const { data, error } = await supabase
+      // Fetch bucket lists with user email using join
+      // Note: This requires a database view or function to access auth.users
+      // For simplicity, we'll use RPC or just display user_id initially
+      const { data: bucketListData, error: bucketListError } = await supabase
         .from('bucket_lists')
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (error) throw error;
-      setBucketLists(data || []);
+      if (bucketListError) throw bucketListError;
+
+      // Enrich with current user's email for matching user_ids
+      if (bucketListData && session) {
+        const enrichedData = bucketListData.map(item => ({
+          ...item,
+          user_email: item.user_id === session.user.id ? session.user.email : item.user_id.substring(0, 8) + '...',
+        }));
+        setBucketLists(enrichedData);
+      } else {
+        setBucketLists(bucketListData || []);
+      }
     } catch (error: any) {
       Alert.alert('Error', error.message);
     } finally {
@@ -49,7 +63,7 @@ export const BucketListScreen: React.FC<BucketListScreenProps> = ({
   useEffect(() => {
     fetchBucketLists();
 
-    // Subscribe to changes
+    // Subscribe to changes (all bucket lists now)
     const subscription = supabase
       .channel('bucket_lists_changes')
       .on(
@@ -58,7 +72,6 @@ export const BucketListScreen: React.FC<BucketListScreenProps> = ({
           event: '*',
           schema: 'public',
           table: 'bucket_lists',
-          filter: `user_id=eq.${session?.user.id}`,
         },
         () => {
           fetchBucketLists();
@@ -76,29 +89,53 @@ export const BucketListScreen: React.FC<BucketListScreenProps> = ({
     fetchBucketLists();
   };
 
+  const filteredBucketLists = filterMode === 'mine'
+    ? bucketLists.filter(item => item.user_id === session?.user.id)
+    : bucketLists;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>My Bucket Lists</Text>
+        <Text style={styles.headerTitle}>Bucket Lists</Text>
+        <View style={styles.filterContainer}>
+          <TouchableOpacity
+            style={[styles.filterButton, filterMode === 'all' && styles.filterButtonActive]}
+            onPress={() => setFilterMode('all')}
+          >
+            <Text style={[styles.filterText, filterMode === 'all' && styles.filterTextActive]}>All</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.filterButton, filterMode === 'mine' && styles.filterButtonActive]}
+            onPress={() => setFilterMode('mine')}
+          >
+            <Text style={[styles.filterText, filterMode === 'mine' && styles.filterTextActive]}>Mine</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {loading ? (
         <View style={styles.emptyContainer}>
           <Text style={styles.emptyText}>Loading...</Text>
         </View>
-      ) : bucketLists.length === 0 ? (
+      ) : filteredBucketLists.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No bucket lists yet</Text>
+          <Text style={styles.emptyText}>
+            {filterMode === 'mine' ? 'No bucket lists yet' : 'No bucket lists found'}
+          </Text>
           <Text style={styles.emptySubtext}>
-            Tap the + button to create your first one!
+            {filterMode === 'mine' ? 'Tap the + button to create your first one!' : 'Try switching to "Mine" to create one!'}
           </Text>
         </View>
       ) : (
         <FlatList
-          data={bucketLists}
+          data={filteredBucketLists}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <BucketListItem item={item} onPress={() => onItemPress(item)} />
+            <BucketListItem
+              item={item}
+              onPress={() => onItemPress(item)}
+              isOwnItem={item.user_id === session?.user.id}
+            />
           )}
           contentContainerStyle={styles.listContent}
           refreshControl={
@@ -131,6 +168,31 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: '#333',
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    marginTop: 12,
+    gap: 8,
+  },
+  filterButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#f0f0f0',
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  filterButtonActive: {
+    backgroundColor: '#007AFF',
+    borderColor: '#007AFF',
+  },
+  filterText: {
+    fontSize: 14,
+    color: '#666',
+    fontWeight: '500',
+  },
+  filterTextActive: {
+    color: '#fff',
   },
   listContent: {
     paddingVertical: 8,

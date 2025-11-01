@@ -99,6 +99,8 @@ export const CommentSection: React.FC<CommentSectionProps> = ({ bucketListId }) 
               .eq('id', commentId);
 
             if (error) throw error;
+
+            await fetchComments();
           } catch (error: any) {
             Alert.alert('Error', error.message);
           }

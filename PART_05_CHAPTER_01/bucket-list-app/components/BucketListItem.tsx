@@ -5,21 +5,32 @@ import { BucketList } from '../lib/types';
 interface BucketListItemProps {
   item: BucketList;
   onPress: () => void;
+  isOwnItem?: boolean;
 }
 
-export const BucketListItem: React.FC<BucketListItemProps> = ({ item, onPress }) => {
+export const BucketListItem: React.FC<BucketListItemProps> = ({ item, onPress, isOwnItem = false }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.container, isOwnItem && styles.ownItemContainer]}
+      onPress={onPress}
+    >
       <View style={styles.content}>
-        <Text
-          style={[
-            styles.title,
-            item.completed && styles.completedTitle,
-          ]}
-          numberOfLines={1}
-        >
-          {item.title}
-        </Text>
+        <View style={styles.header}>
+          <Text
+            style={[
+              styles.title,
+              item.completed && styles.completedTitle,
+            ]}
+            numberOfLines={1}
+          >
+            {item.title}
+          </Text>
+          {isOwnItem && (
+            <View style={styles.ownBadge}>
+              <Text style={styles.ownBadgeText}>Mine</Text>
+            </View>
+          )}
+        </View>
         <Text
           style={[
             styles.description,
@@ -29,6 +40,11 @@ export const BucketListItem: React.FC<BucketListItemProps> = ({ item, onPress })
         >
           {item.content}
         </Text>
+        {item.user_email && (
+          <Text style={styles.author}>
+            By: {item.user_email}
+          </Text>
+        )}
       </View>
       <View style={styles.statusContainer}>
         {item.completed ? (
@@ -58,15 +74,43 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 3,
   },
+  ownItemContainer: {
+    borderLeftWidth: 4,
+    borderLeftColor: '#007AFF',
+  },
   content: {
     flex: 1,
     marginRight: 12,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 4,
   },
   title: {
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
-    marginBottom: 4,
+    flex: 1,
+  },
+  ownBadge: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 8,
+    marginLeft: 8,
+  },
+  ownBadgeText: {
+    color: '#fff',
+    fontSize: 10,
+    fontWeight: 'bold',
+  },
+  author: {
+    fontSize: 12,
+    color: '#888',
+    marginTop: 4,
+    fontStyle: 'italic',
   },
   completedTitle: {
     textDecorationLine: 'line-through',

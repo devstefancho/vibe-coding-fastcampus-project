@@ -56,6 +56,7 @@ React Native와 Expo를 사용해 모바일 저속노화식단 관리 앱을 만
 > React Native Expo로 저속노화식단 관리 앱을 만들려고 해.
 TypeScript를 사용하고, 기본 프로젝트 구조를 생성해줘.
 프로젝트 이름은 anti-aging-diet-app으로 해줘.
+localhost port는 8082를 사용해줘.
 ```
 
 > 앱 생성이 완료되었으면, VS Code에서 terminal을 추가로 열고 `npm run start`로 서버를 실행하세요. 휴대폰 카메라로 QR 코드를 찍어서 expo 앱으로 들어가면 앱이 실행됩니다.

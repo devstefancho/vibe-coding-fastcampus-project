@@ -172,8 +172,16 @@ async function savePage() {
     // 버튼 피드백
     showButtonFeedback(elements.saveBtn, '저장됨!');
 
-    // Background에 상태 변경 알림
-    chrome.runtime.sendMessage({ action: 'updateIcon', url: currentUrl });
+    // Background에 상태 변경 알림 (Storage 동기화를 위한 지연)
+    setTimeout(() => {
+      chrome.runtime.sendMessage({ action: 'updateIcon', url: currentUrl }, (response) => {
+        if (response && response.success) {
+          console.log('아이콘 업데이트 성공');
+        } else {
+          console.log('아이콘 업데이트 실패 또는 응답 없음');
+        }
+      });
+    }, 150);
 
   } catch (error) {
     console.error('저장 실패:', error);
@@ -198,8 +206,16 @@ async function deletePage() {
     // 버튼 피드백
     showButtonFeedback(elements.deleteBtn, '삭제됨!');
 
-    // Background에 상태 변경 알림
-    chrome.runtime.sendMessage({ action: 'updateIcon', url: currentUrl });
+    // Background에 상태 변경 알림 (Storage 동기화를 위한 지연)
+    setTimeout(() => {
+      chrome.runtime.sendMessage({ action: 'updateIcon', url: currentUrl }, (response) => {
+        if (response && response.success) {
+          console.log('아이콘 업데이트 성공');
+        } else {
+          console.log('아이콘 업데이트 실패 또는 응답 없음');
+        }
+      });
+    }, 150);
 
   } catch (error) {
     console.error('삭제 실패:', error);
@@ -299,8 +315,16 @@ function createPageItem(url, page) {
         await checkCurrentPageStatus();
       }
 
-      // Background에 상태 변경 알림
-      chrome.runtime.sendMessage({ action: 'updateIcon', url: urlToDelete });
+      // Background에 상태 변경 알림 (Storage 동기화를 위한 지연)
+      setTimeout(() => {
+        chrome.runtime.sendMessage({ action: 'updateIcon', url: urlToDelete }, (response) => {
+          if (response && response.success) {
+            console.log('아이콘 업데이트 성공');
+          } else {
+            console.log('아이콘 업데이트 실패 또는 응답 없음');
+          }
+        });
+      }, 150);
 
     } catch (error) {
       console.error('삭제 실패:', error);

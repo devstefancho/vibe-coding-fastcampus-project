@@ -1,4 +1,4 @@
-## ScrollKeeper - 페이지 메모 & 스크롤 위치 북마크
+## ScrollSaver - 페이지 메모 & 스크롤 위치 북마크
 
 ## 목적
 
@@ -30,7 +30,7 @@
 ## 프로젝트 구조
 
 ```
-scrollkeeper/
+scrollsaver/
 ├── manifest.json              # 확장프로그램 설정 파일
 ├── popup/                     # 팝업 UI
 │   ├── popup.html
@@ -69,11 +69,11 @@ scrollkeeper/
 ### 1. 크롬 확장프로그램 프로젝트 초기 설정
 
 ```markdown
-ScrollKeeper라는 크롬 확장프로그램 프로젝트를 생성해줘.
+ScrollSaver라는 크롬 확장프로그램 프로젝트를 생성해줘.
 
 **프로젝트 요구사항:**
 - Manifest V3 사용
-- 이름: "ScrollKeeper"
+- 이름: "ScrollSaver"
 - 설명: "웹페이지의 메모와 스크롤 위치를 저장하고 관리하는 확장프로그램"
 - 필요한 권한: storage, tabs, scripting, activeTab
 - 모든 웹페이지에 접근 가능하도록 설정
@@ -89,7 +89,7 @@ manifest.json 파일을 완성하고, 나머지 파일들은 빈 파일로 생�
 ### 2. 확장프로그램 아이콘 생성
 
 ```markdown
-ScrollKeeper 확장프로그램의 아이콘을 생성해줘.
+ScrollSaver 확장프로그램의 아이콘을 생성해줘.
 
 **요구사항:**
 - 활성 상태 아이콘: 파란색 북마크 모양 (페이지가 저장된 경우)
@@ -112,7 +112,7 @@ SVG를 PNG로 변환하거나, Canvas를 사용해서 직접 생성하는 방법
 **UI 구성:**
 
 1. **헤더:**
-   - 제목: "ScrollKeeper"
+   - 제목: "ScrollSaver"
    - 현재 페이지 저장 여부 표시
 
 2. **현재 페이지 섹션:**
@@ -207,7 +207,7 @@ background.js를 구현해줘.
 ### 6. 기능 개선 및 최적화
 
 ```markdown
-ScrollKeeper의 사용자 경험을 개선해줘.
+ScrollSaver의 사용자 경험을 개선해줘.
 
 **개선 사항:**
 
@@ -232,7 +232,7 @@ ScrollKeeper의 사용자 경험을 개선해줘.
 ### 7. 테스트 및 배포 준비
 
 ```markdown
-ScrollKeeper를 테스트하고 배포 준비를 해줘.
+ScrollSaver를 테스트하고 배포 준비를 해줘.
 
 **테스트 항목:**
 - Chrome에서 확장프로그램 로드 (chrome://extensions)
@@ -261,7 +261,7 @@ ScrollKeeper를 테스트하고 배포 준비를 해줘.
 ### 2. 확장프로그램 리로드 방법
 코드 수정 후 반드시 확장프로그램을 리로드해야 변경사항이 반영됩니다:
 1. `chrome://extensions` 접속
-2. ScrollKeeper 카드에서 **새로고침 버튼** 클릭
+2. ScrollSaver 카드에서 **새로고침 버튼** 클릭
 3. 또는 개발자 모드에서 **Reload** 버튼 클릭
 
 ### 3. 특수 페이지 제한사항

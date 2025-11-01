@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>ScrollSaver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 헤더 -->
+    <header class="header">
+      <h1 class="title">ScrollSaver</h1>
+      <div class="status" id="status">
+        <span class="status-indicator" id="statusIndicator"></span>
+        <span class="status-text" id="statusText">로딩 중...</span>
+      </div>
+    </header>
+
+    <!-- 현재 페이지 섹션 -->
+    <section class="current-page" id="currentPageSection">
+      <h2 class="section-title">현재 페이지</h2>
+      <div class="page-info">
+        <div class="page-title" id="pageTitle">페이지 제목</div>
+      </div>
+
+      <div class="memo-container">
+        <label for="memoInput" class="memo-label">
+          메모
+          <span class="char-count">
+            <span id="charCount">0</span>/100
+          </span>
+        </label>
+        <textarea
+          id="memoInput"
+          class="memo-input"
+          placeholder="이 페이지에 대한 메모를 작성하세요..."
+          maxlength="100"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="action-buttons">
+        <button id="saveBtn" class="btn btn-primary">저장</button>
+        <button id="deleteBtn" class="btn btn-danger" style="display: none;">삭제</button>
+      </div>
+    </section>
+
+    <!-- 저장된 페이지 목록 -->
+    <section class="saved-pages">
+      <div class="section-header">
+        <h2 class="section-title">저장된 페이지</h2>
+      </div>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="제목 또는 메모로 검색..."
+        >
+      </div>
+
+      <div class="page-list" id="pageList">
+        <div class="empty-state" id="emptyState">
+          저장된 페이지가 없습니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <span id="pageCount">총 0개의 페이지 저장됨</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

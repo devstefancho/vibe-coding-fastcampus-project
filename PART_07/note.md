@@ -95,6 +95,15 @@ Datasource(./product-link-list.txt) 를 아래 형식의 데이터 칼럼으로 
 "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
 ```
 
+## Vercel에 배포하기
+
+1. https://vercel.com/ 에 회원가입
+2. 터미널에서 `npm install -g vercel`로 vercel 설치
+3. 터미널에서 `vercel login`으로 로그인
+4. claude code에게 vercel 에 배포해달라고 요청
+5. 배포된 사이트 https://vercel.com/ 에서 확인하기
+
+
 ## 웹사이트 완성 체크사항
 
 - [ ] 내 정보(https://partners.coupang.com/#affiliate/profile) 페이지에서 사이트 URL, 스크린샷 등록

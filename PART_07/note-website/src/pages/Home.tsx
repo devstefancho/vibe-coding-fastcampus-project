@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="home">
       <header className="site-header">
-        <h1>노트의 미학</h1>
+        <h1>📔 노트의 미학</h1>
         <p className="subtitle">필기가 만드는 차이, 과학이 증명하다</p>
       </header>
 
